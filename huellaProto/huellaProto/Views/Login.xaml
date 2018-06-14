@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="huellaProto.Views.Login"
+            BindingContext="{Binding Main,Source={StaticResource Locator}}"
+             Title="Login"
+             
+            
+            >
+    <ContentPage.Content>
+        
+        <ScrollView BindingContext="{Binding Login}">
+            <StackLayout Padding="10">
+                
+                <Image 
+                    Source="huella_icon"
+                    WidthRequest="100">
+                </Image>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                    <Image
+                        
+                        Source="user_icon"
+                        WidthRequest="15">
+                        
+                    </Image>
+                
+                <Entry 
+                    Placeholder="E-mail"
+                    Keyboard="Email"
+                    Text="{Binding Email, Mode=TwoWay}"
+                    WidthRequest="200">
+                </Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                    <Image
+                        
+                        Source="pass_icon"
+                        WidthRequest="15">
+
+                    </Image>
+                    
+                <Entry WidthRequest="200"
+                    Placeholder="Password"
+                    IsPassword="True"
+                    Text="{Binding Password, Mode=TwoWay}">
+                </Entry>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Image Source="forget_icon" WidthRequest="25"></Image>
+                <Label 
+                    HorizontalOptions="Center"
+                    Text="Olvidé mi contraseña"
+                    TextColor="#05cec8"
+                    VerticalOptions="CenterAndExpand">
+                </Label>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    >
+                    <Label
+                        Text="Recordarme"
+                        VerticalOptions="Center"
+                        HorizontalOptions="StartAndExpand">
+                    </Label>
+                    <Switch 
+                        HorizontalOptions="End" IsToggled="{Binding IsRemembered, Mode=TwoWay}">
+                    </Switch>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    
+                    <Label Text="¿No tiene cuenta?">
+                        
+                    </Label>
+                    
+                <!--<Label 
+                    HorizontalOptions="Center"
+                    Text="REGISTRESE AQUÍ"
+                    TextColor="#05cec8"
+                    VerticalOptions="CenterAndExpand"
+                    >
+                        
+                </Label>-->
+                    <Button
+                            
+                            Text="Registrar" 
+                            BackgroundColor="#61edb9"
+                            TextColor="White" 
+                            BorderRadius="23"
+                            HeightRequest="36"
+                            WidthRequest="100"                
+                            HorizontalOptions="CenterAndExpand" 
+                            Command="{Binding RegistroCommand}" 
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
+                    </Button>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand"
+                    >
+                    <Button
+                            
+                            Text="Login" 
+                            BackgroundColor="#61edb9"
+                            TextColor="White" 
+                            BorderRadius="23"
+                            HeightRequest="46"
+                            WidthRequest="200"                
+                            HorizontalOptions="CenterAndExpand" 
+                            Command="{Binding LoginCommand}" 
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
+                    </Button>
+                    
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Image Source="logos_sena" WidthRequest="130" ></Image>
+                    
+                </StackLayout>
+                <StackLayout>
+                <Image Margin="-11" Source="foot_icon" >
+
+                </Image>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
