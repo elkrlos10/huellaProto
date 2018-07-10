@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace huellaProto.Droid
 {
-    [Activity(Label = "huellaProto", Icon = "@mipmap/huella_icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Huella de Carbono", Icon = "@mipmap/huella_icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

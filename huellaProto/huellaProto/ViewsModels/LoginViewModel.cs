@@ -1,5 +1,4 @@
-﻿
-namespace huellaProto.ViewModels
+﻿namespace huellaProto.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
     using huellaProto.Views;
@@ -11,7 +10,7 @@ namespace huellaProto.ViewModels
     {
         //Evento de la interfaz INotifyPropertyChanged para refrescar las vistas
         #region Eventos
-        public event PropertyChangedEventHandler PropertyChanged;
+       
         #endregion
         #region Atributos
         private string password;
@@ -21,6 +20,7 @@ namespace huellaProto.ViewModels
         #endregion
 
         #region Propiedades
+
         public string Email
         {
             get { return this.email; }
@@ -51,7 +51,10 @@ namespace huellaProto.ViewModels
         {
             this.IsRemembered = true;
             this.isEnabled = true;
-          
+
+            this.Email = "a@a.com";
+            this.Password = "123";
+
         }
         #endregion
 
@@ -71,11 +74,33 @@ namespace huellaProto.ViewModels
                 return new RelayCommand(Regi);
             }
         }
+        public ICommand CalcularCommand
+        {
+            get
+            {
+                return new RelayCommand(Calcu);
+            }
+        }
+        public ICommand ForgotPasswordCommand
+        {
+            get
+            {
+                return new RelayCommand(Forgot);
+            }
+        }
+        public ICommand RegisCommand
+        {
+            get
+            {
+                return new RelayCommand(Regi);
+            }
+        }
 
 
 
         private async void Login()
         {
+
             //Validar si es null o vacio la propiedad
             if (string.IsNullOrEmpty(this.Email))
             {
@@ -86,6 +111,7 @@ namespace huellaProto.ViewModels
 
                 return;
             }
+
 
             this.IsRunning = true;
             this.IsEnabled = false;
@@ -118,17 +144,34 @@ namespace huellaProto.ViewModels
             this.Password = string.Empty;
 
             MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new huellaProto());
+            await Application.Current.MainPage.Navigation.PushAsync(new EncuestaInsti());
 
         }
         private async void Regi()
         {
-            
+
+
+
             MainViewModel.GetInstance().huellaProto = new huellaViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new registroInsti());
 
         }
 
+        private async void Calcu()
+        {
+
+            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new CalcularInsti());
+
+        }
+
+        private async void Forgot()
+        {
+
+            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new ForgotPass());
+
+        }
         #endregion
     }
 }
