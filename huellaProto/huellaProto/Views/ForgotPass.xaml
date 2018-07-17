@@ -3,13 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="huellaProto.Views.ForgotPass"
              Title="Olvidé mi contraseña"
+             BindingContext="{Binding Main,Source={StaticResource Locator}}"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Su contraseña es: 123"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <ScrollView BindingContext="{Binding Recordar}">
+        <StackLayout Margin="0,45,0,0">
+            <Image Source="huella_icon.png" >
+                <Image.WidthRequest>
+
+                    <OnIdiom x:TypeArguments="x:Double"                     
+               Phone="150.0"                  
+               Tablet="210.0"/>
+                </Image.WidthRequest>
+
+            </Image>
+            <StackLayout Margin="0,70,0,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+            <Entry 
+                    Placeholder="E-mail"
+                    Keyboard="Email"
+                    Text="{Binding Email, Mode=TwoWay}"
+                    >
+                        <Entry.WidthRequest>
+                            <OnIdiom x:TypeArguments="x:Double"                     
+               Phone="200.0"                  
+               Tablet="350.0"/>
+                        </Entry.WidthRequest>
+            </Entry>
+            </StackLayout>
+            <StackLayout Margin="0,10,0,0" VerticalOptions="EndAndExpand">
+                <Button
+                            
+                            Text="Recuperar" 
+                            BackgroundColor="#61edb9"
+                            TextColor="White" 
+                            BorderRadius="23"
+                            HeightRequest="46"
+                            WidthRequest="200"                
+                            HorizontalOptions="CenterAndExpand" 
+                            Command="{Binding RecordarCommand}" 
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
+                </Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,70,0,0">
+                <Image Source="logos_sena" WidthRequest="200" ></Image>
+
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Image Margin="-5" Source="fondos_arboles3_icon" >
+
+                </Image>
+            </StackLayout>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
     

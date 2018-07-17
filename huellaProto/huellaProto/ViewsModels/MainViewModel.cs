@@ -12,6 +12,7 @@ namespace huellaProto.ViewModels
         public huellaViewModel huellaProto { get; set; }
         public RegistroViewModel Registro { get; set; }
         public CalculoViewModel Calculo { get; set; }
+        public RecordarViewModel Recordar { get; set; }
         #endregion
 
         #region Contructores
@@ -21,6 +22,7 @@ namespace huellaProto.ViewModels
             instance = this;
             this.Login = new LoginViewModel();
             this.Registro = new RegistroViewModel();
+            this.Recordar = new RecordarViewModel(); 
 
         }
         #endregion

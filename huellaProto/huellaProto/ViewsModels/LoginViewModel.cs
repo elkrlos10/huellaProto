@@ -170,6 +170,7 @@
 
             MainViewModel.GetInstance().huellaProto = new huellaViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new ForgotPass());
+            
 
         }
         #endregion

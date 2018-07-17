@@ -5,6 +5,7 @@
              Title="Calculo"
               BindingContext="{Binding Main,Source={StaticResource Locator}}">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Margin="0,30,0,0">
             <Image Source="huella_icon.png" >
                 <Image.WidthRequest>
@@ -68,7 +69,7 @@
                Phone="150.0"                  
                Tablet="210.0"/>
                     </Image.WidthRequest>
-                </Image>
+                </Image> 
 
             </StackLayout>
 
@@ -79,6 +80,7 @@
                 </Image>
             </StackLayout>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
     

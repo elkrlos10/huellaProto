@@ -5,13 +5,11 @@
              x:Class="huellaProto.Views.Login"
             BindingContext="{Binding Main,Source={StaticResource Locator}}"
              Title="Login"
-             
-            
             >
     <ContentPage.Content>
 
         <ScrollView BindingContext="{Binding Login}" >
-            <StackLayout Padding="0,-30,0,0" >
+            <StackLayout Padding="0,10,0,0" >
 
                 <StackLayout VerticalOptions="CenterAndExpand">
                 <Image Source="huella_icon.png" >
@@ -29,11 +27,11 @@
                     <Image
                         
                         Source="user_icon"
-                        WidthRequest="20" Margin="0,0,0,0">
+                        WidthRequest="20">
 
                     </Image>
 
-                    <Entry Margin="0,0,0,0" 
+                    <Entry
                     Placeholder="E-mail"
                     Keyboard="Email"
                     Text="{Binding Email, Mode=TwoWay}"
