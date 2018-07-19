@@ -97,7 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\huellaProto\huellaProto.csproj">
-      <Project>{FC515E4F-E5E6-41C6-82AF-7A13B42910D5}</Project>
+      <Project>{79B2FCF7-5C60-4AE0-8CEB-9797AC014269}</Project>
       <Name>huellaProto</Name>
     </ProjectReference>
   </ItemGroup>
