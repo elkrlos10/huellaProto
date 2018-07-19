@@ -86,6 +86,15 @@ namespace huellaProto.ViewModels
 
         private  void Regis()
         {
+            if (string.IsNullOrEmpty(this.Nombre))
+            {
+                Application.Current.MainPage.DisplayAlert(
+                     "Error"
+                   , "Ingrese por favor el nombre"
+                   , "Aceptar");
+
+                return;
+            }
             if (string.IsNullOrEmpty(this.Email))
             {
                  Application.Current.MainPage.DisplayAlert(
@@ -108,26 +117,37 @@ namespace huellaProto.ViewModels
 
                 return;
             }
-
-            if (this.Email != "a@a.com" || this.Password != "123")
+            if (string.IsNullOrEmpty(this.Nit))
             {
-                this.IsRunning = false;
-                this.IsEnabled = true;
-                 Application.Current.MainPage.DisplayAlert(
-                      "Error"
-                    , "Email o Contraseña Incorrectas"
-                    , "Aceptar");
-                this.Password = string.Empty;
+                Application.Current.MainPage.DisplayAlert(
+                     "Error"
+                   , "Ingrese por favor el NIT"
+                   , "Aceptar");
+
                 return;
             }
+            
+            if (string.IsNullOrEmpty(this.Direc))
+            {
+                Application.Current.MainPage.DisplayAlert(
+                     "Error"
+                   , "Ingrese por favor la dirección"
+                   , "Aceptar");
+
+                return;
+            }
+
             this.IsRunning = false;
             this.IsEnabled = true;
 
+            this.Nombre = string.Empty;
             this.Email = string.Empty;
             this.Password = string.Empty;
+            this.Nit = string.Empty;
+            this.Direc = string.Empty;
 
             MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-             Application.Current.MainPage.Navigation.PushAsync(new huellaProto());
+             Application.Current.MainPage.Navigation.PushAsync(new EncuestaInsti());
 
         }
 
