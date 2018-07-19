@@ -231,4 +231,10 @@
   <ItemGroup>
     <BundleResource Include="Resources\user_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\university.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\truck.png" />
+  </ItemGroup>
 </Project>

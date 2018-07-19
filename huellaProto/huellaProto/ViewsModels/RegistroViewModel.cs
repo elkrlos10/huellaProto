@@ -21,6 +21,10 @@ namespace huellaProto.ViewModels
         private string email;
         private string nit;
         private string direc;
+        private bool isVisible;
+        private bool isVisibleIns;
+        private bool isVisibleEmp;
+        private bool isVisibleIcon;
         #endregion
 
         #region Propiedades
@@ -62,13 +66,41 @@ namespace huellaProto.ViewModels
             set { SetValue(ref isEnabled, value); }
 
         }
+        public bool IsVisible
+        {
+            get { return this.isVisible; }
+            set { SetValue(ref isVisible, value); }
+
+        }
+        public bool IsVisibleIns
+        {
+            get { return this.isVisibleIns; }
+            set { SetValue(ref isVisibleIns, value); }
+
+        }
+        public bool IsVisibleEmp
+        {
+            get { return this.isVisibleEmp; }
+            set { SetValue(ref isVisibleEmp, value); }
+
+        }
+        public bool IsVisibleIcon
+        {
+            get { return this.isVisibleIcon; }
+            set { SetValue(ref isVisibleIcon, value); }
+
+        }
         #endregion
 
         #region Contructor
         public RegistroViewModel()
         {
             this.IsRemembered = true;
-            this.isEnabled = true;
+            this.IsEnabled = true;
+            this.IsVisible = false;
+            this.IsVisibleIns = false;
+            this.IsVisibleEmp = false;
+            this.IsVisibleIcon = true;
         }
         #endregion
 
@@ -82,7 +114,21 @@ namespace huellaProto.ViewModels
             }
         }
 
+        public ICommand InstitucionCommand
+        {
+            get
+            {
+                return new RelayCommand(this.Insti);
+            }
+        }
 
+        public ICommand EmpresaCommand
+        {
+            get
+            {
+                return new RelayCommand(this.Empre);
+            }
+        }
 
         private  void Regis()
         {
@@ -151,8 +197,19 @@ namespace huellaProto.ViewModels
 
         }
 
-      
+        private void Insti()
+        {
+            this.IsVisible = true;
+            this.IsVisibleIns = true;
+            this.IsVisibleIcon = false;
+        }
 
+        private void Empre()
+        {
+            this.IsVisible = true;
+            this.IsVisibleEmp = true;
+            this.IsVisibleIcon = false;
+        }
         #endregion
     }
 }
