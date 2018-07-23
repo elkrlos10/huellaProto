@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="huellaProto.Views.Flota"
+             Title="Flota"
+             BindingContext="{Binding Main,Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding FlotaC}">
+            <StackLayout Margin="0,4,0,0">
+                <Image Source="huella_icon.png" >
+                    <Image.WidthRequest>
+                      <OnIdiom x:TypeArguments="x:Double"                     
+                        Phone="150.0"                  
+                        Tablet="210.0"/>
+                    </Image.WidthRequest>
+                </Image>
+                <StackLayout Margin="0,30,0,0">
+                    <Label 
+                        Text="Ingrese la cantidad de vehiculos de su empresa"
+                        HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout Margin="0,30,0,0">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                        <Image Source="truck" WidthRequest="50"></Image>
+                        <Entry 
+                            WidthRequest="120" 
+                            Keyboard="Numeric">
+                        </Entry>
+                    </StackLayout>
+                </StackLayout>
+                <!--<StackLayout HorizontalOptions="CenterAndExpand"  Orientation="Horizontal" Margin="0,20,0,20">
+                    <Image Source="Arbol" WidthRequest="60"></Image>
+                </StackLayout>-->
+                <StackLayout Margin="0,10,0,0">
+                    <Button
+                            Text="Siguiente" 
+                            BackgroundColor="#61edb9"
+                            TextColor="White" 
+                            BorderRadius="23"
+                            HeightRequest="46"
+                            WidthRequest="200"                
+                            HorizontalOptions="CenterAndExpand" 
+                            VerticalOptions="End"
+                            Command="{Binding SiguienteCommand}" 
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
+                    </Button>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,0,0,30">
+                    <Image Source="logos_sena" >
+                        <Image.WidthRequest>
+                            <OnIdiom x:TypeArguments="x:Double"                     
+                                Phone="150.0"                  
+                                Tablet="210.0"/>
+                        </Image.WidthRequest>
+                    </Image>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Image Margin="-1" Source="fondos_arboles3_icon" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

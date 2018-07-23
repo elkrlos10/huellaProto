@@ -3,29 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="huellaProto.Views.CalcularInsti"
              Title="Calculo"
-              BindingContext="{Binding Main,Source={StaticResource Locator}}">
+             BindingContext="{Binding Main,Source={StaticResource Locator}}">
     <ContentPage.Content>
         <ScrollView>
         <StackLayout Margin="0,30,0,0">
             <Image Source="huella_icon.png" >
                 <Image.WidthRequest>
 
-                    <OnIdiom x:TypeArguments="x:Double"                     
-               Phone="150.0"                  
-               Tablet="210.0"/>
+                 <OnIdiom x:TypeArguments="x:Double"                     
+                      Phone="150.0"                  
+                      Tablet="210.0"/>
                 </Image.WidthRequest>
 
             </Image>
             <StackLayout>
-            <Label Text="Su huella de carbono es: 100 Toneladas"
-                
-                HorizontalOptions="CenterAndExpand" />
+                <Label 
+                    Text="Su huella de carbono es: 100 Toneladas"
+                    HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
                 <Label Text="Esto equivale a 8 hectareas de arboles a plantar">
-                    
                 </Label>
-                
             </StackLayout>
             <StackLayout  >
                 <Picker Margin="100,0,90,0" x:Name="picker" Title="Selecciona un arbol">

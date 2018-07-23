@@ -6,7 +6,6 @@
              Title="Registro"
              BindingContext="{Binding Main,Source={StaticResource Locator}}"
              >
-
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BindingContext="{Binding Registro}" Padding="0,30,0,0">
@@ -14,32 +13,40 @@
                         Source="huella_icon"
                         WidthRequest="150">
                     </Image>
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Margin="0,40,0,0" IsVisible="{Binding IsVisibleIcon}">
-                        <StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0" IsVisible="{Binding IsVisibleIcon}">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
                             <Image
-                                Source="university"
-                                WidthRequest="90">
+                                Source="university">
                                 <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
+                                    <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
                                 </Image.GestureRecognizers>
+                                 <Image.WidthRequest>
+                                     <OnIdiom x:TypeArguments="x:Double"                     
+                                        Phone="100.0"                  
+                                        Tablet="210.0"/>
+                                </Image.WidthRequest>
                             </Image>
                             <Label FontSize="15"
-                                HorizontalOptions="Center"
-                                Text="Institución Educativa"
-                                TextColor="#05cec8"
-                                VerticalOptions="CenterAndExpand">
+                                    HorizontalOptions="Center"
+                                    Text="Institución Educativa"
+                                    TextColor="#05cec8"
+                                    VerticalOptions="CenterAndExpand">
                                 <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
+                                    <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
                                 </Label.GestureRecognizers>
                             </Label>
-                        </StackLayout>
-                    <StackLayout Margin="0,35,0,0">
+                     </StackLayout>
+                    <StackLayout Orientation="Vertical" Margin="0,35,0,0" HorizontalOptions="CenterAndExpand" >
                             <Image
-                                Source="truck"
-                                WidthRequest="90">
+                                Source="truck">
                                 <Image.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding EmpresaCommand}" />
+                                    <TapGestureRecognizer Command="{Binding EmpresaCommand}" />
                                 </Image.GestureRecognizers>
+                                <Image.WidthRequest>
+                                   <OnIdiom x:TypeArguments="x:Double"                     
+                                       Phone="100.0"                  
+                                       Tablet="800.0"/>
+                                </Image.WidthRequest>
                             </Image>
                             <Label FontSize="15"
                                  HorizontalOptions="Center"
@@ -52,7 +59,7 @@
                             </Label>
                     </StackLayout>
                     </StackLayout>
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" IsVisible="{Binding IsVisible, Mode=TwoWay}">
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsVisible, Mode=TwoWay}">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,40,0,0"  IsVisible="{Binding IsVisibleIns, Mode=TwoWay}">
                         <Image
                             Source="institucion_icon"
@@ -133,8 +140,8 @@
 
                     </StackLayout>
                 </StackLayout>
-             
-                <StackLayout Margin="0,40,0,0">
+
+                <StackLayout VerticalOptions="EndAndExpand">
                     <Image Margin="-11" Source="fondos_arboles2_icon.png" ></Image>
                 </StackLayout>
 

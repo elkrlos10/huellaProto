@@ -143,15 +143,15 @@
             this.Email = string.Empty;
             this.Password = string.Empty;
 
-            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new EncuestaInsti());
+            //MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+            //await Application.Current.MainPage.Navigation.PushAsync(new EncuestaInsti());
 
+            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new Flota());
         }
         private async void Regi()
         {
-
-
-
+            
             MainViewModel.GetInstance().huellaProto = new huellaViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new registroInsti());
 
