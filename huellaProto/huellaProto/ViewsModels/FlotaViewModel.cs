@@ -14,12 +14,23 @@ namespace huellaProto.ViewsModels
     {
         #region Atributos
         private ObservableCollection<Currency> prueba;
-        //private bool isVisible;
-        //private int NumCamiones; 
-
+        private string motor;
+        private string combustible;
+      
         #endregion
 
         #region Propiedades
+        public string Motor
+        {
+            get { return this.motor; }
+            set { SetValue(ref this.motor, value); }
+        }
+
+        public string Combustible
+        {
+            get { return this.combustible; }
+            set { SetValue(ref this.combustible, value); }
+        }
         public ObservableCollection<Currency> Prueba
         {
             get { return this.prueba; }

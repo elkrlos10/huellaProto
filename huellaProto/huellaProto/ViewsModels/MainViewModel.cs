@@ -18,6 +18,7 @@ namespace huellaProto.ViewModels
         public CalculoViewModel Calculo { get; set; }
         public RecordarViewModel Recordar { get; set; }
         public FlotaViewModel FlotaC { get; set; }
+        public ListFlotaViewModel ListaFlota { get; set; }
         #endregion
 
         #region Contructores
@@ -29,6 +30,7 @@ namespace huellaProto.ViewModels
             this.Registro = new RegistroViewModel();
             this.Recordar = new RecordarViewModel();
             this.FlotaC = new FlotaViewModel();
+            this.ListaFlota = new ListFlotaViewModel();
         }
         #endregion
 
