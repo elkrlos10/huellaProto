@@ -3,11 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="huellaProto.Views.ListFlota"
              BindingContext="{Binding Main,Source={StaticResource Locator}}"
-             Title="Configuraciones">
+             Title="Vehículos">
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding FlotaC}">
+        <StackLayout BindingContext="{Binding ListaFlota}">
             <Label
-                Text="Total vehiculos 1000" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,15,0,0"></Label>
+                Text="Total vehículos 1000" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,15,0,0"></Label>
+            <Label Text="Marca-Modelo-Combustible-Cilindraje" FontAttributes="Bold" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,15,0,0"></Label>
             <!--<ListView 
                 
                 HasUnevenRows="true" 
@@ -73,26 +74,50 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand"
-                                            Orientation="Horizontal">
-                                <Image Source="truck"></Image>
+                                            Orientation="Vertical">
+                              
                                 <Label VerticalOptions="FillAndExpand"
                                     VerticalTextAlignment="Center"
                                     Text="{Binding Motor}"
-                                    FontSize="24">
+                                    FontSize="15">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding NavegarCommand}"/>
                                     </Label.GestureRecognizers>
                                 </Label>
-                                <Image 
-                                    Grid.Column="1"
-                                    HorizontalOptions="EndAndExpand" 
-                                    Source="ic_chevron_right">
-                                </Image>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="truck"></Image>
+                                    <Entry 
+                                        WidthRequest="80" 
+                                        Keyboard="Numeric"
+                                        HorizontalOptions="Center"> 
+                                    </Entry>
+                                    <Label Text="N° días" HorizontalOptions="EndAndExpand" VerticalOptions="End"></Label>
+                                    <Entry 
+                                        WidthRequest="40" 
+                                        Keyboard="Numeric"
+                                        HorizontalOptions="EndAndExpand"
+                                        Margin="-5,0,0,0">
+                                    </Entry>
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <StackLayout Margin="0,10,0,0">
+                <Button
+                            Text="Siguiente" 
+                            BackgroundColor="#61edb9"
+                            TextColor="White" 
+                            BorderRadius="23"
+                            HeightRequest="46"
+                            WidthRequest="150"                
+                            HorizontalOptions="CenterAndExpand" 
+                            VerticalOptions="End"
+                            Command="{Binding SiguienteCommand}" 
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
+                </Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

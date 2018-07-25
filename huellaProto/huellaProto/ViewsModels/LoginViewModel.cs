@@ -130,12 +130,19 @@
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
-                await Application.Current.MainPage.DisplayAlert(
-                      "Error"
-                    , "Email o Contraseña Incorrectas"
-                    , "Aceptar");
-                this.Password = string.Empty;
-                return;
+                //await Application.Current.MainPage.DisplayAlert(
+                //      "Error"
+                //    , "Email o Contraseña Incorrectas"
+                //    , "Aceptar");
+                //this.Password = string.Empty;
+                //return;
+                MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+                await Application.Current.MainPage.Navigation.PushAsync(new EncuestaInsti());
+            }
+            else
+            {
+                MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+                await Application.Current.MainPage.Navigation.PushAsync(new Flota());
             }
             this.IsRunning = false;
             this.IsEnabled = true;
@@ -143,11 +150,9 @@
             this.Email = string.Empty;
             this.Password = string.Empty;
 
-            //MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-            //await Application.Current.MainPage.Navigation.PushAsync(new EncuestaInsti());
+          
 
-            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new Flota());
+            
         }
         private async void Regi()
         {
