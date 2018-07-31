@@ -24,7 +24,8 @@
                         <Image Source="truck" WidthRequest="50"></Image>
                         <Entry 
                             WidthRequest="120" 
-                            Keyboard="Numeric">
+                            Keyboard="Numeric"
+                            Text="{Binding CantidadVehiculo, Mode=TwoWay}">
                         </Entry>
                     </StackLayout>
                 </StackLayout>

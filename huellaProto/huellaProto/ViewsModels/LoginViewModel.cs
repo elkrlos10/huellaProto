@@ -2,6 +2,7 @@
 {
     using GalaSoft.MvvmLight.Command;
     using huellaProto.Views;
+    using huellaProto.ViewsModels;
     using System.ComponentModel;
     using System.Windows.Input;
     using Xamarin.Forms;
@@ -12,6 +13,7 @@
         #region Eventos
        
         #endregion
+
         #region Atributos
         private string password;
         private bool isRunning;
@@ -67,6 +69,7 @@
                 return new RelayCommand(Login);
             }
         }
+
         public ICommand RegistroCommand
         {
             get
@@ -74,6 +77,7 @@
                 return new RelayCommand(Regi);
             }
         }
+
         public ICommand CalcularCommand
         {
             get
@@ -81,6 +85,7 @@
                 return new RelayCommand(Calcu);
             }
         }
+
         public ICommand ForgotPasswordCommand
         {
             get
@@ -88,6 +93,7 @@
                 return new RelayCommand(Forgot);
             }
         }
+
         public ICommand RegisCommand
         {
             get
@@ -95,7 +101,6 @@
                 return new RelayCommand(Regi);
             }
         }
-
 
 
         private async void Login()
@@ -141,7 +146,7 @@
             }
             else
             {
-                MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+                MainViewModel.GetInstance().FlotaC = new FlotaViewModel();
                 await Application.Current.MainPage.Navigation.PushAsync(new Flota());
             }
             this.IsRunning = false;
@@ -154,10 +159,11 @@
 
             
         }
+
         private async void Regi()
         {
             
-            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+            MainViewModel.GetInstance().Registro = new RegistroViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new registroInsti());
 
         }
@@ -173,7 +179,7 @@
         private async void Forgot()
         {
 
-            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+            MainViewModel.GetInstance().Recordar = new RecordarViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new ForgotPass());
             
 

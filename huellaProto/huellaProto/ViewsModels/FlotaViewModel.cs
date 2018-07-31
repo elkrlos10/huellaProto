@@ -12,7 +12,29 @@ namespace huellaProto.ViewsModels
 
     public class FlotaViewModel : BaseViewModel
     {
-        
+        #region Constructor
+        public FlotaViewModel()
+        {
+           
+        }
+        #endregion
+
+        #region atributos
+
+        private int cantidadVehiculo;
+
+        #endregion
+
+        #region Propiedades
+
+        public int CantidadVehiculo
+        {
+            get { return this.cantidadVehiculo; }
+            set { SetValue(ref this.cantidadVehiculo, value); }
+        }
+
+        #endregion
+
         #region Commands 
         public ICommand SiguienteCommand
         {
@@ -23,12 +45,13 @@ namespace huellaProto.ViewsModels
         }
         #endregion
 
-
+        
         #region Metodos
 
         private async void ConfCommand()
         {
-            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+            var can = this.CantidadVehiculo.ToString();
+            MainViewModel.GetInstance().ListaFlota = new ListFlotaViewModel(can);
             await Application.Current.MainPage.Navigation.PushAsync(new ListFlota());
             await Application.Current.MainPage.DisplayAlert(
                     "Información"

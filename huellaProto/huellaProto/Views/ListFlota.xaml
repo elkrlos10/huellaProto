@@ -7,7 +7,12 @@
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding ListaFlota}">
             <Label
-                Text="Total vehículos 1000" FontAttributes="Bold" FontSize="Large" HorizontalTextAlignment="Center" Margin="0,15,0,0"></Label>
+                Text="{Binding Cantidad}"
+                FontAttributes="Bold" 
+                FontSize="Large" 
+                HorizontalTextAlignment="Center" 
+                Margin="0,15,0,0">
+            </Label>
             <Label Text="Marca-Modelo-Combustible-Cilindraje" FontAttributes="Bold" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,15,0,0"></Label>
             <!--<ListView 
                 
@@ -106,7 +111,7 @@
             </ListView>
             <StackLayout Margin="0,10,0,0">
                 <Button
-                            Text="Siguiente" 
+                            Text="Calcular" 
                             BackgroundColor="#61edb9"
                             TextColor="White" 
                             BorderRadius="23"
@@ -114,7 +119,7 @@
                             WidthRequest="150"                
                             HorizontalOptions="CenterAndExpand" 
                             VerticalOptions="End"
-                            Command="{Binding SiguienteCommand}" 
+                            Command="{Binding CalcularCommand}" 
                             IsEnabled="{Binding Isnabled, Mode=TwoWay}">
                 </Button>
             </StackLayout>

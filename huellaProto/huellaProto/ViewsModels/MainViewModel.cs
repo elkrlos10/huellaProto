@@ -27,10 +27,10 @@ namespace huellaProto.ViewModels
         {
             instance = this;
             this.Login = new LoginViewModel();
-            this.Registro = new RegistroViewModel();
-            this.Recordar = new RecordarViewModel();
-            this.FlotaC = new FlotaViewModel();
-            this.ListaFlota = new ListFlotaViewModel();
+            //this.Registro = new RegistroViewModel();
+            //this.Recordar = new RecordarViewModel();
+            //this.FlotaC = new FlotaViewModel();
+            //this.ListaFlota = new ListFlotaViewModel("");
         }
         #endregion
 

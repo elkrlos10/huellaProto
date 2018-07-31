@@ -14,16 +14,16 @@ namespace huellaProto.ViewsModels
     {
         #region Atributos
         private ObservableCollection<Currency> prueba;
-        private string motor;
+        private string cantidad;
         private string combustible;
 
         #endregion
 
         #region Propiedades
-        public string Motor
+        public string Cantidad
         {
-            get { return this.motor; }
-            set { SetValue(ref this.motor, value); }
+            get { return this.cantidad; }
+            set { SetValue(ref this.cantidad, value); }
         }
 
         public string Combustible
@@ -38,11 +38,24 @@ namespace huellaProto.ViewsModels
         }
         #endregion
 
-        public ListFlotaViewModel()
+        #region Constructor
+        public ListFlotaViewModel(string NumCamiones)
         {
             this.Prueba = Probando();
-
+            this.Cantidad = "Total vehículos " + NumCamiones;
         }
+
+        #endregion
+
+        #region Commands 
+        public ICommand CalcularCommand
+        {
+            get
+            {
+                return new RelayCommand(Calcular);
+            }
+        }
+        #endregion
 
         #region Metodos
 
@@ -61,7 +74,15 @@ namespace huellaProto.ViewsModels
             return new ObservableCollection<Currency>(obj);
         }
 
+        private async void Calcular()
+        {
+            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new CalcularInsti());
+        }
+
         #endregion
+
+
     }
 
     public class Currency
