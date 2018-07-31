@@ -43,6 +43,7 @@ namespace huellaProto.ViewsModels
         {
             this.Prueba = Probando();
             this.Cantidad = "Total vehículos " + NumCamiones;
+
         }
 
         #endregion
