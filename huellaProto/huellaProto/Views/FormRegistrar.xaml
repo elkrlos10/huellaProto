@@ -1,17 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="huellaProto.Views.FormRegistrar"
              Title="Registro"
              BindingContext="{Binding Main,Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding FormRegistrar}">
-            <Image 
-                        Source="huella_icon"
-                        WidthRequest="150">
-            </Image>
-            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,40,0,0">
+      <ScrollView BindingContext="{Binding FormRegistrar}">
+        <StackLayout Padding="0,10,0,0" 
+                     Orientation="Vertical">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                 <Image Source="huella_icon.png" >
+                    <Image.WidthRequest>
+                        <OnIdiom x:TypeArguments="x:Double"                     
+                               Phone="150.0"                  
+                               Tablet="210.0"/>
+                    </Image.WidthRequest>
+                 </Image>
+                 <StackLayout Orientation="Horizontal"
+                              HorizontalOptions="CenterAndExpand"
+                              Margin="0,40,0,0">
                     <Image
                             Source="institucion_icon"
                             WidthRequest="30"
@@ -33,17 +40,9 @@
                            IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}">
                     </Entry>
                 </StackLayout>
-                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="0,40,0,0"  IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}">
-                    <Image
-                            Source="truck"
-                            WidthRequest="30">
-                    </Image>
-                    <Entry WidthRequest="200"
-                            Placeholder="Empresa"
-                            Text="{Binding Nombre, Mode=TwoWay}">
-                    </Entry>
-                </StackLayout>-->
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand" 
+                             Margin="0,10">
                     <Image
                             Source="letter"
                             WidthRequest="30">
@@ -54,7 +53,9 @@
                             Text="{Binding Email, Mode=TwoWay}">
                     </Entry>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <StackLayout Orientation="Horizontal" 
+                             HorizontalOptions="CenterAndExpand"
+                             Margin="0,10">
                     <Image
                                 Source="pass_icon"
                                 WidthRequest="20">
@@ -66,18 +67,20 @@
                                 Text="{Binding Password, Mode=TwoWay}">
                     </Entry>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center"  >
+                <StackLayout Orientation="Horizontal" 
+                             HorizontalOptions="CenterAndExpand" 
+                             Margin="0,10">
                     <Image
                                 Margin="-15,0,-10,0"
                                 Source="nit"
                                 WidthRequest="50">
                     </Image>
                     <Entry WidthRequest="200"
-                                Placeholder="NIT"
+                                Placeholder="Nit"
                                 Text="{Binding Nit, Mode=TwoWay}">
                     </Entry>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,10" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" >
                     <Image
                                 Margin="-5,0,-5,0"
                                 Source="sign"
@@ -88,7 +91,7 @@
                                 Text="{Binding Direc, Mode=TwoWay}">
                     </Entry>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
                     <Button
                                 Text="Registrar" 
                                 BackgroundColor="#61edb9"
@@ -98,14 +101,17 @@
                                 WidthRequest="200"                
                                 HorizontalOptions="CenterAndExpand" 
                                 Command="{Binding RegisCommand}" 
-                                IsEnabled="{Binding Isnabled, Mode=TwoWay}">
+                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                                Margin="0,15,0,0">
                     </Button>
 
                 </StackLayout>
             </StackLayout>
+          
             <StackLayout VerticalOptions="EndAndExpand">
-                <Image Margin="-11" Source="fondos_arboles2_icon.png" ></Image>
+                <Image Source="fondos_arboles3_icon.png" VerticalOptions="EndAndExpand" ></Image>
             </StackLayout>
         </StackLayout>
+       </ScrollView>     
     </ContentPage.Content>
 </ContentPage>
