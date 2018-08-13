@@ -13,6 +13,7 @@ namespace huellaProto
 
             
             MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#61edb9"), BarTextColor = Color.White };
+            //MainPage = new NavigationPage(new HuellaTabbed()) { BarBackgroundColor = Color.FromHex("#61edb9"), BarTextColor = Color.White };
         }
 
         #endregion

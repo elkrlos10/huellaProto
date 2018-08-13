@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="huellaProto.Views.Bienvenida"
+             BindingContext="{Binding Main,Source={StaticResource Locator}}"
+             Title="Bienvenido">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Bienvenida}" Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+            <Image Source="huella_icon.png"
+                   VerticalOptions="StartAndExpand">
+                <Image.WidthRequest>
+                    <OnIdiom x:TypeArguments="x:Double"                     
+                               Phone="150.0"                  
+                               Tablet="210.0"/>
+                </Image.WidthRequest>
+            </Image>
+            <Label Text="BIENVENIDO"
+                   XAlign="Center"
+                   FontSize="Large"
+                   Margin="0,10,0,0">
+            </Label>
+            <Label 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                Margin="20,10,20,10"
+                XAlign="Center">
+                <Label.Text>
+                    La presente encuesta hace parte de la recolección de información para la ejecución del proyecto 'Compensación de la huella de carbono mediante proyectos agroforestales, administrados con herramientas TIC' y financiado por el Sistema de Investigación Desarrollo Tecnológico e Innovación del SENA – SENNOVA."
+                </Label.Text>
+            </Label>
+            <StackLayout 
+                        Padding="0,20,0,0"
+                        Orientation="Horizontal"
+                        VerticalOptions="StartAndExpand">
+                <Button
+                    Text="Continuar" 
+                    BackgroundColor="#61edb9"
+                    TextColor="White" 
+                    BorderRadius="23"
+                    HeightRequest="46"
+                    WidthRequest="200"                
+                    HorizontalOptions="CenterAndExpand" 
+                    Command="{Binding SiguienteCommand}" 
+                    IsEnabled="{Binding Isnabled, Mode=TwoWay}">
+                </Button>
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Image Source="logos_sena"
+                           WidthRequest="150" ></Image>
+                </StackLayout>
+                <StackLayout VerticalOptions="End" Padding="0,20,0,0">
+                    <Image Margin="-11"
+                           Source="foot_icon" >
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

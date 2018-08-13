@@ -20,6 +20,7 @@ namespace huellaProto.ViewModels
         public FlotaViewModel FlotaC { get; set; }
         public ListFlotaViewModel ListaFlota { get; set; }
         public FormRegistrarViewModel FormRegistrar { get; set; }
+        public BienvenidaViewModel Bienvenida { get; set; }
         #endregion
 
         #region Contructores

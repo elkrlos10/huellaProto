@@ -4,8 +4,6 @@ namespace huellaProto.ViewsModels
     using GalaSoft.MvvmLight.Command;
     using huellaProto.ViewModels;
     using huellaProto.Views;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Windows.Input;
     using Xamarin.Forms;
 

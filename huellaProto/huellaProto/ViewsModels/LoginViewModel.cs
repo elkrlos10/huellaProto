@@ -141,8 +141,8 @@
                 //    , "Aceptar");
                 //this.Password = string.Empty;
                 //return;
-                MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-                await Application.Current.MainPage.Navigation.PushAsync(new EncuestaInsti());
+                MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
+                await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
             }
             else
             {
@@ -154,9 +154,6 @@
 
             this.Email = string.Empty;
             this.Password = string.Empty;
-
-          
-
             
         }
 
