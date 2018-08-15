@@ -1,24 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.ListFlota"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}"
-             Title="Vehículos">
+<ContentPage
+    x:Class="huellaProto.Views.ListFlota"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Vehículos"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding ListaFlota}">
             <Label
-                Text="{Binding Cantidad}"
-                FontAttributes="Bold" 
-                FontSize="Large" 
-                HorizontalTextAlignment="Center" 
-                Margin="0,15,0,0">
-            </Label>
-            <Label Text="Marca-Modelo-Combustible-Cilindraje" FontAttributes="Bold" FontSize="Micro" HorizontalTextAlignment="Center" Margin="0,15,0,0"></Label>
-            <!--<ListView 
-                
-                HasUnevenRows="true" 
+                Margin="0,15,0,0"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="{Binding Cantidad}" />
+            <Label
+                Margin="0,15,0,0"
+                FontAttributes="Bold"
+                FontSize="Micro"
+                HorizontalTextAlignment="Center"
+                Text="Marca-Modelo-Combustible-Cilindraje" />
+            <!--<ListView
+
+                HasUnevenRows="true"
                 IsPullToRefreshEnabled="true"
-              
+
                 ItemsSource="{Binding Prueba}"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
@@ -29,80 +34,93 @@
                                 HasShadow="true"
                                 Margin="5"
                                 BackgroundColor="#CEF6F5">
-                                --><!--<Frame.GestureRecognizers>
+            -->
+            <!--<Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
-                                </Frame.GestureRecognizers>--><!--
+                                </Frame.GestureRecognizers>-->
+            <!--
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="auto"/>
-                                        --><!--<ColumnDefinition Width="Auto"/>--><!--
+            -->
+            <!--<ColumnDefinition Width="Auto"/>-->
+            <!--
                                     </Grid.ColumnDefinitions>
-                                    --><!--<ffimageloading:CachedImage 
+            -->
+            <!--<ffimageloading:CachedImage
                                         Grid.Column="0"
                                         HeightRequest="30"
                                         Source="{Binding Flag, Converter={StaticResource SvgImageSourceConverter}}"
                                         WidthRequest="60">
-                                    </ffimageloading:CachedImage>--><!--
-                                    <StackLayout 
+                                    </ffimageloading:CachedImage>-->
+            <!--
+                                    <StackLayout
                                         Grid.Column="0"
                                         VerticalOptions="Center">
-                                        <Label 
+                                        <Label
                                             FontAttributes="Bold"
-                                            FontSize="Medium" 
+                                            FontSize="Medium"
                                             Text="{Binding Motor}"
                                             TextColor="White">
                                         </Label>
-                                        <Label 
+                                        <Label
                                             Text="{Binding Combustible}"
                                             TextColor="Black">
                                         </Label>
                                     </StackLayout>
-                                    --><!--<Image 
+            -->
+            <!--<Image
                                         Grid.Column="1"
-                                        HorizontalOptions="End" 
+                                        HorizontalOptions="End"
                                         Source="ic_chevron_right">
-                                    </Image>--><!--
+                                    </Image>-->
+            <!--
                                 </Grid>
                             </Frame>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>-->
-            <ListView x:Name="MenuItemsListView"
-                        SeparatorVisibility="None"
-                        HasUnevenRows="true"
-                        ItemsSource="{Binding Prueba}"
-                        VerticalOptions="Start"
-                        Margin="0,15,0,0">
+            <ListView
+                x:Name="MenuItemsListView"
+                Margin="0,15,0,0"
+                HasUnevenRows="true"
+                ItemsSource="{Binding Prueba}"
+                SeparatorVisibility="None"
+                VerticalOptions="Start">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand"
-                                            Orientation="Vertical">
-                              
-                                <Label VerticalOptions="FillAndExpand"
-                                    VerticalTextAlignment="Center"
+                            <StackLayout
+                                Padding="15,10"
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Vertical">
+
+                                <Label
+                                    FontSize="15"
                                     Text="{Binding Motor}"
-                                    FontSize="15">
+                                    VerticalOptions="FillAndExpand"
+                                    VerticalTextAlignment="Center">
                                     <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding NavegarCommand}"/>
+                                        <TapGestureRecognizer Command="{Binding NavegarCommand}" />
                                     </Label.GestureRecognizers>
                                 </Label>
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="truck"></Image>
-                                    <Entry 
-                                        WidthRequest="80" 
+                                    <Image Source="truck" />
+                                    <Entry
+                                        HorizontalOptions="Center"
                                         Keyboard="Numeric"
-                                        HorizontalOptions="Center"> 
-                                    </Entry>
-                                    <Label Text="N° días" HorizontalOptions="EndAndExpand" VerticalOptions="End"></Label>
-                                    <Entry 
-                                        WidthRequest="40" 
-                                        Keyboard="Numeric"
+                                        WidthRequest="80" />
+                                    <Label
                                         HorizontalOptions="EndAndExpand"
-                                        Margin="-5,0,0,0">
-                                    </Entry>
+                                        Text="N° días"
+                                        VerticalOptions="End" />
+                                    <Entry
+                                        Margin="-5,0,0,0"
+                                        HorizontalOptions="EndAndExpand"
+                                        Keyboard="Numeric"
+                                        WidthRequest="40" />
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>
@@ -111,17 +129,16 @@
             </ListView>
             <StackLayout Margin="0,10,0,0">
                 <Button
-                            Text="Calcular" 
-                            BackgroundColor="#61edb9"
-                            TextColor="White" 
-                            BorderRadius="23"
-                            HeightRequest="46"
-                            WidthRequest="150"                
-                            HorizontalOptions="CenterAndExpand" 
-                            VerticalOptions="End"
-                            Command="{Binding CalcularCommand}" 
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
-                </Button>
+                    BackgroundColor="#61edb9"
+                    BorderRadius="23"
+                    Command="{Binding CalcularCommand}"
+                    HeightRequest="46"
+                    HorizontalOptions="CenterAndExpand"
+                    IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                    Text="Calcular"
+                    TextColor="White"
+                    VerticalOptions="End"
+                    WidthRequest="150" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

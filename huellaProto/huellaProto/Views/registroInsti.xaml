@@ -1,70 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
+<ContentPage
+    x:Class="huellaProto.Views.registroInsti"
     xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.registroInsti"
-             Title="Registro"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}"
-             >
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Registro"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BindingContext="{Binding Registro}" Padding="0,30,0,0">
-                <Image Source="huella_icon.png" >
+            <StackLayout Padding="0,30,0,0" BindingContext="{Binding Registro}">
+                <Image Source="huella_icon.png">
                     <Image.WidthRequest>
-                        <OnIdiom x:TypeArguments="x:Double"                     
-                               Phone="150.0"                  
-                               Tablet="210.0"/>
+                        <OnIdiom
+                            x:TypeArguments="x:Double"
+                            Phone="170.0"
+                            Tablet="210.0" />
                     </Image.WidthRequest>
                 </Image>
-                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="0,40,0,0">
-                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
-                            <Image
-                                Source="university">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
-                                </Image.GestureRecognizers>
-                                 <Image.WidthRequest>
-                                     <OnIdiom x:TypeArguments="x:Double"                     
-                                        Phone="100.0"                  
-                                        Tablet="210.0"/>
-                                </Image.WidthRequest>
-                            </Image>
-                            <Label FontSize="15"
-                                    HorizontalOptions="Center"
-                                    Text="Institución Educativa"
-                                    TextColor="#05cec8"
-                                    VerticalOptions="CenterAndExpand">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
-                                </Label.GestureRecognizers>
-                            </Label>
-                     </StackLayout>
-                    <StackLayout Orientation="Vertical" Margin="0,35,0,0" HorizontalOptions="CenterAndExpand" >
-                            <Image
-                                Source="truck">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding EmpresaCommand}" />
-                                </Image.GestureRecognizers>
-                                <Image.WidthRequest>
-                                   <OnIdiom x:TypeArguments="x:Double"                     
-                                       Phone="100.0"                  
-                                       Tablet="800.0"/>
-                                </Image.WidthRequest>
-                            </Image>
-                            <Label FontSize="15"
-                                 HorizontalOptions="Center"
-                                 Text="Empresa de Transporte"
-                                 TextColor="#05cec8"
-                                 VerticalOptions="CenterAndExpand">
-                                <Label.GestureRecognizers>
+                <StackLayout
+                    Margin="0,40,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Vertical">
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                        <Image Source="university">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
+                            </Image.GestureRecognizers>
+                            <Image.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="100.0"
+                                    Tablet="210.0" />
+                            </Image.WidthRequest>
+                        </Image>
+                        <Label
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            Text="Institución Educativa"
+                            TextColor="#6E6E6E"
+                            VerticalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,35,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Vertical">
+                        <Image Source="iconoTransporteRegistro">
+                            <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding EmpresaCommand}" />
-                                </Label.GestureRecognizers>
-                            </Label>
+                            </Image.GestureRecognizers>
+                            <Image.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="800.0" />
+                            </Image.WidthRequest>
+                        </Image>
+                        <Label
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            Text="Empresa de Transporte"
+                            TextColor="#6E6E6E"
+                            VerticalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EmpresaCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
                     </StackLayout>
                 </StackLayout>
-              
+
                 <StackLayout VerticalOptions="EndAndExpand">
-                    <Image Margin="-11" Source="fondos_arboles2_icon.png" ></Image>
+                    <Image Margin="-11" Source="fondos_arboles2_icon.png" />
                 </StackLayout>
 
             </StackLayout>

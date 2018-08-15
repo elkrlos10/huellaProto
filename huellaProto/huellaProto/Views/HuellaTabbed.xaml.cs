@@ -15,7 +15,7 @@ namespace huellaProto.Views
         public HuellaTabbed ()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, true);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace huellaProto.Views
 		public ListFlota ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 	}
 }

@@ -15,6 +15,9 @@ namespace huellaProto.Views
 		public registroInsti ()
 		{
 			InitializeComponent ();
-		}
-	}
+
+            NavigationPage.SetHasNavigationBar(this, false);
+
+        }
+    }
 }

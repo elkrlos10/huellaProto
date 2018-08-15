@@ -15,6 +15,7 @@ namespace huellaProto.Views
 		public ForgotPass ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 	}
 }

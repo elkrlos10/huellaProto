@@ -1,109 +1,96 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage NavigationPage.HasNavigationBar="False"
+<ContentPage
+    x:Class="huellaProto.Views.Login"
     xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.Login"
-            BindingContext="{Binding Main,Source={StaticResource Locator}}"
-             Title="Login"
-            >
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Login"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
 
-        <ScrollView BindingContext="{Binding Login}" >
-            <StackLayout Padding="0,10,0,0" >
+        <ScrollView BindingContext="{Binding Login}">
+            <StackLayout Padding="0,15,0,0">
                 <StackLayout VerticalOptions="CenterAndExpand">
-                    <Image Source="huella_icon.png" >
+                    <Image Source="huella_icon.png">
                         <Image.WidthRequest>
-                           <OnIdiom x:TypeArguments="x:Double"                     
-                               Phone="150.0"                  
-                               Tablet="210.0"/>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="180.0"
+                                Tablet="210.0" />
                         </Image.WidthRequest>
                     </Image>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
-                        <Image
-                            Source="user_icon"
-                            WidthRequest="20">
-                        </Image>
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                         <Entry
-                            Placeholder="E-mail"
                             Keyboard="Email"
+                            Placeholder="E-mail"
                             Text="{Binding Email, Mode=TwoWay}"
-                            WidthRequest="200">
-                        </Entry>
+                            WidthRequest="200" />
+                        <Image Source="iconoUsuario" WidthRequest="20" />
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-                        <Image
-                            Source="pass_icon"
-                            WidthRequest="20">
-                        </Image>
-                        <Entry WidthRequest="200"
-                            Placeholder="Password"
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                        <Entry
                             IsPassword="True"
-                            Text="{Binding Password, Mode=TwoWay}">
-                        </Entry>
+                            Placeholder="Password"
+                            Text="{Binding Password, Mode=TwoWay}"
+                            WidthRequest="200" />
+                        <Image Source="iconoPassword" WidthRequest="20" />
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Image Source="forget_icon" WidthRequest="30"></Image>
-                        <Label FontSize="20"
-                        HorizontalOptions="Center"
-                        Text="Olvidé mi contraseña"
-                        TextColor="#05cec8"
-                        VerticalOptions="CenterAndExpand">
+                    <StackLayout
+                        Margin="0,20,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Vertical">
+                        <Label
+                            FontSize="18"
+                            Text="¿No tiene una cuenta?"
+                            TextColor="#6E6E6E" />
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            Text="REGISTRESE AQUÍ"
+                            TextColor="#05cec8"
+                            VerticalOptions="CenterAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RegisCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout
+                        Padding="0,15,0,0"
+                        Orientation="Horizontal"
+                        VerticalOptions="StartAndExpand">
+                        <Button
+                            BackgroundColor="#61edb9"
+                            BorderRadius="23"
+                            Command="{Binding LoginCommand}"
+                            HeightRequest="46"
+                            HorizontalOptions="CenterAndExpand"
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                            Text="Login"
+                            TextColor="White"
+                            WidthRequest="200" />
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Label
+                            FontSize="16"
+                            HorizontalOptions="Center"
+                            Text="Olvidé mi contraseña"
+                            TextColor="#6E6E6E"
+                            VerticalOptions="CenterAndExpand">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" />
                             </Label.GestureRecognizers>
                         </Label>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Label FontSize="20"
-                            Text="Recordarme"
-                            VerticalOptions="Center"
-                            HorizontalOptions="StartAndExpand">
-                        </Label>
-                        <Switch 
-                            HorizontalOptions="End" IsToggled="{Binding IsRemembered, Mode=TwoWay}">
-                        </Switch>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                            <Label FontSize="15" Text="¿No tiene cuenta?"/>
-                            <Label FontSize="15"
-                                HorizontalOptions="Center"
-                                Text="REGISTRESE AQUÍ"
-                                TextColor="#05cec8"
-                                VerticalOptions="CenterAndExpand">
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding RegisCommand}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-
-                    </StackLayout>
-                    <StackLayout 
-                        Padding="0,50,0,0"
-                        Orientation="Horizontal"
-                        VerticalOptions="StartAndExpand"
-                        >
-                            <Button
-                            
-                                    Text="Login" 
-                                    BackgroundColor="#61edb9"
-                                    TextColor="White" 
-                                    BorderRadius="23"
-                                    HeightRequest="46"
-                                    WidthRequest="200"                
-                                    HorizontalOptions="CenterAndExpand" 
-                                    Command="{Binding LoginCommand}" 
-                                    IsEnabled="{Binding Isnabled, Mode=TwoWay}">
-                            </Button>
-                    </StackLayout>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Image Source="logos_sena" WidthRequest="200" ></Image>
-
-                    </StackLayout>
-                    <StackLayout>
-                        <Image Margin="-11" Source="foot_icon" >
-
-                        </Image>
-                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    Margin="0,10,0,10"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Horizontal">
+                    <Image Source="logos_sena" WidthRequest="200" />
+                </StackLayout>
+                <StackLayout Margin="0,-10,0,0">
+                    <Image Source="foot_icon" />
+                </StackLayout>
 
             </StackLayout>
         </ScrollView>

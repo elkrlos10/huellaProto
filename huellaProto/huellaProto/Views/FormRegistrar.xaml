@@ -1,117 +1,120 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.FormRegistrar"
-             Title="Registro"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}">
+<ContentPage
+    x:Class="huellaProto.Views.FormRegistrar"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Registro"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#F6B131" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-      <ScrollView BindingContext="{Binding FormRegistrar}">
-        <StackLayout Padding="0,10,0,0" 
-                     Orientation="Vertical">
-            <StackLayout VerticalOptions="CenterAndExpand">
-                 <Image Source="huella_icon.png" >
-                    <Image.WidthRequest>
-                        <OnIdiom x:TypeArguments="x:Double"                     
-                               Phone="150.0"                  
-                               Tablet="210.0"/>
-                    </Image.WidthRequest>
-                 </Image>
-                 <StackLayout Orientation="Horizontal"
-                              HorizontalOptions="CenterAndExpand"
-                              Margin="0,40,0,0">
-                    <Image
-                            Source="institucion_icon"
-                            WidthRequest="30"
-                            IsVisible="{Binding IsVisibleIns, Mode=TwoWay}">
+        <ScrollView BindingContext="{Binding FormRegistrar}">
+            <StackLayout Padding="0,10,0,0" Orientation="Vertical">
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Image Source="logoNaranja">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="150.0"
+                                Tablet="210.0" />
+                        </Image.WidthRequest>
                     </Image>
-                    <Entry WidthRequest="200"
+                    <StackLayout
+                        Margin="0,40,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Entry
+                            IsVisible="{Binding IsVisibleIns, Mode=TwoWay}"
                             Placeholder="Institución"
-                           Text="{Binding Nombre, Mode=TwoWay}"
-                           IsVisible="{Binding IsVisibleIns, Mode=TwoWay}">
-                    </Entry>
-                    <Image
-                            Source="truck"
-                            WidthRequest="30"
-                            IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}">
-                    </Image>
-                    <Entry WidthRequest="200"
+                            Text="{Binding Nombre, Mode=TwoWay}"
+                            WidthRequest="200" />
+                        <Image
+                            IsVisible="{Binding IsVisibleIns, Mode=TwoWay}"
+                            Source="iconoInstitucion"
+                            WidthRequest="30" />
+                        <Entry
+                            IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}"
                             Placeholder="Empresa"
-                           Text="{Binding Nombre, Mode=TwoWay}"
-                           IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}">
-                    </Entry>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="CenterAndExpand" 
-                             Margin="0,10">
-                    <Image
-                            Source="letter"
-                            WidthRequest="30">
-                    </Image>
-                    <Entry WidthRequest="200"
-                            Placeholder="E-mail"
+                            Text="{Binding Nombre, Mode=TwoWay}"
+                            WidthRequest="200" />
+                        <Image
+                            IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}"
+                            Source="iconoTransporte"
+                            WidthRequest="30" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,10"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Entry
                             Keyboard="Email"
-                            Text="{Binding Email, Mode=TwoWay}">
-                    </Entry>
+                            Placeholder="E-mail"
+                            Text="{Binding Email, Mode=TwoWay}"
+                            WidthRequest="200" />
+                        <Image Source="iconoCorreo" WidthRequest="30" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,10"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Entry
+                            IsPassword="True"
+                            Placeholder="Password"
+                            Text="{Binding Password, Mode=TwoWay}"
+                            WidthRequest="200" />
+                        <Image Source="iconoContrasenaNaranja" WidthRequest="30" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,10"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Entry
+                            Placeholder="Nit"
+                            Text="{Binding Nit, Mode=TwoWay}"
+                            WidthRequest="200" />
+                        <Image
+                            Margin="-15,0,-10,0"
+                            Source="nit"
+                            WidthRequest="50" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,0,0,10"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal">
+                        <Entry
+                            Placeholder="Dirección"
+                            Text="{Binding Direc, Mode=TwoWay}"
+                            WidthRequest="200" />
+                        <Image
+                            Margin="-5,0,-5,0"
+                            Source="iconoDireccion"
+                            WidthRequest="30" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                        <Button
+                            Margin="0,15,0,0"
+                            BackgroundColor="#F6B131"
+                            BorderRadius="23"
+                            Command="{Binding RegisCommand}"
+                            HeightRequest="46"
+                            HorizontalOptions="CenterAndExpand"
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                            Text="REGISTRAR"
+                            TextColor="White"
+                            WidthRequest="200" />
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" 
-                             HorizontalOptions="CenterAndExpand"
-                             Margin="0,10">
-                    <Image
-                                Source="pass_icon"
-                                WidthRequest="20">
-                    </Image>
 
-                    <Entry WidthRequest="200"
-                                Placeholder="Password"
-                                IsPassword="True"
-                                Text="{Binding Password, Mode=TwoWay}">
-                    </Entry>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal" 
-                             HorizontalOptions="CenterAndExpand" 
-                             Margin="0,10">
-                    <Image
-                                Margin="-15,0,-10,0"
-                                Source="nit"
-                                WidthRequest="50">
-                    </Image>
-                    <Entry WidthRequest="200"
-                                Placeholder="Nit"
-                                Text="{Binding Nit, Mode=TwoWay}">
-                    </Entry>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" >
-                    <Image
-                                Margin="-5,0,-5,0"
-                                Source="sign"
-                                WidthRequest="30">
-                    </Image>
-                    <Entry WidthRequest="200"
-                                Placeholder="Dirección"
-                                Text="{Binding Direc, Mode=TwoWay}">
-                    </Entry>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
-                    <Button
-                                Text="Registrar" 
-                                BackgroundColor="#61edb9"
-                                TextColor="White" 
-                                BorderRadius="23"
-                                HeightRequest="46"
-                                WidthRequest="200"                
-                                HorizontalOptions="CenterAndExpand" 
-                                Command="{Binding RegisCommand}" 
-                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                                Margin="0,15,0,0">
-                    </Button>
-
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Image Source="fondo1Naranja" VerticalOptions="EndAndExpand" />
                 </StackLayout>
             </StackLayout>
-          
-            <StackLayout VerticalOptions="EndAndExpand">
-                <Image Source="fondos_arboles3_icon.png" VerticalOptions="EndAndExpand" ></Image>
-            </StackLayout>
-        </StackLayout>
-       </ScrollView>     
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

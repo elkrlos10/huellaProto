@@ -54,7 +54,7 @@
             this.IsRemembered = true;
             this.isEnabled = true;
 
-            this.Email = "a@a.com";
+            this.Email = "a@a.co";
             this.Password = "123";
 
         }

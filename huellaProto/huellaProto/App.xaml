@@ -1,13 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:infra="clr-namespace:huellaProto.Infrastructure" 
-             x:Class="huellaProto.App">
+<Application
+    x:Class="huellaProto.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:infra="clr-namespace:huellaProto.Infrastructure">
     <Application.Resources>
 
-        <!-- Application resource dictionary -->
+        <!--  Application resource dictionary  -->
         <ResourceDictionary>
-            <infra:InstanceLocator  x:Key="Locator"/>
+            <infra:InstanceLocator x:Key="Locator" />
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#61edb9" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

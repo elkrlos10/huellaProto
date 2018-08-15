@@ -1,122 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.Trasnporte"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}"
-            Title="vehículos">
+<ContentPage
+    x:Class="huellaProto.Views.Trasnporte"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="vehículos"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Login}">
 
-            <StackLayout Padding="10" VerticalOptions="CenterAndExpand">
-                <StackLayout VerticalOptions="CenterAndExpand">
+            <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+                <StackLayout IsVisible="False" VerticalOptions="FillAndExpand">
                     <Label
-                    Text="¿La institución cuenta con vehículos propios?"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand">
-                    </Label>
+                        HorizontalOptions="CenterAndExpand"
+                        Text="¿La institución cuenta con vehículos propios?"
+                        VerticalOptions="CenterAndExpand" />
 
                     <StackLayout Orientation="Horizontal">
                         <Button
-                            Text="SI" 
                             BackgroundColor="#61edb9"
-                            TextColor="White" 
                             BorderRadius="23"
+                            Command="{Binding SiguienteCommand}"
                             HeightRequest="46"
-                            WidthRequest="100"                
-                            HorizontalOptions="CenterAndExpand" 
-                            Command="{Binding SiguienteCommand}" 
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
-                        </Button>
+                            HorizontalOptions="CenterAndExpand"
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                            Text="SI"
+                            TextColor="White"
+                            WidthRequest="100" />
                         <Button
-                            Text="NO" 
                             BackgroundColor="#61edb9"
-                            TextColor="White" 
                             BorderRadius="23"
+                            Command="{Binding SiguienteCommand}"
                             HeightRequest="46"
-                            WidthRequest="100"                
-                            HorizontalOptions="CenterAndExpand" 
-                            Command="{Binding SiguienteCommand}" 
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
-                        </Button>
+                            HorizontalOptions="CenterAndExpand"
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                            Text="NO"
+                            TextColor="White"
+                            WidthRequest="100" />
                     </StackLayout>
                 </StackLayout>
-                <StackLayout IsVisible="False">
-                    <Image Source="huella_icon" WidthRequest="100" HorizontalOptions="CenterAndExpand"></Image>
+                <StackLayout IsVisible="True">
+                    <Image
+                        HorizontalOptions="CenterAndExpand"
+                        Source="huella_icon"
+                        WidthRequest="100" />
 
-                    <Label XAlign="Center" FontSize="20" Margin="0,8" Text="El consumo anual de la institucion es de:"></Label>
-                    <Label XAlign="Center" Text="1. En Viajes en avión"></Label>
-                    <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a kilometros"></Label>
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Image Source="aeroplane_icon" WidthRequest="20"></Image>
-                        <Entry  WidthRequest="100" Keyboard="Numeric">
-
-                        </Entry>
-                        <Label VerticalOptions="Center" Text="Km/h."></Label>
-                    </StackLayout>
-
-
-                    <Label XAlign="Center" Margin="3" Text="2. En Combustible"></Label>
-                    <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a galones"></Label>
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Image Source="combustible_icon" WidthRequest="15"></Image>
-                        <Entry WidthRequest="100" Keyboard="Numeric" >
-
-                        </Entry>
-                        <Label VerticalOptions="Center" Text="Gal."></Label>
-                    </StackLayout>
-
-                    <Label XAlign="Center" Margin="3" Text="3. En Energía"></Label>
-                    <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a kilowatts"></Label>
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Image Source="energia_icon" WidthRequest="15"></Image>
-                        <Entry WidthRequest="100" Keyboard="Numeric">
-
-                        </Entry>
-                        <Label VerticalOptions="Center" Text="kW/h."></Label>
-                    </StackLayout>
-
-                    <Label XAlign="Center" Margin="3" Text="4. En Gas"></Label>
-                    <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a metros cubicos"></Label>
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Image Source="gas_icon" WidthRequest="15"></Image>
-                        <Entry WidthRequest="100" Keyboard="Numeric">
-
-                        </Entry>
-                        <Label VerticalOptions="Center" Text="m3."></Label>
+                    <StackLayout
+                        Margin="0,10,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label Text="¿Con cuántos vehículos cuenta la institución?" XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image Source="aeroplane_icon" WidthRequest="20" />
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                        </StackLayout>
                     </StackLayout>
                     <StackLayout
-                    Orientation="Horizontal"
-                    VerticalOptions="CenterAndExpand"
-                    >
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="¿Cuantos de los vehículos utilizan gasolina?"
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image Source="combustible_icon" WidthRequest="15" />
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Label Text="km." VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="¿Cuantos de los vehículos utilizan diesel?"
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image Source="combustible_icon" WidthRequest="15" />
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Label Text="km." VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="¿Cuantos de los vehículos utilizan gas natural?"
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image Source="combustible_icon" WidthRequest="15" />
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Label Text="km." VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Horizontal"
+                        VerticalOptions="EndAndExpand">
                         <Button
-                            
-                            Text="Calcular" 
                             BackgroundColor="#61edb9"
-                            TextColor="White" 
                             BorderRadius="23"
+                            Command="{Binding CalcularCommand}"
                             HeightRequest="46"
-                            WidthRequest="200"                
-                            HorizontalOptions="CenterAndExpand" 
-                            Command="{Binding CalcularCommand}" 
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
-                        </Button>
+                            HorizontalOptions="CenterAndExpand"
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                            Text="Calcular"
+                            TextColor="White"
+                            WidthRequest="200" />
 
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                        <Image Source="logos_sena" WidthRequest="130" ></Image>
+                    <!--<StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Image Source="logos_sena" WidthRequest="130" />
 
-                    </StackLayout>
-                    <StackLayout>
-                        <Image Margin="-11" Source="fondos_arboles3_icon.png" >
-
-                        </Image>
-                    </StackLayout>
+                    </StackLayout>-->
+                    <!--<StackLayout VerticalOptions="End">
+                        <Image Margin="-11" Source="fondos_arboles3_icon.png" />
+                    </StackLayout>-->
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Image Margin="-11" Source="fondos_arboles3_icon.png" />
                 </StackLayout>
             </StackLayout>
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

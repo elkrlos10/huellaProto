@@ -1,60 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.Bienvenida"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}"
-             Title="Bienvenido">
-    <ContentPage.Content>
-        <StackLayout BindingContext="{Binding Bienvenida}" Orientation="Vertical" VerticalOptions="CenterAndExpand" >
-            <Image Source="huella_icon.png"
-                   VerticalOptions="StartAndExpand">
-                <Image.WidthRequest>
-                    <OnIdiom x:TypeArguments="x:Double"                     
-                               Phone="150.0"                  
-                               Tablet="210.0"/>
-                </Image.WidthRequest>
-            </Image>
-            <Label Text="BIENVENIDO"
-                   XAlign="Center"
-                   FontSize="Large"
-                   Margin="0,10,0,0">
-            </Label>
-            <Label 
-                VerticalOptions="CenterAndExpand" 
+<ContentPage
+    x:Class="huellaProto.Views.Bienvenida"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Bienvenido"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <RelativeLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Image
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                   Property=Height}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Width}"
+            Source="fondo1Verde"
+            VerticalOptions="EndAndExpand" />
+        <!--<Grid RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" />-->
+        <ScrollView BindingContext="{Binding Bienvenida}">
+            <StackLayout
+                Padding="0,15,0,0"
                 HorizontalOptions="CenterAndExpand"
-                Margin="20,10,20,10"
-                XAlign="Center">
-                <Label.Text>
-                    La presente encuesta hace parte de la recolección de información para la ejecución del proyecto 'Compensación de la huella de carbono mediante proyectos agroforestales, administrados con herramientas TIC' y financiado por el Sistema de Investigación Desarrollo Tecnológico e Innovación del SENA – SENNOVA."
-                </Label.Text>
-            </Label>
-            <StackLayout 
-                        Padding="0,20,0,0"
-                        Orientation="Horizontal"
+                Orientation="Vertical"
+                VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Vertical">
+                    <Image
+                        Margin="0,40,0,10"
+                        Source="logoVerde"
                         VerticalOptions="StartAndExpand">
-                <Button
-                    Text="Continuar" 
-                    BackgroundColor="#61edb9"
-                    TextColor="White" 
-                    BorderRadius="23"
-                    HeightRequest="46"
-                    WidthRequest="200"                
-                    HorizontalOptions="CenterAndExpand" 
-                    Command="{Binding SiguienteCommand}" 
-                    IsEnabled="{Binding Isnabled, Mode=TwoWay}">
-                </Button>
-            </StackLayout>
-            <StackLayout VerticalOptions="EndAndExpand">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Image Source="logos_sena"
-                           WidthRequest="150" ></Image>
-                </StackLayout>
-                <StackLayout VerticalOptions="End" Padding="0,20,0,0">
-                    <Image Margin="-11"
-                           Source="foot_icon" >
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="180.0"
+                                Tablet="240.0" />
+                        </Image.WidthRequest>
                     </Image>
+                    <StackLayout Margin="0,10,0,0">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            Text="BIENVENIDO"
+                            XAlign="Center" />
+                        <Label
+                            Margin="50,10,50,10"
+                            FontSize="16"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            XAlign="Center">
+                            <Label.Text>
+                                La presente encuesta hace parte de la recolección de información para la ejecución del proyecto 'Compensación de la huella de carbono mediante proyectos agroforestales, administrados con herramientas TIC' y financiado por el Sistema de Investigación Desarrollo Tecnológico e Innovación del SENA – SENNOVA.&quot;
+                            </Label.Text>
+                            <Label.FontSize>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="14"
+                                    Tablet="25.0" />
+                            </Label.FontSize>
+                        </Label>
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout Padding="0,10,0,10" VerticalOptions="EndAndExpand">
+                    <Button
+                        BackgroundColor="#82a20d"
+                        BorderRadius="23"
+                        Command="{Binding SiguienteCommand}"
+                        FontSize="18"
+                        HeightRequest="46"
+                        HorizontalOptions="CenterAndExpand"
+                        IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                        Text="Continuar"
+                        TextColor="White"
+                        WidthRequest="200" />
                 </StackLayout>
             </StackLayout>
-        </StackLayout>
-    </ContentPage.Content>
+        </ScrollView>
+    </RelativeLayout>
 </ContentPage>

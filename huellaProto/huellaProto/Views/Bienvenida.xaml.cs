@@ -15,6 +15,8 @@ namespace huellaProto.Views
 		public Bienvenida ()
 		{
 			InitializeComponent ();
-		}
-	}
+            NavigationPage.SetHasNavigationBar(this, false);
+
+        }
+    }
 }
