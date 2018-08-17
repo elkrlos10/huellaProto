@@ -25,8 +25,8 @@ namespace huellaProto.ViewsModels
         private async void ConfCommand()
         {
            
-            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed());
+            MainViewModel.GetInstance().Tabs = new TabsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(4));
 
         }
 

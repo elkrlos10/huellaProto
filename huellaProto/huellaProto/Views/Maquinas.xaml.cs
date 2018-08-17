@@ -12,9 +12,12 @@ namespace huellaProto.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Maquinas : ContentPage
 	{
-		public Maquinas ()
+       
+        public Maquinas ()
 		{
 			InitializeComponent ();
 		}
-	}
+
+        
+    }
 }

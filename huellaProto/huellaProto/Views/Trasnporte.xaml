@@ -6,20 +6,23 @@
     Title="vehículos"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <ScrollView BindingContext="{Binding Login}">
+
+        <ScrollView BindingContext="{Binding Tabs}">
 
             <StackLayout Padding="10" VerticalOptions="FillAndExpand">
-                <StackLayout IsVisible="False" VerticalOptions="FillAndExpand">
+                <StackLayout IsVisible="{Binding IsVisiblePreg, Mode=TwoWay}" VerticalOptions="FillAndExpand">
                     <Label
+                        Margin="30,10,30,10"
+                        FontSize="Large"
                         HorizontalOptions="CenterAndExpand"
                         Text="¿La institución cuenta con vehículos propios?"
-                        VerticalOptions="CenterAndExpand" />
-
+                        VerticalOptions="CenterAndExpand"
+                        XAlign="Center" />
                     <StackLayout Orientation="Horizontal">
                         <Button
                             BackgroundColor="#61edb9"
-                            BorderRadius="23"
-                            Command="{Binding SiguienteCommand}"
+                            BorderRadius="50"
+                            Command="{Binding VehiculosCommand}"
                             HeightRequest="46"
                             HorizontalOptions="CenterAndExpand"
                             IsEnabled="{Binding Isnabled, Mode=TwoWay}"
@@ -29,7 +32,7 @@
                         <Button
                             BackgroundColor="#61edb9"
                             BorderRadius="23"
-                            Command="{Binding SiguienteCommand}"
+                            Command="{Binding OmitirCommand}"
                             HeightRequest="46"
                             HorizontalOptions="CenterAndExpand"
                             IsEnabled="{Binding Isnabled, Mode=TwoWay}"
@@ -37,8 +40,11 @@
                             TextColor="White"
                             WidthRequest="100" />
                     </StackLayout>
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Image Margin="-11" Source="fondos_arboles3_icon.png" />
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout IsVisible="True">
+                <StackLayout IsVisible="{Binding IsVisibleForm, Mode=TwoWay}">
                     <Image
                         HorizontalOptions="CenterAndExpand"
                         Source="huella_icon"
@@ -107,7 +113,7 @@
                         <Button
                             BackgroundColor="#61edb9"
                             BorderRadius="23"
-                            Command="{Binding CalcularCommand}"
+                            Command="{Binding OmitirCommand}"
                             HeightRequest="46"
                             HorizontalOptions="CenterAndExpand"
                             IsEnabled="{Binding Isnabled, Mode=TwoWay}"
@@ -120,13 +126,11 @@
                         <Image Source="logos_sena" WidthRequest="130" />
 
                     </StackLayout>-->
-                    <!--<StackLayout VerticalOptions="End">
+                    <StackLayout VerticalOptions="End">
                         <Image Margin="-11" Source="fondos_arboles3_icon.png" />
-                    </StackLayout>-->
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout VerticalOptions="EndAndExpand">
-                    <Image Margin="-11" Source="fondos_arboles3_icon.png" />
-                </StackLayout>
+
             </StackLayout>
 
         </ScrollView>

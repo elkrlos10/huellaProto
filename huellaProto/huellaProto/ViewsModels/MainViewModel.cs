@@ -21,6 +21,7 @@ namespace huellaProto.ViewModels
         public ListFlotaViewModel ListaFlota { get; set; }
         public FormRegistrarViewModel FormRegistrar { get; set; }
         public BienvenidaViewModel Bienvenida { get; set; }
+        public TabsViewModel Tabs { get; set; }
         #endregion
 
         #region Contructores

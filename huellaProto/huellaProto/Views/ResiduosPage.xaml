@@ -1,13 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.ResiduosPage"
-             Title="Residuos">
+<ContentPage
+    x:Class="huellaProto.Views.ResiduosPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Residuos"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView BindingContext="{Binding Tabs}">
+            <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+                <StackLayout>
+                    <Image
+                        HorizontalOptions="CenterAndExpand"
+                        Source="huella_icon"
+                        WidthRequest="100" />
+                    <StackLayout
+                        Margin="0,10,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label Text="¿Realiza realiza separación de residuos orgánicos e inorgánicos? " XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="¿La institución cuenta con programa de reciclaje?"
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="¿La institución realiza compostaje a partir de residuos orgánicos? "
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="En promedio, ¿Qué cantidad de residuos sólidos generan mensualmente en la institución, teniendo en cuenta todos los residuos? (Toneladas)"
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="En promedio, ¿Qué cantidad de residuos reciclables se están generando mensualmente en la institución? (Toneladas)   "
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Horizontal"
+                        VerticalOptions="EndAndExpand">
+                        <Button
+                            BackgroundColor="#61edb9"
+                            BorderRadius="23"
+                            Command="{Binding OmitirResiduosCommand}"
+                            HeightRequest="46"
+                            HorizontalOptions="CenterAndExpand"
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                            Text="Calcular"
+                            TextColor="White"
+                            WidthRequest="200" />
+
+                    </StackLayout>
+                    <!--<StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Image Source="logos_sena" WidthRequest="130" />
+
+                    </StackLayout>-->
+                    <!--<StackLayout VerticalOptions="End">
+                        <Image Margin="-11" Source="fondos_arboles3_icon.png" />
+                    </StackLayout>-->
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Image Margin="-11" Source="fondos_arboles3_icon.png" />
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

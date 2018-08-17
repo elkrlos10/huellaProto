@@ -1,84 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.CalcularInsti"
-             Title="Calculo"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}">
-    <ContentPage.Content>
+<ContentPage
+    x:Class="huellaProto.Views.CalcularInsti"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Calculo"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <RelativeLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Image
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                   Property=Height}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Width}"
+            Source="fondo1Verde"
+            VerticalOptions="EndAndExpand" />
         <ScrollView>
-        <StackLayout Margin="0,30,0,0">
-            <Image Source="huella_icon.png" >
-                <Image.WidthRequest>
-
-                 <OnIdiom x:TypeArguments="x:Double"                     
-                      Phone="150.0"                  
-                      Tablet="210.0"/>
-                </Image.WidthRequest>
-
-            </Image>
-            <StackLayout>
-                <Label 
-                    Text="Su huella de carbono es: 100 Toneladas"
-                    HorizontalOptions="CenterAndExpand" />
-            </StackLayout>
-            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                <Label Text="Esto equivale a 8 hectareas de arboles a plantar">
-                </Label>
-            </StackLayout>
-            <StackLayout  >
-                <Picker Margin="100,0,90,0" x:Name="picker" Title="Selecciona un arbol">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Pino</x:String>
-                            <x:String>Acacia</x:String>
-                           
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-                
-            </StackLayout>
-            
-            <StackLayout HorizontalOptions="CenterAndExpand"  Orientation="Horizontal" Margin="0,20,0,20">
-                <Image Source="Arbol" WidthRequest="60"></Image>
-                
-            </StackLayout>
-            
-            <StackLayout Margin="0,10,0,0">
-                <Button
-                            
-                            Text="Compensar" 
-                            BackgroundColor="#61edb9"
-                            TextColor="White" 
-                            BorderRadius="23"
-                            HeightRequest="46"
-                            WidthRequest="200"                
-                            HorizontalOptions="CenterAndExpand" 
-                            Command="{Binding LoginCommand}" 
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
-                </Button>
-
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,0,0,30">
-                <Image Source="logos_sena" >
+            <StackLayout Margin="0,30,0,0">
+                <Image Source="huella_icon.png">
                     <Image.WidthRequest>
 
-                        <OnIdiom x:TypeArguments="x:Double"                     
-               Phone="150.0"                  
-               Tablet="210.0"/>
+                        <OnIdiom
+                            x:TypeArguments="x:Double"
+                            Phone="150.0"
+                            Tablet="210.0" />
                     </Image.WidthRequest>
-                </Image> 
-
-            </StackLayout>
-
-            <StackLayout VerticalOptions="EndAndExpand">
-
-                <Image Margin="-1" Source="fondos_arboles3_icon" >
 
                 </Image>
+                <StackLayout>
+                    <Label HorizontalOptions="CenterAndExpand" Text="Su huella de carbono es: 100 Toneladas" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Text="Esto equivale a 8 hectareas de arboles a plantar" />
+                </StackLayout>
+                <StackLayout>
+                    <Picker
+                        x:Name="picker"
+                        Title="Selecciona un arbol"
+                        Margin="100,0,90,0">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Pino</x:String>
+                                <x:String>Acacia</x:String>
+
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                </StackLayout>
+
+                <StackLayout
+                    Margin="0,20,0,20"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Horizontal">
+                    <Image Source="Arbol" WidthRequest="60" />
+
+                </StackLayout>
+
+                <StackLayout Margin="0,10,0,0">
+                    <Button
+                        BackgroundColor="#61edb9"
+                        BorderRadius="23"
+                        Command="{Binding LoginCommand}"
+                        HeightRequest="46"
+                        HorizontalOptions="CenterAndExpand"
+                        IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                        Text="Compensar"
+                        TextColor="White"
+                        WidthRequest="200" />
+
+                </StackLayout>
+
+                <StackLayout
+                    Margin="0,0,0,30"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <Label Text="¿Deseas precisar tu calculo de huella?">
+                        <!--<Image.WidthRequest>
+
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="150.0"
+                                Tablet="210.0" />
+                        </Image.WidthRequest>-->
+                    </Label>
+
+                </StackLayout>
+
+                <!--<StackLayout VerticalOptions="EndAndExpand">
+
+                    <Image Margin="-1" Source="fondos_arboles3_icon" />
+                </StackLayout>-->
             </StackLayout>
-        </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
+    </RelativeLayout>
 </ContentPage>
-    
