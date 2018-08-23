@@ -178,6 +178,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\huella_icon.png" />
+    <BundleResource Include="Resources\logoVerde.png" />
+    <BundleResource Include="Resources\fondo1verde.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\aeroplane_icon.png" />

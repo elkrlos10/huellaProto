@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="huellaProto.Views.Bienvenida"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -13,16 +13,16 @@
                                                                   Property=Width}"
             Source="fondo1Verde"
             VerticalOptions="EndAndExpand" />
-        <!--<Grid RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" />-->
-        <ScrollView BindingContext="{Binding Bienvenida}">
+        <Grid RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}" />
+           <FlexLayout BindingContext="{Binding Bienvenida}"  Direction="Column" JustifyContent="SpaceEvenly" AlignItems="Stretch" >
             <StackLayout
-                Padding="0,15,0,0"
+                Padding="0,10,0,0"
                 HorizontalOptions="CenterAndExpand"
                 Orientation="Vertical"
                 VerticalOptions="CenterAndExpand">
                 <StackLayout Orientation="Vertical">
                     <Image
-                        Margin="0,40,0,10"
+                        Margin="0,0,0,10"
                         Source="logoVerde"
                         VerticalOptions="StartAndExpand">
                         <Image.WidthRequest>
@@ -71,6 +71,6 @@
                         WidthRequest="200" />
                 </StackLayout>
             </StackLayout>
-        </ScrollView>
+          </FlexLayout>
     </RelativeLayout>
 </ContentPage>

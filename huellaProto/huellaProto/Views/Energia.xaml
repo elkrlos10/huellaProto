@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="huellaProto.Views.Energia"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -10,17 +10,37 @@
 
             <StackLayout Padding="10" VerticalOptions="FillAndExpand">
                 <StackLayout>
-                    <Image
-                        HorizontalOptions="CenterAndExpand"
+                     <Image
+                        Margin="0,0,0,10"
                         Source="huella_icon"
-                        WidthRequest="100" />
+                        VerticalOptions="StartAndExpand">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="100.0"
+                                Tablet="240.0" />
+                        </Image.WidthRequest>
+                    </Image>
                     <StackLayout
                         Margin="0,10,0,0"
                         Orientation="Vertical"
                         VerticalOptions="CenterAndExpand">
                         <Label Text="¿Cuál es el consumo promedio (En kW/h), en la factura de servicios públicos, del consumo mensual de Energía Eléctrica en la institución?" XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                          <Entry Keyboard="Numeric">
+                             <Entry.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="140.0" />
+                            </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="35.0" />
+                            </Entry.HeightRequest>
+                           </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -32,7 +52,20 @@
                             Text="¿Cuál es el consumo promedio (En metros cúbicos), en la factura de servicios públicos, del consumo mensual de Gas Natural en la institución?"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                           <Entry Keyboard="Numeric">
+                             <Entry.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="140.0" />
+                            </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="35.0" />
+                            </Entry.HeightRequest>
+                           </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -44,7 +77,20 @@
                             Text="¿La institución cuenta con algún tipo de energía renovable?"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                           <Entry Keyboard="Numeric">
+                             <Entry.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="140.0" />
+                            </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="35.0" />
+                            </Entry.HeightRequest>
+                           </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout

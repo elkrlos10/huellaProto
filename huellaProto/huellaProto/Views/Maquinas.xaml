@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="huellaProto.Views.Maquinas"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Tabs}">
 
-            <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+                  <StackLayout Padding="10" VerticalOptions="FillAndExpand">
                 <StackLayout IsVisible="{Binding IsVisiblePregMaquina, Mode=TwoWay}" VerticalOptions="FillAndExpand">
                     <Label
                         Margin="30,10,30,10"
@@ -41,18 +41,39 @@
                             WidthRequest="100" />
                     </StackLayout>
                 </StackLayout>
+                <FlexLayout  VerticalOptions="CenterAndExpand" Direction="Column" JustifyContent="SpaceEvenly" AlignItems="Stretch" >
                 <StackLayout IsVisible="{Binding IsVisibleFormMaquina, Mode=TwoWay}">
-                    <Image
-                        HorizontalOptions="CenterAndExpand"
+                     <Image
+                        Margin="0,0,0,10"
                         Source="huella_icon"
-                        WidthRequest="100" />
+                        VerticalOptions="StartAndExpand">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="100.0"
+                                Tablet="240.0" />
+                        </Image.WidthRequest>
+                    </Image>
                     <StackLayout
                         Margin="0,10,0,0"
                         Orientation="Vertical"
                         VerticalOptions="CenterAndExpand">
                         <Label Text="¿Con cuántas máquinas o equipos que utilicen combustibles líquidos cuenta la institución?" XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                           <Entry Keyboard="Numeric">
+                             <Entry.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="140.0" />
+                            </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="35.0" />
+                            </Entry.HeightRequest>
+                           </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -64,7 +85,20 @@
                             Text="¿Cuantas de los maquinas utilizan gasolina? "
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Entry Keyboard="Numeric">
+                             <Entry.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="140.0" />
+                            </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="35.0" />
+                            </Entry.HeightRequest>
+                           </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -76,7 +110,20 @@
                             Text="¿Cuantas de los maquinas utilizan diesel?"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Entry Keyboard="Numeric">
+                             <Entry.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="140.0" />
+                            </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="35.0" />
+                            </Entry.HeightRequest>
+                           </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -88,7 +135,20 @@
                             Text="¿Cuantas de los maquinas utilizan gas natural?"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" WidthRequest="80" />
+                            <Entry Keyboard="Numeric">
+                             <Entry.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="140.0" />
+                            </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="35.0" />
+                            </Entry.HeightRequest>
+                           </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -115,10 +175,12 @@
                         <Image Margin="-11" Source="fondos_arboles3_icon.png" />
                     </StackLayout>-->
                 </StackLayout>
-                <StackLayout VerticalOptions="EndAndExpand">
+              
+                        </FlexLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
                     <Image Margin="-11" Source="fondos_arboles3_icon.png" />
                 </StackLayout>
-            </StackLayout>
+            </StackLayout>       
 
         </ScrollView>
     </ContentPage.Content>

@@ -96,7 +96,7 @@ namespace huellaProto.ViewsModels
         }
 
 
-        public ICommand OmitirResiduosCommand
+        public ICommand ResiduosCommand
         {
             get
             {
@@ -145,14 +145,11 @@ namespace huellaProto.ViewsModels
 
         private void CambioViewMaquina()
         {
-            this.IsVisibleFormMaquina = false;
-            this.IsVisiblePregMaquina = false;
-
-            //MainViewModel.GetInstance().Login = new LoginViewModel();
-
+            
             Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(2));
             //Remover la ultima vista de la pila
-            Application.Current.MainPage.Navigation.RemovePage(Application.Current.MainPage.Navigation.NavigationStack[Application.Current.MainPage.Navigation.NavigationStack.Count - 2]);
+            Application.Current.MainPage.Navigation.RemovePage
+                       (Application.Current.MainPage.Navigation.NavigationStack[Application.Current.MainPage.Navigation.NavigationStack.Count - 2]);
 
         }
 
@@ -163,7 +160,8 @@ namespace huellaProto.ViewsModels
 
             Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(3));
             //Remover la ultima vista de la pila
-            Application.Current.MainPage.Navigation.RemovePage(Application.Current.MainPage.Navigation.NavigationStack[Application.Current.MainPage.Navigation.NavigationStack.Count - 2]);
+            Application.Current.MainPage.Navigation.RemovePage
+                       (Application.Current.MainPage.Navigation.NavigationStack[Application.Current.MainPage.Navigation.NavigationStack.Count - 2]);
 
         }
 
