@@ -12,13 +12,13 @@
                 <StackLayout>
                      <Image
                         Margin="0,0,0,10"
-                        Source="huella_icon"
+                        Source="logoVerde"
                         VerticalOptions="StartAndExpand">
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
-                                Phone="100.0"
-                                Tablet="240.0" />
+                                Phone="140.0"
+                                Tablet="210.0" />
                         </Image.WidthRequest>
                     </Image>
                     <StackLayout
@@ -98,7 +98,7 @@
                         Orientation="Horizontal"
                         VerticalOptions="EndAndExpand">
                         <Button
-                            BackgroundColor="#61edb9"
+                            BackgroundColor="#82a20d"
                             BorderRadius="23"
                             Command="{Binding CalcularCommand}"
                             HeightRequest="46"

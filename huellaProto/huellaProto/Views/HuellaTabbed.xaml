@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage
     x:Class="huellaProto.Views.HuellaTabbed"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:tabs="clr-namespace:huellaProto.Views"
     Title="Encuesta"
-    BarBackgroundColor="#61edb9">
+    BarBackgroundColor="#82a20d">
     <!--  Pages can be added as references or inline  -->
     <TabbedPage.Children>
         <tabs:Trasnporte />

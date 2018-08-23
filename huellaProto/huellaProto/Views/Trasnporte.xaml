@@ -10,7 +10,19 @@
         <ScrollView BindingContext="{Binding Tabs}">
 
             <StackLayout Padding="10" VerticalOptions="FillAndExpand">
-                <StackLayout IsVisible="{Binding IsVisiblePreg, Mode=TwoWay}" VerticalOptions="FillAndExpand">
+                
+                <StackLayout IsVisible="{Binding IsVisiblePreg, Mode=TwoWay}" VerticalOptions="EndAndExpand">
+                     <Image
+                        Margin="0,0,0,60"
+                        Source="logoVerde"
+                        VerticalOptions="StartAndExpand">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="140.0"
+                                Tablet="210.0" />
+                        </Image.WidthRequest>
+                    </Image>
                     <Label
                         Margin="30,10,30,10"
                         FontSize="Large"
@@ -18,39 +30,43 @@
                         Text="¿La institución cuenta con vehículos propios?"
                         VerticalOptions="CenterAndExpand"
                         XAlign="Center" />
-                    <StackLayout Orientation="Horizontal">
-                        <Button
-                            BackgroundColor="#61edb9"
-                            BorderRadius="23"
-                            Command="{Binding VehiculosCommand}"
-                            HeightRequest="46"
-                            HorizontalOptions="CenterAndExpand"
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                            Text="SI"
-                            TextColor="White"
-                            WidthRequest="100" />
-                        <Button
-                            BackgroundColor="#61edb9"
-                            BorderRadius="23"
-                            Command="{Binding OmitirCommand}"
-                            HeightRequest="46"
-                            HorizontalOptions="CenterAndExpand"
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                            Text="NO"
-                            TextColor="White"
-                            WidthRequest="100" />
+                    <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" >
+                        <StackLayout Margin="10">
+                            <Button
+                                BackgroundColor="#82a20d"
+                                BorderRadius="23"
+                                Command="{Binding VehiculosCommand}"
+                                HeightRequest="46"
+                                HorizontalOptions="CenterAndExpand"
+                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                                Text="SI"
+                                TextColor="White"
+                                WidthRequest="100" />
+                       </StackLayout>
+                        <StackLayout Margin="10">
+                            <Button
+                                BackgroundColor="#82a20d"
+                                BorderRadius="23"
+                                Command="{Binding OmitirCommand}"
+                                HeightRequest="46"
+                                HorizontalOptions="CenterAndExpand"
+                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                                Text="NO"
+                                TextColor="White"
+                                WidthRequest="100" />
+                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout IsVisible="{Binding IsVisibleForm, Mode=TwoWay}">
-                    <Image
-                        Margin="0,0,0,10"
-                        Source="huella_icon"
+                     <Image
+                        Margin="0,10,0,20"
+                        Source="logoVerde"
                         VerticalOptions="StartAndExpand">
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
-                                Phone="100.0"
-                                Tablet="240.0" />
+                                Phone="140.0"
+                                Tablet="210.0" />
                         </Image.WidthRequest>
                     </Image>
                     <StackLayout
@@ -204,7 +220,7 @@
                         Orientation="Horizontal"
                         VerticalOptions="EndAndExpand">
                         <Button
-                            BackgroundColor="#61edb9"
+                            BackgroundColor="#82a20d"
                             BorderRadius="23"
                             Command="{Binding OmitirCommand}"
                             HeightRequest="46"

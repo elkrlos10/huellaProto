@@ -8,8 +8,19 @@
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Tabs}">
 
-                  <StackLayout Padding="10" VerticalOptions="FillAndExpand">
-                <StackLayout IsVisible="{Binding IsVisiblePregMaquina, Mode=TwoWay}" VerticalOptions="FillAndExpand">
+              <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+                <StackLayout IsVisible="{Binding IsVisiblePregMaquina, Mode=TwoWay}" VerticalOptions="EndAndExpand">
+                     <Image
+                        Margin="0,0,0,60"
+                        Source="logoVerde"
+                        VerticalOptions="StartAndExpand">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="140.0"
+                                Tablet="210.0" />
+                        </Image.WidthRequest>
+                    </Image>
                     <Label
                         Margin="30,10,30,10"
                         FontSize="Large"
@@ -18,40 +29,44 @@
                         VerticalOptions="CenterAndExpand"
                         XAlign="Center" />
 
-                    <StackLayout Orientation="Horizontal">
-                        <Button
-                            BackgroundColor="#61edb9"
-                            BorderRadius="23"
-                            Command="{Binding MaquinasCommand}"
-                            HeightRequest="46"
-                            HorizontalOptions="CenterAndExpand"
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                            Text="SI"
-                            TextColor="White"
-                            WidthRequest="100" />
-                        <Button
-                            BackgroundColor="#61edb9"
-                            BorderRadius="23"
-                            Command="{Binding OmitirMaquinaCommand}"
-                            HeightRequest="46"
-                            HorizontalOptions="CenterAndExpand"
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                            Text="NO"
-                            TextColor="White"
-                            WidthRequest="100" />
+                    <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"  Orientation="Horizontal">
+                         <StackLayout Margin="10">
+                            <Button
+                                BackgroundColor="#82a20d"
+                                BorderRadius="23"
+                                Command="{Binding MaquinasCommand}"
+                                HeightRequest="46"
+                                HorizontalOptions="CenterAndExpand"
+                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                                Text="SI"
+                                TextColor="White"
+                                WidthRequest="100" />
+                         </StackLayout>
+                         <StackLayout Margin="10">
+                            <Button
+                                BackgroundColor="#82a20d"
+                                BorderRadius="23"
+                                Command="{Binding OmitirMaquinaCommand}"
+                                HeightRequest="46"
+                                HorizontalOptions="CenterAndExpand"
+                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                                Text="NO"
+                                TextColor="White"
+                                WidthRequest="100" />
+                            </StackLayout>
                     </StackLayout>
                 </StackLayout>
                 <FlexLayout  VerticalOptions="CenterAndExpand" Direction="Column" JustifyContent="SpaceEvenly" AlignItems="Stretch" >
                 <StackLayout IsVisible="{Binding IsVisibleFormMaquina, Mode=TwoWay}">
                      <Image
                         Margin="0,0,0,10"
-                        Source="huella_icon"
+                        Source="logoVerde"
                         VerticalOptions="StartAndExpand">
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
-                                Phone="100.0"
-                                Tablet="240.0" />
+                                Phone="140.0"
+                                Tablet="210.0" />
                         </Image.WidthRequest>
                     </Image>
                     <StackLayout
@@ -156,7 +171,7 @@
                         Orientation="Horizontal"
                         VerticalOptions="EndAndExpand">
                         <Button
-                            BackgroundColor="#61edb9"
+                            BackgroundColor="#82a20d"
                             BorderRadius="23"
                             Command="{Binding OmitirMaquinaCommand}"
                             HeightRequest="46"
@@ -176,7 +191,7 @@
                     </StackLayout>-->
                 </StackLayout>
               
-                        </FlexLayout>
+            </FlexLayout>
             <StackLayout VerticalOptions="EndAndExpand">
                     <Image Margin="-11" Source="fondos_arboles3_icon.png" />
                 </StackLayout>
