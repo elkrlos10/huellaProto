@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="huellaProto.Views.Flota"
@@ -6,11 +6,16 @@
              BindingContext="{Binding Main,Source={StaticResource Locator}}">
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding FlotaC}">
-            <StackLayout Margin="0,4,0,0">
-                <Image Source="huella_icon.png" >
+            <StackLayout>   
+            <StackLayout Margin="0,10,0,0" 
+                         Orientation="Vertical"
+                         HorizontalOptions="CenterAndExpand" 
+                         VerticalOptions="CenterAndExpand">
+                <Image Source="logoVerde"
+                       Margin="0,0,0,30">
                     <Image.WidthRequest>
                       <OnIdiom x:TypeArguments="x:Double"                     
-                        Phone="150.0"                  
+                        Phone="140.0"                  
                         Tablet="210.0"/>
                     </Image.WidthRequest>
                 </Image>
@@ -21,11 +26,18 @@
                 </StackLayout>
                 <StackLayout Margin="0,30,0,0">
                     <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                        <Image Source="truck" WidthRequest="50"></Image>
+                        <Image Source="truck" WidthRequest="50" Margin="6">
+                            <Image.WidthRequest>
+                              <OnIdiom x:TypeArguments="x:Double"                     
+                                Phone="50.0"                  
+                                Tablet="100.0"/>
+                            </Image.WidthRequest>
+                        </Image>
                         <Entry 
                             WidthRequest="120" 
                             Keyboard="Numeric"
-                            Text="{Binding CantidadVehiculo, Mode=TwoWay}">
+                            Text="{Binding CantidadVehiculo, Mode=TwoWay}"
+                            Margin="6">
                         </Entry>
                     </StackLayout>
                 </StackLayout>
@@ -35,7 +47,7 @@
                 <StackLayout Margin="0,10,0,0">
                     <Button
                             Text="Siguiente" 
-                            BackgroundColor="#61edb9"
+                            BackgroundColor="#82a20d"
                             TextColor="White" 
                             BorderRadius="23"
                             HeightRequest="46"
@@ -56,8 +68,11 @@
                         </Image.WidthRequest>
                     </Image>
                 </StackLayout>
-                <StackLayout VerticalOptions="EndAndExpand">
-                    <Image Margin="-1" Source="fondos_arboles3_icon" />
+             </StackLayout>
+                <StackLayout>
+                    <StackLayout VerticalOptions="EndAndExpand">
+                         <Image Margin="-11" Source="fondos_arboles3_icon" />
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

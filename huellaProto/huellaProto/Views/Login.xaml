@@ -30,7 +30,7 @@
                             <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
-                                    Phone="80.0"
+                                    Phone="150.0"
                                     Tablet="300.0" />
                             </Entry.WidthRequest>
                                 <Entry.HeightRequest>
@@ -51,7 +51,7 @@
                             <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
-                                    Phone="80.0"
+                                    Phone="150.0"
                                     Tablet="300.0" />
                             </Entry.WidthRequest>
                                 <Entry.HeightRequest>
