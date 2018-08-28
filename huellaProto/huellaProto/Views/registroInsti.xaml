@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="0,30,0,0" BindingContext="{Binding Registro}">
-                <Image Source="huella_icon.png">
+                <Image Source="logoVerde">
                     <Image.WidthRequest>
                         <OnIdiom
                             x:TypeArguments="x:Double"
@@ -72,7 +72,7 @@
                 </StackLayout>
 
                 <StackLayout VerticalOptions="EndAndExpand">
-                    <Image Margin="-11" Source="fondos_arboles2_icon.png" />
+                    <Image Margin="-11" Source="fondos_arboles3_icon.png" />
                 </StackLayout>
 
             </StackLayout>

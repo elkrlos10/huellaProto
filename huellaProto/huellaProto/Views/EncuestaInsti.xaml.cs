@@ -15,7 +15,7 @@ namespace huellaProto.Views
 		public EncuestaInsti ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
 
         }
 	}

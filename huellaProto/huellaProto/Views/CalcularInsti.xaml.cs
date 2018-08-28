@@ -25,7 +25,7 @@ namespace huellaProto.Views
 
             var picker = new Picker { Title = "Selecciona un arbol" };
             picker.ItemsSource = treeList;
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
         }
 	}
 }

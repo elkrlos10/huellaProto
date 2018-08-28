@@ -5,19 +5,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Registro"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
-    <ContentPage.Resources>
+    <!--<ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="#F6B131" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
         </ResourceDictionary>
-    </ContentPage.Resources>
+    </ContentPage.Resources>-->
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding FormRegistrar}">
             <StackLayout Padding="0,10,0,0" Orientation="Vertical">
                 <StackLayout VerticalOptions="CenterAndExpand">
-                    <Image Source="logoNaranja">
+                    <Image Source="logoVerde">
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
@@ -99,7 +99,7 @@
                     <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
                         <Button
                             Margin="0,15,0,0"
-                            BackgroundColor="#F6B131"
+                            BackgroundColor="#82a20d"
                             BorderRadius="23"
                             Command="{Binding RegisCommand}"
                             HeightRequest="46"
@@ -112,7 +112,7 @@
                 </StackLayout>
 
                 <StackLayout VerticalOptions="EndAndExpand">
-                    <Image Source="fondo1Naranja" VerticalOptions="EndAndExpand" />
+                    <Image Source="fondos_arboles3_icon" VerticalOptions="EndAndExpand" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>

@@ -39,8 +39,8 @@ namespace huellaProto.ViewModels
         #region Contructor
         public RegistroViewModel()
         {
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#61edb9");
-            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+            //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex("#61edb9");
+            //((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
             //MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#61edb9"), BarTextColor = Color.White };
         }
         #endregion
