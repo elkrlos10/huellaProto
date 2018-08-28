@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="huellaProto.Views.registroInsti"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -21,7 +21,7 @@
                     HorizontalOptions="CenterAndExpand"
                     Orientation="Vertical">
                     <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
-                        <Image Source="university">
+                        <Image Source="institucion">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding InstitucionCommand}" />
                             </Image.GestureRecognizers>
@@ -29,7 +29,7 @@
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
                                     Phone="100.0"
-                                    Tablet="210.0" />
+                                    Tablet="110.0" />
                             </Image.WidthRequest>
                         </Image>
                         <Label
@@ -47,7 +47,7 @@
                         Margin="0,35,0,0"
                         HorizontalOptions="CenterAndExpand"
                         Orientation="Vertical">
-                        <Image Source="iconoTransporteRegistro">
+                        <Image Source="transporte">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding EmpresaCommand}" />
                             </Image.GestureRecognizers>
@@ -55,7 +55,7 @@
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
                                     Phone="80.0"
-                                    Tablet="800.0" />
+                                    Tablet="130.0" />
                             </Image.WidthRequest>
                         </Image>
                         <Label

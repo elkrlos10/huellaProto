@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="huellaProto.Views.EncuestaInsti"
              BindingContext="{Binding Main,Source={StaticResource Locator}}"
-             Title="vehículos">
+             Title="VEHICULOS">
 
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Login}">
@@ -29,7 +29,7 @@
                 <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a galones"></Label>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image Source="combustible_icon" WidthRequest="15"></Image>
+                    <Image Source="combustible" WidthRequest="15"></Image>
                     <Entry WidthRequest="100" Keyboard="Numeric" >
 
                     </Entry>
@@ -40,7 +40,7 @@
                 <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a kilowatts"></Label>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image Source="energia_icon" WidthRequest="15"></Image>
+                    <Image Source="energia" WidthRequest="15"></Image>
                     <Entry WidthRequest="100" Keyboard="Numeric">
 
                     </Entry>
@@ -51,7 +51,7 @@
                 <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a metros cubicos"></Label>
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image Source="gas_icon" WidthRequest="15"></Image>
+                    <Image Source="gas" WidthRequest="15"></Image>
                     <Entry WidthRequest="100" Keyboard="Numeric">
 
                     </Entry>

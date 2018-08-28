@@ -90,7 +90,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\drawable\agua.png" />
     <AndroidResource Include="Resources\drawable\combustible.png" />
-    <AndroidResource Include="Resources\drawable\correo.png" />
     <AndroidResource Include="Resources\drawable\direccion.png" />
     <AndroidResource Include="Resources\drawable\energia.png" />
     <AndroidResource Include="Resources\drawable\gas.png" />
@@ -272,6 +271,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\siguienteVerde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\correo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

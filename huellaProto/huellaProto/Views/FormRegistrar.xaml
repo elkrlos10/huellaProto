@@ -36,7 +36,7 @@
                             WidthRequest="200" />
                         <Image
                             IsVisible="{Binding IsVisibleIns, Mode=TwoWay}"
-                            Source="iconoInstitucion"
+                            Source="institucion"
                             WidthRequest="30" />
                         <Entry
                             IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}"
@@ -45,7 +45,7 @@
                             WidthRequest="200" />
                         <Image
                             IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}"
-                            Source="iconoTransporte"
+                            Source="transporte"
                             WidthRequest="30" />
                     </StackLayout>
                     <StackLayout
@@ -57,7 +57,7 @@
                             Placeholder="E-mail"
                             Text="{Binding Email, Mode=TwoWay}"
                             WidthRequest="200" />
-                        <Image Source="iconoCorreo" WidthRequest="30" />
+                        <Image Source="correo" WidthRequest="30" />
                     </StackLayout>
                     <StackLayout
                         Margin="0,10"
@@ -68,7 +68,7 @@
                             Placeholder="Password"
                             Text="{Binding Password, Mode=TwoWay}"
                             WidthRequest="200" />
-                        <Image Source="iconoContrasenaNaranja" WidthRequest="30" />
+                        <Image Source="pass" WidthRequest="30" />
                     </StackLayout>
                     <StackLayout
                         Margin="0,10"
@@ -93,7 +93,7 @@
                             WidthRequest="200" />
                         <Image
                             Margin="-5,0,-5,0"
-                            Source="iconoDireccion"
+                            Source="direccions"
                             WidthRequest="30" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">

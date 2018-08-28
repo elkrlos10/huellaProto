@@ -66,7 +66,7 @@ namespace huellaProto.ViewsModels
         public ICommand VehiculosCommand
         {
             get
-            {
+            {   
                 return new RelayCommand(Vehiculos);
             }
         }
@@ -117,6 +117,12 @@ namespace huellaProto.ViewsModels
         {
             this.IsVisibleForm = true;
             this.IsVisiblePreg = false;
+            Application.Current.MainPage.DisplayAlert(
+                     "Para tener en cuenta"
+                   , "Ingrese el número de vehículos por cada tipo de combustible y el promedio de kilometros que recorren semanalmente"
+                   , "Aceptar");
+
+            return;
         }
 
         private void CambioViewVehiculo()

@@ -22,19 +22,19 @@ namespace huellaProto.Views
             switch (opc)
             {
                 case 1:
-                    this.Children.Add(new Maquinas() { Title = "Maquinas" });
+                    this.Children.Add(new Maquinas() { Title = "MAQUINAS" });
                     CurrentPage = Children[1];
                     break;
                 case 2:
 
-                    this.Children.Add(new Maquinas() { Title = "Maquinas" });
-                    this.Children.Add(new ResiduosPage() { Title = "Residuos" });
+                    this.Children.Add(new Maquinas() { Title = "MAQUINAS" });
+                    this.Children.Add(new ResiduosPage() { Title = "RESIDUOS" });
                     CurrentPage = Children[2];
                     break;
                 case 3:
-                    this.Children.Add(new Maquinas() { Title = "Maquinas" });
-                    this.Children.Add(new ResiduosPage() { Title = "Residuos" });
-                    this.Children.Add(new Energia() { Title = "Energía" });
+                    this.Children.Add(new Maquinas() { Title = "MAQUINAS" });
+                    this.Children.Add(new ResiduosPage() { Title = "RESIDUOS" });
+                    this.Children.Add(new Energia() { Title = "ENERGIA" });
                     CurrentPage = Children[3];
                     break;
               
