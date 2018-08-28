@@ -88,6 +88,16 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\agua.png" />
+    <AndroidResource Include="Resources\drawable\combustible.png" />
+    <AndroidResource Include="Resources\drawable\correo.png" />
+    <AndroidResource Include="Resources\drawable\direccion.png" />
+    <AndroidResource Include="Resources\drawable\energia.png" />
+    <AndroidResource Include="Resources\drawable\gas.png" />
+    <AndroidResource Include="Resources\drawable\institucion.png" />
+    <AndroidResource Include="Resources\drawable\pass.png" />
+    <AndroidResource Include="Resources\drawable\transporte.png" />
+    <AndroidResource Include="Resources\drawable\usuario.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-hdpi\" />

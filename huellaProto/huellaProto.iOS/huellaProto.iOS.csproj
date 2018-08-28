@@ -247,4 +247,45 @@
   <ItemGroup>
     <BundleResource Include="Resources\truck.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\abajoVerde.png" />
+    <AndroidResource Include="Resources\agua.png" />
+    <AndroidResource Include="Resources\anteriorAzul.png" />
+    <AndroidResource Include="Resources\anteriorNaranja.png" />
+    <AndroidResource Include="Resources\anteriorVerde.png" />
+    <AndroidResource Include="Resources\arribaAzul.png" />
+    <AndroidResource Include="Resources\arribaNaranaja.png" />
+    <AndroidResource Include="Resources\arribaVerde.png" />
+    <AndroidResource Include="Resources\combustible.png" />
+    <AndroidResource Include="Resources\correo.png" />
+    <AndroidResource Include="Resources\direccion.png" />
+    <AndroidResource Include="Resources\energia.png" />
+    <AndroidResource Include="Resources\Fondo1Azul.png" />
+    <AndroidResource Include="Resources\fondo1Naranja.png" />
+    <AndroidResource Include="Resources\fondo2Azul.png" />
+    <AndroidResource Include="Resources\fondo2Verde.png" />
+    <AndroidResource Include="Resources\fondo3Verde.png" />
+    <AndroidResource Include="Resources\gas.png" />
+    <AndroidResource Include="Resources\ic_chevron_right.png" />
+    <AndroidResource Include="Resources\iconoContrasenaNaranja.png" />
+    <AndroidResource Include="Resources\iconoCorreo.png" />
+    <AndroidResource Include="Resources\iconoDireccion.png" />
+    <AndroidResource Include="Resources\iconoInstitucion.png" />
+    <AndroidResource Include="Resources\iconoInstitucionRegistro.png" />
+    <AndroidResource Include="Resources\iconoPassword.png" />
+    <AndroidResource Include="Resources\iconoTransporteRegistro.png" />
+    <AndroidResource Include="Resources\iconoUsuario.png" />
+    <AndroidResource Include="Resources\institucion.png" />
+    <AndroidResource Include="Resources\logo.png" />
+    <AndroidResource Include="Resources\logoAzul.png" />
+    <AndroidResource Include="Resources\logoBlanco.png" />
+    <AndroidResource Include="Resources\logoNaranja.png" />
+    <AndroidResource Include="Resources\logosSenaSennova.png" />
+    <AndroidResource Include="Resources\pass.png" />
+    <AndroidResource Include="Resources\siguienteAzul.png" />
+    <AndroidResource Include="Resources\siguienteNaranja.png" />
+    <AndroidResource Include="Resources\siguienteVerde.png" />
+    <AndroidResource Include="Resources\transporte.png" />
+    <AndroidResource Include="Resources\usuario.png" />
+  </ItemGroup>
 </Project>
