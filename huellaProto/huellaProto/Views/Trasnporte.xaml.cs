@@ -14,7 +14,7 @@ namespace huellaProto.Views
 	{
 		public Trasnporte ()
 		{
-			InitializeComponent ();
+            InitializeComponent();
 		}
 	}
 }

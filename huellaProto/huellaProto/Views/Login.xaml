@@ -40,7 +40,7 @@
                                     Tablet="40.0" />
                             </Entry.HeightRequest>
                         </Entry>
-                        <Image Source="usuario" WidthRequest="20" />
+                       <Image Source="usuario" WidthRequest="20"/>
                     </StackLayout>
                     <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Margin="6">
                         <Entry
@@ -61,7 +61,8 @@
                                     Tablet="40.0" />
                             </Entry.HeightRequest>
                         </Entry>
-                        <Image Source="pass" WidthRequest="20" />
+                       <Image Source="pass" WidthRequest="20"/>
+      
                     </StackLayout>
                     <StackLayout
                         Margin="0,20,0,0"

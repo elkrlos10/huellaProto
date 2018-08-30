@@ -147,7 +147,6 @@
     <ImageAsset Include="Assets.xcassets\Images.imageset\huella_icon.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -186,6 +185,51 @@
     <BundleResource Include="Resources\huella_icon.png" />
     <BundleResource Include="Resources\logoVerde.png" />
     <BundleResource Include="Resources\fondo1verde.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Portrait.png" />
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\pass.png" />
+    <BundleResource Include="Resources\usuario.png" />
+    <BundleResource Include="Resources\abajoVerde.png" />
+    <BundleResource Include="Resources\agua.png" />
+    <BundleResource Include="Resources\anteriorAzul.png" />
+    <BundleResource Include="Resources\anteriorNaranja.png" />
+    <BundleResource Include="Resources\anteriorVerde.png" />
+    <BundleResource Include="Resources\arribaAzul.png" />
+    <BundleResource Include="Resources\arribaNaranaja.png" />
+    <BundleResource Include="Resources\arribaVerde.png" />
+    <BundleResource Include="Resources\combustible.png" />
+    <BundleResource Include="Resources\correo.png" />
+    <BundleResource Include="Resources\direccion.png" />
+    <BundleResource Include="Resources\energia.png" />
+    <BundleResource Include="Resources\Fondo1Azul.png" />
+    <BundleResource Include="Resources\fondo1Naranja.png" />
+    <BundleResource Include="Resources\fondo2Azul.png" />
+    <BundleResource Include="Resources\fondo2Verde.png" />
+    <BundleResource Include="Resources\fondo3Verde.png" />
+    <BundleResource Include="Resources\gas.png" />
+    <BundleResource Include="Resources\ic_chevron_right.png" />
+    <BundleResource Include="Resources\iconoContrasenaNaranja.png" />
+    <BundleResource Include="Resources\iconoCorreo.png" />
+    <BundleResource Include="Resources\iconoDireccion.png" />
+    <BundleResource Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\iconoInstitucion.png" />
+    <BundleResource Include="Resources\iconoInstitucionRegistro.png" />
+    <BundleResource Include="Resources\iconoPassword.png" />
+    <BundleResource Include="Resources\iconoTransporteRegistro.png" />
+    <BundleResource Include="Resources\iconoUsuario.png" />
+    <BundleResource Include="Resources\institucion.png" />
+    <BundleResource Include="Resources\logo.png" />
+    <BundleResource Include="Resources\logoAzul.png" />
+    <BundleResource Include="Resources\logoBlanco.png" />
+    <BundleResource Include="Resources\logoNaranja.png" />
+    <BundleResource Include="Resources\logosSenaSennova.png" />
+    <BundleResource Include="Resources\siguienteAzul.png" />
+    <BundleResource Include="Resources\siguienteNaranja.png" />
+    <BundleResource Include="Resources\siguienteVerde.png" />
+    <BundleResource Include="Resources\transporte.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\aeroplane_icon.png" />
@@ -239,59 +283,12 @@
     <BundleResource Include="Resources\nit.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\pass_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\sign.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\user_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\university.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\truck.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\abajoVerde.png" />
-    <AndroidResource Include="Resources\agua.png" />
-    <AndroidResource Include="Resources\anteriorAzul.png" />
-    <AndroidResource Include="Resources\anteriorNaranja.png" />
-    <AndroidResource Include="Resources\anteriorVerde.png" />
-    <AndroidResource Include="Resources\arribaAzul.png" />
-    <AndroidResource Include="Resources\arribaNaranaja.png" />
-    <AndroidResource Include="Resources\arribaVerde.png" />
-    <AndroidResource Include="Resources\combustible.png" />
-    <AndroidResource Include="Resources\correo.png" />
-    <AndroidResource Include="Resources\direccion.png" />
-    <AndroidResource Include="Resources\energia.png" />
-    <AndroidResource Include="Resources\Fondo1Azul.png" />
-    <AndroidResource Include="Resources\fondo1Naranja.png" />
-    <AndroidResource Include="Resources\fondo2Azul.png" />
-    <AndroidResource Include="Resources\fondo2Verde.png" />
-    <AndroidResource Include="Resources\fondo3Verde.png" />
-    <AndroidResource Include="Resources\gas.png" />
-    <AndroidResource Include="Resources\ic_chevron_right.png" />
-    <AndroidResource Include="Resources\iconoContrasenaNaranja.png" />
-    <AndroidResource Include="Resources\iconoCorreo.png" />
-    <AndroidResource Include="Resources\iconoDireccion.png" />
-    <AndroidResource Include="Resources\iconoInstitucion.png" />
-    <AndroidResource Include="Resources\iconoInstitucionRegistro.png" />
-    <AndroidResource Include="Resources\iconoPassword.png" />
-    <AndroidResource Include="Resources\iconoTransporteRegistro.png" />
-    <AndroidResource Include="Resources\iconoUsuario.png" />
-    <AndroidResource Include="Resources\institucion.png" />
-    <AndroidResource Include="Resources\logo.png" />
-    <AndroidResource Include="Resources\logoAzul.png" />
-    <AndroidResource Include="Resources\logoBlanco.png" />
-    <AndroidResource Include="Resources\logoNaranja.png" />
-    <AndroidResource Include="Resources\logosSenaSennova.png" />
-    <AndroidResource Include="Resources\pass.png" />
-    <AndroidResource Include="Resources\siguienteAzul.png" />
-    <AndroidResource Include="Resources\siguienteNaranja.png" />
-    <AndroidResource Include="Resources\siguienteVerde.png" />
-    <AndroidResource Include="Resources\transporte.png" />
-    <AndroidResource Include="Resources\usuario.png" />
   </ItemGroup>
 </Project>
