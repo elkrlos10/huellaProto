@@ -2,7 +2,7 @@
 
 namespace huellaProto.Service
 {
-    //using Plugin.Connectivity;
+    using Plugin.Connectivity;
     using System;
     using System.Net.Http;
     using System.Threading.Tasks;
@@ -14,38 +14,38 @@ namespace huellaProto.Service
 
     public class ApiService
     {
-        //Provar conexión a internet
-        //public async Task<Response> CheckConnection()
-        //{
-        //    //Para validar que el wifi este activo 
-        //    if (!CrossConnectivity.Current.IsConnected)
-        //    {
-        //        return new Response
-        //        {
-        //            IsSuccess = false,
-        //            Message = "Prenda el internet por favor"
-        //        };
-        //    }
+    //    Provar conexión a internet
+        public async Task<Response> CheckConnection()
+        {
+            //Para validar que el wifi este activo 
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = "Prenda el internet por favor"
+                };
+            }
 
-        //    //Pink a la pagina para verificar la salida a internet
-        //    var isResachable = await CrossConnectivity.Current.IsRemoteReachable("google.com");
+            //Pink a la pagina para verificar la salida a internet
+            var isResachable = await CrossConnectivity.Current.IsRemoteReachable("google.com");
 
-        //    if (!isResachable)
-        //    {
-        //        return new Response
-        //        {
-        //            IsSuccess = false,
-        //            Message = "Conecntese a internet"
-        //        };
-        //    }
+            if (!isResachable)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = "Conecntese a internet"
+                };
+            }
 
-        //    return new Response
-        //    {
-        //        IsSuccess = true,
-        //        Message = "Ok"
-        //    };
+            return new Response
+            {
+                IsSuccess = true,
+                Message = "Ok"
+            };
 
-        //}
+        }
 
         //public async Task<TokenResponse> GetToken(string urlBase, string username, string password)
         //{
@@ -330,13 +330,13 @@ namespace huellaProto.Service
                 }
 
                 var result = await response.Content.ReadAsStringAsync();
-                var newRecord = JsonConvert.DeserializeObject<T>(result);
+                //var newRecord = JsonConvert.DeserializeObject<T>(result);
 
                 return new Response
                 {
                     IsSuccess = true,
                     Message = "Record added OK",
-                    Result = newRecord,
+                    Result = result,
                 };
             }
             catch (Exception ex)

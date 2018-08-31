@@ -4,6 +4,7 @@ namespace huellaProto.ViewsModels
 {
     using GalaSoft.MvvmLight.Command;
     using huellaProto.Models;
+    using huellaProto.Models.DTO;
     using huellaProto.Service;
     using huellaProto.ViewModels;
     using huellaProto.Views;
@@ -162,54 +163,25 @@ namespace huellaProto.ViewsModels
 
                 return;
             }
-            var conexion = $"http://10.3.240.88:8083//api/Area/ConsultarAreas";
 
+            var Empresa = new EmpresaDTO();
+
+            Empresa.NombreEmpresa= this.Nombre;
+            Empresa.Email = this.Email;
+            Empresa.Password = this.Password;
+            Empresa.Nit= this.Nit;
+            Empresa.Direccion = this.Direc;
 
 
             try
             {
                 //var conexion = $"http://10.3.240.88:8083//api/Area/ConsultarAreas";
 
-                var response = await this.apiService.Get<Usuario>(
-                                      "http://10.3.240.88:8083//",
-                                      "api/Area",
-                                     "/ConsultarAreas");
+                var response = await this.apiService.Post<EmpresaDTO>(
+                                      "http://10.3.240.88:8089//",
+                                      "api/Usuario",
+                                     "/RegistarEmpresa", Empresa);
 
-                using (var cliente = new HttpClient())
-                {
-                    //ralizando la petición
-                    var peticion = await cliente.GetAsync(conexion);
-
-                    if (peticion != null)
-                    {
-                        //sacando el json que devuelve la peticion
-                        var json = peticion.Content.ReadAsStringAsync().Result;
-                        //var json = await peticion.Content.ReadAsStringAsync();
-
-
-                        var datos = (JContainer)JsonConvert.DeserializeObject(json);
-
-                        if (datos != null)
-                        {
-                            //var clima = new Clima();
-                            //clima.Titulo = (string)datos["name"];
-                            //clima.Temperatura = ((float)datos["main"]["temp"] - 273.15).ToString("N2") + " °C";
-                            //clima.Viento = (string)datos["wind"]["speed"] + " mph";
-                            //clima.Humedad = (string)datos["main"]["humidity"] + " %";
-                            //clima.Visibilidad = (string)datos["weather"][0]["main"];
-
-                            //var fechaBase = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-                            //var amanecer = fechaBase.AddSeconds((double)datos["sys"]["sunrise"]);
-                            //var ocaso = fechaBase.AddSeconds((double)datos["sys"]["sunset"]);
-                            //clima.Amanecer = amanecer.ToString() + " UTC";
-                            //clima.Ocaso = ocaso.ToString() + " UTC";
-                            //return clima;
-
-                        }
-
-                    }
-                    //return default(Clima);
-                }
             }
             catch (Exception e)
             {

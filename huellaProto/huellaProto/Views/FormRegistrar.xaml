@@ -3,6 +3,7 @@
     x:Class="huellaProto.Views.FormRegistrar"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:huellaProto.Views.FormRegistrar.Behaviors;assembly=huellaProto..Views.FormRegistrar"
     Title="Registro"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <!--<ContentPage.Resources>
@@ -33,7 +34,11 @@
                             IsVisible="{Binding IsVisibleIns, Mode=TwoWay}"
                             Placeholder="Institución"
                             Text="{Binding Nombre, Mode=TwoWay}"
-                            WidthRequest="200" />
+                            WidthRequest="200">
+                            <Entry.Behaviors>
+                                <behaviors:EntryLengthValidatorBehavior MaxLength="3" />
+                            </Entry.Behaviors>
+                        </Entry>
                         <Image
                             IsVisible="{Binding IsVisibleIns, Mode=TwoWay}"
                             Source="institucion"
