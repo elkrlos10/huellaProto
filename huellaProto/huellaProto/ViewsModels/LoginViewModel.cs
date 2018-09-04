@@ -1,8 +1,11 @@
 ﻿namespace huellaProto.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using huellaProto.Models.DTO;
+    using huellaProto.Service;
     using huellaProto.Views;
     using huellaProto.ViewsModels;
+    using System;
     using System.ComponentModel;
     using System.Windows.Input;
     using Xamarin.Forms;
@@ -11,7 +14,11 @@
     {
         //Evento de la interfaz INotifyPropertyChanged para refrescar las vistas
         #region Eventos
-       
+
+        #endregion
+
+        #region Service
+        private ApiService apiService;
         #endregion
 
         #region Atributos
@@ -54,9 +61,10 @@
             this.IsRemembered = true;
             this.isEnabled = true;
 
-            this.Email = "a@a.co";
+            this.Email = "Colegio";
             this.Password = "123";
 
+            this.apiService = new ApiService();
         }
         #endregion
 
@@ -117,9 +125,8 @@
                 return;
             }
 
-
-            this.IsRunning = true;
-            this.IsEnabled = false;
+            //this.IsRunning = true;
+            //this.IsEnabled = false;
 
             if (string.IsNullOrEmpty(this.Password))
             {
@@ -131,35 +138,54 @@
                 return;
             }
 
-            if (this.Email != "a@a.com" || this.Password != "123")
+            var oUsuario = new UsuarioDTO
             {
-                this.IsRunning = false;
-                this.IsEnabled = true;
-                //await Application.Current.MainPage.DisplayAlert(
-                //      "Error"
-                //    , "Email o Contraseña Incorrectas"
-                //    , "Aceptar");
-                //this.Password = string.Empty;
-                //return;
-                MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
-                await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
-            }
-            else
+                NombreUsuario = this.Email,
+                Password = this.Password,
+            };
+
+            var connection = await this.apiService.CheckConnection();
+
+            if (!connection.IsSuccess)
             {
-                MainViewModel.GetInstance().FlotaC = new FlotaViewModel();
-                await Application.Current.MainPage.Navigation.PushAsync(new Flota());
+                //Probar conexión a internet
+                await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
+               
+                return;
             }
-            this.IsRunning = false;
-            this.IsEnabled = true;
+
+            var response = await this.apiService.Post<UsuarioDTO>(
+                                  "http://apihuella.azurewebsites.net//",
+                                  "api/Usuario",
+                                 "/IniciarSesion", oUsuario);
+
+            //Validar la respuesta del api
+            if (!response.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
+
+                return;
+            }
+            if (response.Result == null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Ingresaste un correo o contraseña incorrecta", "Aceptar");
+                return;
+            }
+
+            oUsuario = (UsuarioDTO)response.Result;
+
+            MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
+
 
             this.Email = string.Empty;
             this.Password = string.Empty;
-            
+
         }
 
         private async void Regi()
         {
-            
+
             MainViewModel.GetInstance().Registro = new RegistroViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new registroInsti());
 
@@ -178,7 +204,7 @@
 
             MainViewModel.GetInstance().Recordar = new RecordarViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new ForgotPass());
-            
+
 
         }
         #endregion

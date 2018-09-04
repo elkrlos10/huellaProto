@@ -330,13 +330,13 @@ namespace huellaProto.Service
                 }
 
                 var result = await response.Content.ReadAsStringAsync();
-                //var newRecord = JsonConvert.DeserializeObject<T>(result);
+                var newRecord = JsonConvert.DeserializeObject<T>(result);
 
                 return new Response
                 {
                     IsSuccess = true,
                     Message = "Record added OK",
-                    Result = result,
+                    Result = newRecord,
                 };
             }
             catch (Exception ex)

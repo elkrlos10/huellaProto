@@ -22,6 +22,9 @@ namespace huellaProto.ViewModels
         public FormRegistrarViewModel FormRegistrar { get; set; }
         public BienvenidaViewModel Bienvenida { get; set; }
         public TabsViewModel Tabs { get; set; }
+
+        public string User { get; set; }
+        public string IdProyecto { get; set; }
         #endregion
 
         #region Contructores
