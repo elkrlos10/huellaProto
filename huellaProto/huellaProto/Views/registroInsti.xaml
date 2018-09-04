@@ -12,7 +12,7 @@
                     <Image.WidthRequest>
                         <OnIdiom
                             x:TypeArguments="x:Double"
-                            Phone="170.0"
+                            Phone="140.0"
                             Tablet="210.0" />
                     </Image.WidthRequest>
                 </Image>
@@ -28,7 +28,7 @@
                             <Image.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
-                                    Phone="100.0"
+                                    Phone="60.0"
                                     Tablet="110.0" />
                             </Image.WidthRequest>
                         </Image>
@@ -54,7 +54,7 @@
                             <Image.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
-                                    Phone="80.0"
+                                    Phone="70.0"
                                     Tablet="130.0" />
                             </Image.WidthRequest>
                         </Image>

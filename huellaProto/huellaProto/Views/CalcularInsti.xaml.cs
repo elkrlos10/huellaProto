@@ -21,11 +21,16 @@ namespace huellaProto.Views
             
             treeList.Add(image);
             treeList.Add(image2);
-            
 
-            var picker = new Picker { Title = "Selecciona un arbol" };
+
+			var picker = new Picker {
+				Title = "Selecciona un árbol",
+				VerticalOptions = LayoutOptions.CenterAndExpand,
+				HorizontalOptions = LayoutOptions.CenterAndExpand
+			};
             picker.ItemsSource = treeList;
-            //NavigationPage.SetHasNavigationBar(this, false);
-        }
+
+			//NavigationPage.SetHasNavigationBar(this, false);
+		}
 	}
 }

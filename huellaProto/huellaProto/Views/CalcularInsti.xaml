@@ -11,14 +11,14 @@
                                                                    Property=Height}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
                                                                   Property=Width}"
-            Source="fondo1Verde"
+            Source="fondoCielo"
             VerticalOptions="EndAndExpand" />
       
 
 
           <FlexLayout BindingContext="{Binding Bienvenida}"  Direction="Column" JustifyContent="SpaceEvenly" AlignItems="Stretch" >
             <StackLayout
-                Padding="0,10,0,0"
+                Padding="0,5,0,0"
                 HorizontalOptions="CenterAndExpand"
                 Orientation="Vertical"
                 VerticalOptions="StartAndExpand">
@@ -30,7 +30,7 @@
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
-                                Phone="180.0"
+                                Phone="140.0"
                                 Tablet="240.0" />
                         </Image.WidthRequest>
                     </Image>
@@ -40,29 +40,75 @@
                     <Label HorizontalOptions="CenterAndExpand" Text="Su huella de carbono es: 100 Toneladas" />
                     <Label Text="Esto equivale a 8 hectareas de arboles a plantar" />
                 </StackLayout>
-                <StackLayout>
-                   <Picker
+				<StackLayout>
+					<Picker
                        x:Name="picker"
                        Title="Selecciona un árbol"
-                       Margin="100,0,90,0">
-                       <Picker.ItemsSource>
-                           <x:Array Type="{x:Type x:String}">
-                               <x:String>Pino</x:String>
-                               <x:String>Acacia</x:String>
-                               </x:Array>
-                       </Picker.ItemsSource>
-                   </Picker>
-
-               </StackLayout>
-                  <StackLayout 
-                    Margin="0,20,0,20"
-                    HorizontalOptions="CenterAndExpand"
-                    Orientation="Horizontal">
-                    <Image Source="Arbol" WidthRequest="60"/>
-                </StackLayout> 
-                            
-                <StackLayout Margin="0,10,0,0">
-                   <Button
+                       Margin="80,0,80,0"
+					   FontSize="Small">
+						<Picker.ItemsSource>
+							<x:Array Type="{x:Type x:String}">
+								<x:String>Pino</x:String>
+								<x:String>Acacia</x:String>
+							</x:Array>
+						</Picker.ItemsSource>
+					</Picker>
+					<Picker
+                       x:Name="pickerZona"
+                       Title="Selecciona la zona"
+                       Margin="100,0,100,0"
+					   FontSize="Small">
+						<Picker.ItemsSource>
+							<x:Array Type="{x:Type x:String}">
+								<x:String>Urabá</x:String>
+								<x:String>La Salada</x:String>
+							</x:Array>
+						</Picker.ItemsSource>
+					</Picker>
+					<StackLayout
+                        Margin="0,5,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+						<Label
+                            Margin="0"
+                            Text="Porcentaje a compensar"
+                            XAlign="Center" />
+						<StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+							<Entry Keyboard="Numeric"
+                                  Text="{Binding Gas, Mode=TwoWay}">
+								<Entry.WidthRequest>
+									<OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="140.0" />
+								</Entry.WidthRequest>
+								<Entry.HeightRequest>
+									<OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="35.0" />
+								</Entry.HeightRequest>
+							</Entry>
+						</StackLayout>
+					</StackLayout>
+				</StackLayout>
+				<StackLayout
+                   Margin="0,0,0,10"
+                   HorizontalOptions="CenterAndExpand"
+                   Orientation="Vertical">
+					<Label
+                       Margin="10"
+                       Text="¿Deseas precisar tu calculo de huella?"
+                       XAlign="Center" 
+					HorizontalOptions="CenterAndExpand"/>
+					<StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+						<Label Text="NO" XAlign="Center" />
+						<Switch IsToggled="{Binding EnergiaRenovable, Mode=TwoWay}"></Switch>
+						<Label Text="SI" XAlign="Center" />
+					</StackLayout>
+				</StackLayout>
+				<StackLayout Margin="0">
+					<Button
                        BackgroundColor="#82a20d"
                        BorderRadius="23"
                        Command="{Binding LoginCommand}"
@@ -72,25 +118,9 @@
                        Text="Compensar"
                        TextColor="White"
                        WidthRequest="200" />
+				</StackLayout>
 
-               </StackLayout>
 
-                 <StackLayout
-                   Margin="0,0,0,30"
-                   HorizontalOptions="CenterAndExpand"
-                   Orientation="Horizontal"
-                   VerticalOptions="CenterAndExpand">
-                   <Label Text="¿Deseas precisar tu calculo de huella?">
-                       <!--<Image.WidthRequest>
-
-                           <OnIdiom
-                               x:TypeArguments="x:Double"
-                               Phone="150.0"
-                               Tablet="210.0" />
-                       </Image.WidthRequest>-->
-                   </Label>
-
-               </StackLayout>
             </StackLayout>
           </FlexLayout>
 
