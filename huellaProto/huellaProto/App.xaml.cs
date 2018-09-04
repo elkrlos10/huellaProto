@@ -10,7 +10,7 @@ namespace huellaProto
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
+            MainPage = new NavigationPage(new CalcularInsti()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
             
         }
 

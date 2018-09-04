@@ -23,7 +23,7 @@
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
-                                Phone="150.0"
+                                Phone="140.0"
                                 Tablet="210.0" />
                         </Image.WidthRequest>
                     </Image>
@@ -52,7 +52,7 @@
                         <Image
                             IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}"
                             Source="transporte"
-                            WidthRequest="30" />
+                            WidthRequest="40" />
                     </StackLayout>
                     <StackLayout
                         Margin="0,10"
@@ -74,7 +74,7 @@
                             Placeholder="Password"
                             Text="{Binding Password, Mode=TwoWay}"
                             WidthRequest="200" />
-                        <Image Source="pass" WidthRequest="30" />
+                        <Image Source="pass2" WidthRequest="33" />
                     </StackLayout>
                     <StackLayout
                         Margin="0,10"
@@ -85,9 +85,9 @@
                             Text="{Binding Nit, Mode=TwoWay}"
                             WidthRequest="200" />
                         <Image
-                            Margin="-15,0,-10,0"
+                            Margin="-10,0,-10,0"
                             Source="nit"
-                            WidthRequest="50" />
+                            WidthRequest="40" />
                     </StackLayout>
                     <StackLayout
                         Margin="0,0,0,10"
@@ -99,7 +99,7 @@
                             WidthRequest="200" />
                         <Image
                             Margin="-5,0,-5,0"
-                            Source="direccions"
+                            Source="direccion"
                             WidthRequest="30" />
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">

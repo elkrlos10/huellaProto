@@ -17,7 +17,7 @@
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
-                                Phone="180.0"
+                                Phone="140.0"
                                 Tablet="210.0" />
                         </Image.WidthRequest>
                     </Image>
