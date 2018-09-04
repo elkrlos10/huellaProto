@@ -171,14 +171,21 @@ namespace huellaProto.ViewsModels
             Empresa.Password = this.Password;
             Empresa.Nit= this.Nit;
             Empresa.Direccion = this.Direc;
-
+            if (this.isVisibleIns)
+            {
+                Empresa.TipoEmpresa = 1;
+            }
+            else
+            {
+                Empresa.TipoEmpresa = 2;
+            }
 
             try
             {
                 //var conexion = $"http://10.3.240.88:8083//api/Area/ConsultarAreas";
 
                 var response = await this.apiService.Post<EmpresaDTO>(
-                                      "http://10.3.240.88:8089//",
+                                      "http://apihuella.azurewebsites.net//",
                                       "api/Usuario",
                                      "/RegistarEmpresa", Empresa);
 
@@ -188,8 +195,6 @@ namespace huellaProto.ViewsModels
 
                 throw;
             }
-
-
 
             this.IsRunning = false;
             this.IsEnabled = true;

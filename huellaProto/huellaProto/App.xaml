@@ -10,7 +10,7 @@
         <ResourceDictionary>
             <infra:InstanceLocator x:Key="Locator" />
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="#61edb9" />
+                <Setter Property="BarBackgroundColor" Value="#82a20d" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
         </ResourceDictionary>

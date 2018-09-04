@@ -75,7 +75,8 @@
                         VerticalOptions="CenterAndExpand">
                         <Label Text="¿Con cuántas máquinas o equipos que utilicen combustibles líquidos cuenta la institución?" XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                           <Entry Keyboard="Numeric">
+                           <Entry Keyboard="Numeric"
+                                  Text="{Binding Can_Total, Mode=TwoWay}" >
                              <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
@@ -97,10 +98,11 @@
                         VerticalOptions="CenterAndExpand">
                         <Label
                             Margin="3"
-                            Text="¿Cuantas de los maquinas utilizan gasolina? "
+                            Text="¿Cuantas de los máquinas utilizan gasolina? "
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric">
+                            <Entry Keyboard="Numeric"
+                                    Text="{Binding Can_Gasolina, Mode=TwoWay}">
                              <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
@@ -114,7 +116,23 @@
                                     Tablet="35.0" />
                             </Entry.HeightRequest>
                            </Entry>
-                        </StackLayout>
+                            <Entry Keyboard="Numeric"
+                                Text="{Binding Ltr_Gasolina, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="80.0"
+                                Tablet="140.0" />
+                                </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                    <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="45.0" 
+                                Tablet="35.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Label Text="Gal." VerticalOptions="Center" />
+                            </StackLayout>
                     </StackLayout>
                     <StackLayout
                         Margin="0,15,0,0"
@@ -125,7 +143,8 @@
                             Text="¿Cuantas de los maquinas utilizan diesel?"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric">
+                            <Entry Keyboard="Numeric"
+                                   Text="{Binding Can_Diesel, Mode=TwoWay}">
                              <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
@@ -139,7 +158,23 @@
                                     Tablet="35.0" />
                             </Entry.HeightRequest>
                            </Entry>
-                        </StackLayout>
+                            <Entry Keyboard="Numeric"
+                            Text="{Binding Ltr_Diesel, Mode=TwoWay}">
+                            <Entry.WidthRequest>
+                                        <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="80.0"
+                                Tablet="140.0" />
+                                    </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                    <OnIdiom
+                            x:TypeArguments="x:Double"
+                            Phone="45.0" 
+                            Tablet="35.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Label Text="Gal." VerticalOptions="Center" />
+                            </StackLayout>
                     </StackLayout>
                     <StackLayout
                         Margin="0,15,0,0"
@@ -150,7 +185,8 @@
                             Text="¿Cuantas de los maquinas utilizan gas natural?"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric">
+                            <Entry Keyboard="Numeric"
+                                   Text="{Binding Can_GasNatural, Mode=TwoWay}">
                              <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
@@ -164,7 +200,23 @@
                                     Tablet="35.0" />
                             </Entry.HeightRequest>
                            </Entry>
-                        </StackLayout>
+                                <Entry Keyboard="Numeric"
+                            Text="{Binding Ltr_GasNatural, Mode=TwoWay}">
+                                    <Entry.WidthRequest>
+                                        <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="80.0"
+                                Tablet="140.0" />
+                                    </Entry.WidthRequest>
+                                    <Entry.HeightRequest>
+                                        <OnIdiom
+                            x:TypeArguments="x:Double"
+                            Phone="45.0" 
+                            Tablet="35.0" />
+                                    </Entry.HeightRequest>
+                                </Entry>
+                                <Label Text="Gal." VerticalOptions="Center" />
+                            </StackLayout>
                     </StackLayout>
                     <StackLayout
                         Margin="0,15,0,0"

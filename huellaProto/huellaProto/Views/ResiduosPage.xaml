@@ -26,20 +26,9 @@
                         VerticalOptions="CenterAndExpand">
                         <Label Text="¿Realiza realiza separación de residuos orgánicos e inorgánicos? " XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
-                                <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                            <Label Text="NO" XAlign="Center" />
+                            <Switch IsToggled="{Binding SeparacionResiduos, Mode=TwoWay}"></Switch>
+                            <Label Text="SI" XAlign="Center" />
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -51,20 +40,9 @@
                             Text="¿La institución cuenta con programa de reciclaje?"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
-                                <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"   
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                            <Label Text="NO" XAlign="Center" />
+                            <Switch IsToggled="{Binding ProgramaReciclaje, Mode=TwoWay}"></Switch>
+                            <Label Text="SI" XAlign="Center" />
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -76,20 +54,9 @@
                             Text="¿La institución realiza compostaje a partir de residuos orgánicos? "
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
-                                <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                            <Label Text="NO" XAlign="Center" />
+                            <Switch IsToggled="{Binding Compostaje, Mode=TwoWay}"></Switch>
+                            <Label Text="SI" XAlign="Center" />
                         </StackLayout>
                     </StackLayout>
 
@@ -102,7 +69,8 @@
                             Text="En promedio, ¿Qué cantidad de residuos sólidos generan mensualmente en la institución, teniendo en cuenta todos los residuos? (Toneladas)"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric">
+                            <Entry Keyboard="Numeric"
+                                   Text="{Binding Can_ResiduosSolidos, Mode=TwoWay}">
                              <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
@@ -128,7 +96,8 @@
                             Text="En promedio, ¿Qué cantidad de residuos reciclables se están generando mensualmente en la institución? (Toneladas)   "
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric">
+                            <Entry Keyboard="Numeric"
+                                   Text="{Binding Can_RediduosRecicla, Mode=TwoWay}">
                              <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
