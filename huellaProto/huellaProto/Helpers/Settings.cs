@@ -18,9 +18,11 @@
         //private const string SettingsKey = "settings_key";
         const string user = "User";
         const string idProyecto = "0";
-        static readonly string SettingsDefaultInt = "0";
-        static readonly string SettingsDefault = string.Empty;
+        const string tipoEmpresa = "0";
 
+        static readonly string userDefault = string.Empty;
+        static readonly string idProyectoDefaultInt = "0";
+        static readonly string Default = "0";
         #endregion
 
 
@@ -28,7 +30,7 @@
         {
             get
             {
-                return AppSettings.GetValueOrDefault(user, SettingsDefault);
+                return AppSettings.GetValueOrDefault(user, userDefault);
             }
             set
             {
@@ -40,7 +42,20 @@
         {
             get
             {
-                return AppSettings.GetValueOrDefault(idProyecto, SettingsDefaultInt);
+                return AppSettings.GetValueOrDefault(idProyecto, idProyectoDefaultInt);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(idProyecto, value);
+            }
+        }
+
+
+        public static string TipoEmpresa
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(tipoEmpresa, Default);
             }
             set
             {

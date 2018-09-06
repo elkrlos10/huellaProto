@@ -298,18 +298,23 @@
                 IdProyecto = 1,
             };
 
-            //try
-            //{
-            //    var response = await this.apiService.Post<Vehiculos>(
-            //                          "http://apihuella.azurewebsites.net//",
-            //                          "api/Encuestas",
-            //                         "/RegristarVehiculos", oVehiculos);
-            //}
-            //catch (Exception e)
-            //{
+            try
+            {
+                var response = await this.apiService._Post(
+                                     MainViewModel.GetInstance().UrlServices,
+                                      "api/Encuestas",
+                                     "/RegristarVehiculos", oVehiculos);
 
-            //    throw;
-            //}
+                //var response = await this.apiService.Post(
+                //                    MainViewModel.GetInstance().UrlServices,
+                //                    "api/Usuario",
+                //                    "/RegistarEmpresa", Empresa);
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
 
             await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(1));
             //Remover la ultima vista de la pila
@@ -342,18 +347,18 @@
                 IdProyecto = 1,
             };
 
-            //try
-            //{
-            //    var response = await this.apiService.Post<Maquina>(
-            //                          "http://apihuella.azurewebsites.net//",
-            //                          "api/Encuestas",
-            //                         "/RegristarMaquinas", oMaquinas);
-            //}
-            //catch (Exception e)
-            //{
+            try
+            {
+                var response = await this.apiService._Post(
+                                      MainViewModel.GetInstance().UrlServices,
+                                      "api/Encuestas",
+                                     "/RegristarMaquinas", oMaquinas);
+            }
+            catch (Exception e)
+            {
 
-            //    throw;
-            //}
+                throw;
+            }
 
 
             await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(2));
@@ -376,18 +381,18 @@
                 IdProyecto = 1,
             };
 
-            //try
-            //{
-            //    var response = await this.apiService.Post<Residuos>(
-            //                          "http://apihuella.azurewebsites.net//",
-            //                          "api/Encuestas",
-            //                         "/RegristarResiduos", oResiduos);
-            //}
-            //catch (Exception e)
-            //{
+            try
+            {
+                var response = await this.apiService.Post<Residuos>(
+                                      MainViewModel.GetInstance().UrlServices,
+                                      "api/Encuestas",
+                                     "/RegristarResiduos", oResiduos);
+            }
+            catch (Exception e)
+            {
 
-            //    throw;
-            //}
+                throw;
+            }
 
             await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(3));
             //Remover la ultima vista de la pila
@@ -399,26 +404,26 @@
         private async void Calcular()
         {
 
-            //var oEnergia = new EnergiaM
-            //{
-            //    EnergiaKwh = this.EnergiaKwh,
-            //    Gas = this.Gas,
-            //    EnergiaRenovable = this.EnergiaRenovable,
-            //    IdProyecto = 1,
-            //};
+            var oEnergia = new EnergiaM
+            {
+                EnergiaKwh = this.EnergiaKwh,
+                Gas = this.Gas,
+                EnergiaRenovable = this.EnergiaRenovable,
+                IdProyecto = 1,
+            };
 
-            //try
-            //{
-            //    var response = await this.apiService.Post<EnergiaM>(
-            //                          "http://apihuella.azurewebsites.net//",
-            //                          "api/Encuestas",
-            //                         "/RegristarEnergia", oEnergia);
-            //}
-            //catch (Exception e)
-            //{
+            try
+            {
+                var response = await this.apiService._Post(
+                                     MainViewModel.GetInstance().UrlServices,
+                                      "api/Encuestas",
+                                     "/RegristarEnergia", oEnergia);
+            }
+            catch (Exception e)
+            {
 
-            //    throw;
-            //}
+                throw;
+            }
 
             MainViewModel.GetInstance().huellaProto = new huellaViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new CalcularInsti());

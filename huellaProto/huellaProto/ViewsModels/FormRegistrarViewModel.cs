@@ -1,6 +1,4 @@
-﻿
-
-namespace huellaProto.ViewsModels
+﻿namespace huellaProto.ViewsModels
 {
     using GalaSoft.MvvmLight.Command;
     using huellaProto.Models;
@@ -13,6 +11,7 @@ namespace huellaProto.ViewsModels
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
+    using System.Text.RegularExpressions;
     using System.Windows.Input;
     using Xamarin.Forms;
 
@@ -113,6 +112,8 @@ namespace huellaProto.ViewsModels
 
         private async void Regis()
         {
+            //Validaciones Campos
+            #region validaciones_Campos
             if (string.IsNullOrEmpty(this.Nombre))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -122,6 +123,7 @@ namespace huellaProto.ViewsModels
 
                 return;
             }
+
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -131,9 +133,15 @@ namespace huellaProto.ViewsModels
 
                 return;
             }
-
-            this.IsRunning = true;
-            this.IsEnabled = false;
+            else
+            {
+                bool isEmail = Regex.IsMatch(this.Email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+                if (!isEmail)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Advertencia", "El formato del correo electrónico es incorrecto, revíselo e intente de nuevo.", "OK");
+                    return;
+                }
+            }
 
             if (string.IsNullOrEmpty(this.Password))
             {
@@ -144,6 +152,15 @@ namespace huellaProto.ViewsModels
 
                 return;
             }
+            else
+            {
+                if (this.Password.Length < 6)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Advertencia", "La contraseña debe tener al menos 6 caracteres.", "OK");
+                    return;
+                }
+            }
+
             if (string.IsNullOrEmpty(this.Nit))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -152,6 +169,14 @@ namespace huellaProto.ViewsModels
                    , "Aceptar");
 
                 return;
+            }
+            else
+            {
+                if (this.Nit.Length < 6)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Advertencia", "El nit debe tener por lo menos 6 numeros.", "OK");
+                    return;
+                }
             }
 
             if (string.IsNullOrEmpty(this.Direc))
@@ -164,30 +189,59 @@ namespace huellaProto.ViewsModels
                 return;
             }
 
-            var Empresa = new EmpresaDTO();
+            #endregion
 
-            Empresa.NombreEmpresa= this.Nombre;
-            Empresa.Email = this.Email;
-            Empresa.Password = this.Password;
-            Empresa.Nit= this.Nit;
-            Empresa.Direccion = this.Direc;
+            var tipoEmpresa = 0;
+
             if (this.isVisibleIns)
             {
-                Empresa.TipoEmpresa = 1;
+                tipoEmpresa = 1;
             }
             else
             {
-                Empresa.TipoEmpresa = 2;
+                tipoEmpresa = 2;
             }
+
+            var Empresa = new EmpresaDTO
+            {
+                NombreEmpresa = this.Nombre,
+                Email = this.Email,
+                Password = this.Password,
+                Nit = this.Nit,
+                Direccion = this.Direc,
+                TipoEmpresa = tipoEmpresa,
+                TipoUsuario = 1
+            };
+
+            //var connection = await this.apiService.CheckConnection();
+
+            //if (!connection.IsSuccess)
+            //{
+            //    //Probar conexión a internet
+            //    await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
+
+            //    return;
+            //}
 
             try
             {
-                //var conexion = $"http://10.3.240.88:8083//api/Area/ConsultarAreas";
+                var response = await this.apiService._Post(
+                                    MainViewModel.GetInstance().UrlServices,
+                                    "api/Usuario",
+                                    "/RegistarEmpresa", Empresa);
 
-                var response = await this.apiService.Post<EmpresaDTO>(
-                                      "http://apihuella.azurewebsites.net//",
-                                      "api/Usuario",
-                                     "/RegistarEmpresa", Empresa);
+
+                if (!(bool)response.Result)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "El correo ya existe", "Aceptar");
+                      return;
+                }
+
+                this.Nombre = string.Empty;
+                this.Email = string.Empty;
+                this.Password = string.Empty;
+                this.Nit = string.Empty;
+                this.Direc = string.Empty;
 
             }
             catch (Exception e)
@@ -196,17 +250,16 @@ namespace huellaProto.ViewsModels
                 throw;
             }
 
-            this.IsRunning = false;
-            this.IsEnabled = true;
-
-            this.Nombre = string.Empty;
-            this.Email = string.Empty;
-            this.Password = string.Empty;
-            this.Nit = string.Empty;
-            this.Direc = string.Empty;
+            //Validar la respuesta del api
+            //if (!response.IsSuccess)
+            //{
+            //    await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
+            //    return;
+            //}
 
             MainViewModel.GetInstance().Login = new LoginViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new Login());
+
 
         }
         #endregion

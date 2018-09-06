@@ -7,6 +7,7 @@
     using huellaProto.ViewsModels;
     using System;
     using System.ComponentModel;
+    using System.Text.RegularExpressions;
     using System.Windows.Input;
     using Xamarin.Forms;
 
@@ -110,11 +111,14 @@
             }
         }
 
+        #endregion
 
+        #region Metodos
         private async void Login()
         {
 
-            //Validar si es null o vacio la propiedad
+            //Validar campos 
+            #region Validaciones
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -124,9 +128,15 @@
 
                 return;
             }
-
-            //this.IsRunning = true;
-            //this.IsEnabled = false;
+            else
+            {
+                bool isEmail = Regex.IsMatch(this.Email, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+                if (!isEmail)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Advertencia", "El formato del correo electrónico es incorrecto, revíselo e intente de nuevo.", "OK");
+                    return;
+                }
+            }
 
             if (string.IsNullOrEmpty(this.Password))
             {
@@ -137,6 +147,8 @@
 
                 return;
             }
+
+            #endregion
 
             var oUsuario = new UsuarioDTO
             {
@@ -150,12 +162,12 @@
             {
                 //Probar conexión a internet
                 await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
-               
+
                 return;
             }
 
             var response = await this.apiService.Post<UsuarioDTO>(
-                                  "http://apihuella.azurewebsites.net//",
+                                  MainViewModel.GetInstance().UrlServices,
                                   "api/Usuario",
                                  "/IniciarSesion", oUsuario);
 
@@ -173,7 +185,9 @@
             }
 
             oUsuario = (UsuarioDTO)response.Result;
-
+            MainViewModel.GetInstance().User = oUsuario.NombreUsuario;
+            MainViewModel.GetInstance().TipoEmpresa = oUsuario.TipoEmpresa;
+            MainViewModel.GetInstance().IdEmpresa = oUsuario.IdEmpresa;
             MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
 
@@ -207,6 +221,7 @@
 
 
         }
+
         #endregion
     }
 }

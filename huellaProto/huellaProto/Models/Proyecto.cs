@@ -12,5 +12,7 @@ namespace huellaProto.Models
         public DateTime FechaProyecto { get; set; }
 
         public int IdEmpresa { get; set; }
+
+        public int Etapa { get; set; }
     }
 }

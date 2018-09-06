@@ -3,7 +3,6 @@
     x:Class="huellaProto.Views.FormRegistrar"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-   
     Title="Registro"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <!--<ContentPage.Resources>
@@ -32,6 +31,7 @@
                         HorizontalOptions="CenterAndExpand"
                         Orientation="Horizontal">
                         <Entry
+                            x:Name="Nombre"
                             IsVisible="{Binding IsVisibleIns, Mode=TwoWay}"
                             Placeholder="Institución"
                             Text="{Binding Nombre, Mode=TwoWay}"
@@ -45,6 +45,7 @@
                             Source="institucion"
                             WidthRequest="30" />
                         <Entry
+                            x:Name="NombreE"
                             IsVisible="{Binding IsVisibleEmp, Mode=TwoWay}"
                             Placeholder="Empresa"
                             Text="{Binding Nombre, Mode=TwoWay}"
@@ -59,6 +60,7 @@
                         HorizontalOptions="CenterAndExpand"
                         Orientation="Horizontal">
                         <Entry
+                            x:Name="Email"
                             Keyboard="Email"
                             Placeholder="E-mail"
                             Text="{Binding Email, Mode=TwoWay}"
@@ -70,6 +72,7 @@
                         HorizontalOptions="CenterAndExpand"
                         Orientation="Horizontal">
                         <Entry
+                            x:Name="Password"
                             IsPassword="True"
                             Placeholder="Password"
                             Text="{Binding Password, Mode=TwoWay}"
@@ -81,6 +84,8 @@
                         HorizontalOptions="CenterAndExpand"
                         Orientation="Horizontal">
                         <Entry
+                            x:Name="Nit"
+                            Keyboard="Numeric"
                             Placeholder="Nit"
                             Text="{Binding Nit, Mode=TwoWay}"
                             WidthRequest="200" />

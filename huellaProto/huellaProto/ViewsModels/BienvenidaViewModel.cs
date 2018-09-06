@@ -40,23 +40,37 @@ namespace huellaProto.ViewsModels
 
             try
             {
-                //var proyecto = new Proyecto();
 
-                //proyecto.IdEmpresa = 1;
-                //proyecto.FechaProyecto = DateTime.Now;
+                var proyecto = new Proyecto();
 
-                //var response = await this.apiService.Post<Proyecto>(
-                //                      "http://apihuella.azurewebsites.net/",
-                //                      "api/Usuario",
-                //                     "/CrearProyecto", proyecto);
+                proyecto.IdEmpresa = MainViewModel.GetInstance().IdEmpresa;
+                proyecto.FechaProyecto = DateTime.Now;
+                proyecto.Etapa = 1;
+                
+                var response = await this.apiService.Post<Proyecto>(
+                                      MainViewModel.GetInstance().UrlServices,
+                                      "api/Usuario",
+                                     "/CrearProyecto", proyecto);
+
             }
             catch (Exception e)
             {
                 throw;
             }
 
-            MainViewModel.GetInstance().Tabs = new TabsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(4));
+            if (MainViewModel.GetInstance().TipoEmpresa == 1)
+            {
+                MainViewModel.GetInstance().Tabs = new TabsViewModel();
+                await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(4));
+
+            }
+            else
+            {
+                MainViewModel.GetInstance().FlotaC = new FlotaViewModel();
+                await Application.Current.MainPage.Navigation.PushAsync(new Flota());
+
+            }
+
 
         }
 

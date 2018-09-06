@@ -24,7 +24,12 @@ namespace huellaProto.ViewModels
         public TabsViewModel Tabs { get; set; }
 
         public string User { get; set; }
-        public string IdProyecto { get; set; }
+        public int IdProyecto { get; set; }
+        public int TipoEmpresa { get; set; }
+        public string Etapa { get; set; }
+        public int IdEmpresa { get; set; }
+        public string UrlServices { get; set; }
+
         #endregion
 
         #region Contructores
@@ -33,6 +38,7 @@ namespace huellaProto.ViewModels
         {
             instance = this;
             this.Login = new LoginViewModel();
+            this.UrlServices = "http://10.3.240.88:8089//";
             //this.Registro = new RegistroViewModel();
             //this.Recordar = new RecordarViewModel();
             //this.FlotaC = new FlotaViewModel();
