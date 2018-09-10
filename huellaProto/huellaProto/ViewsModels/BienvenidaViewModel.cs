@@ -51,7 +51,9 @@ namespace huellaProto.ViewsModels
                                       MainViewModel.GetInstance().UrlServices,
                                       "api/Usuario",
                                      "/CrearProyecto", proyecto);
+               var proyec = (Proyecto)response.Result;
 
+                MainViewModel.GetInstance().IdProyecto = proyec.IdProyecto; 
             }
             catch (Exception e)
             {

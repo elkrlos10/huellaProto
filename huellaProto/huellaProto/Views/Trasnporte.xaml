@@ -10,7 +10,7 @@
         <ScrollView BindingContext="{Binding Tabs}">
             <StackLayout Padding="10" VerticalOptions="FillAndExpand">
                 <StackLayout IsVisible="{Binding IsVisiblePreg, Mode=TwoWay}" VerticalOptions="EndAndExpand">
-                     <Image
+                    <Image
                         Margin="0,0,0,60"
                         Source="logoVerde"
                         VerticalOptions="StartAndExpand">
@@ -28,7 +28,10 @@
                         Text="¿La institución cuenta con vehículos propios?"
                         VerticalOptions="CenterAndExpand"
                         XAlign="Center" />
-                    <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Orientation="Horizontal" >
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        VerticalOptions="EndAndExpand">
                         <StackLayout Margin="10">
                             <Button
                                 BackgroundColor="#82a20d"
@@ -40,7 +43,7 @@
                                 Text="SI"
                                 TextColor="White"
                                 WidthRequest="100" />
-                       </StackLayout>
+                        </StackLayout>
                         <StackLayout Margin="10">
                             <Button
                                 BackgroundColor="#82a20d"
@@ -52,11 +55,11 @@
                                 Text="NO"
                                 TextColor="White"
                                 WidthRequest="100" />
-                         </StackLayout>
+                        </StackLayout>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout IsVisible="{Binding IsVisibleForm, Mode=TwoWay}">
-                     <Image
+                    <Image
                         Margin="0,10,0,20"
                         Source="logoVerde"
                         VerticalOptions="StartAndExpand">
@@ -68,30 +71,6 @@
                         </Image.WidthRequest>
                     </Image>
                     <StackLayout
-                        Margin="0,10,0,0"
-                        Orientation="Vertical"
-                        VerticalOptions="CenterAndExpand">
-                        <Label Text="¿Con cuántos vehículos cuenta la institución?" XAlign="Center" />
-                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Image Source="aeroplane_icon" WidthRequest="20" />
-                            <Entry Keyboard="Numeric"
-                                   Text="{Binding CantidadTotal, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
-                                <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"    
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
-                        </StackLayout>
-                    </StackLayout>
-                    <StackLayout
                         Margin="0,15,0,0"
                         Orientation="Vertical"
                         VerticalOptions="CenterAndExpand">
@@ -101,36 +80,36 @@
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Image Source="combustible_icon" WidthRequest="15" />
-                            <Entry Keyboard="Numeric"
-                                   Text="{Binding CantidadGasolina, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                            <Entry
+                                Keyboard="Numeric"
+                                Text="{Binding CantidadGasolina, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0" 
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
-                           <Entry Keyboard="Numeric"
-                                  Text="{Binding Km_Gasolina, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="35.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Entry Keyboard="Numeric" Text="{Binding Km_Gasolina, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0" 
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="35.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
                             <Label Text="km." VerticalOptions="Center" />
                         </StackLayout>
                     </StackLayout>
@@ -144,36 +123,34 @@
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Image Source="combustible_icon" WidthRequest="15" />
-                            <Entry Keyboard="Numeric"
-                                   Text="{Binding CantidadDiesel, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                            <Entry Keyboard="Numeric" Text="{Binding CantidadDiesel, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0" 
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
-                            <Entry Keyboard="Numeric"
-                                   Text="{Binding Km_Diesel, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="35.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Entry Keyboard="Numeric" Text="{Binding Km_Diesel, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0" 
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="35.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
                             <Label Text="km." VerticalOptions="Center" />
                         </StackLayout>
                     </StackLayout>
@@ -187,36 +164,34 @@
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Image Source="combustible_icon" WidthRequest="15" />
-                            <Entry   Keyboard="Numeric"
-                                   Text="{Binding CantidadGas, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                            <Entry Keyboard="Numeric" Text="{Binding CantidadGas, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0" 
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
-                            <Entry Keyboard="Numeric"
-                                   Text="{Binding Km_Gas, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="35.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Entry Keyboard="Numeric" Text="{Binding Km_Gas, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"
-                                    Tablet="35.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="35.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
                             <Label Text="km." VerticalOptions="Center" />
                         </StackLayout>
                     </StackLayout>
@@ -240,11 +215,11 @@
                         <Image Source="logos_sena" WidthRequest="130" />
 
                     </StackLayout>-->
-                   
+
                 </StackLayout>
-                 <StackLayout VerticalOptions="EndAndExpand">
-                        <Image Margin="-11" Source="fondos_arboles3_icon.png" />
-                    </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Image Margin="-11" Source="fondos_arboles3_icon.png" />
+                </StackLayout>
             </StackLayout>
 
         </ScrollView>

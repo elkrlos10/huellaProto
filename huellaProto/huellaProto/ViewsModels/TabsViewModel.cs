@@ -281,12 +281,35 @@
                 this.IsVisiblePreg = false;
             }
 
-            var retornar = await ValidarCamposTransporte();
-            if (retornar)
+            if (this.CantidadGasolina > 0 && this.Km_Gasolina==0)
             {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor los Km recorridos en la semana por los vahículos a gasolina"
+                  , "Aceptar");
+
+                return;
+            }
+            if (this.CantidadDiesel > 0 && this.Km_Diesel <= 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor los Km recorridos en la semana por los vahículos a diesel"
+                  , "Aceptar");
+
+                return;
+            }
+            if (this.CantidadGas > 0 && this.km_Gas <= 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor los Km recorridos en la semana por los vahículos a gas"
+                  , "Aceptar");
+
                 return;
             }
 
+            var idProyecto = MainViewModel.GetInstance().IdProyecto;
             var oVehiculos = new Vehiculos
             {
                 Can_Gasolina = this.CantidadGasolina,
@@ -295,7 +318,7 @@
                 Km_Diesel = this.km_Diesel,
                 Can_GasNatural = this.CantidadGas,
                 Km_GasNatural = this.Km_Gas,
-                IdProyecto = 1,
+                IdProyecto = idProyecto
             };
 
             try
@@ -305,10 +328,6 @@
                                       "api/Encuestas",
                                      "/RegristarVehiculos", oVehiculos);
 
-                //var response = await this.apiService.Post(
-                //                    MainViewModel.GetInstance().UrlServices,
-                //                    "api/Usuario",
-                //                    "/RegistarEmpresa", Empresa);
             }
             catch (Exception e)
             {
@@ -330,21 +349,46 @@
 
         private async void CambioViewMaquina()
         {
-            var retornar = await ValidarCamposMaquinas();
-            if (retornar)
+            if (this.Can_Gasolina > 0 && this.Lts_Gasolina <= 0)
             {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor los galones utilizados en la semana por las máquinas a gasolina"
+                  , "Aceptar");
+
                 return;
             }
+            if (this.Can_Diesel > 0 && this.lts_Diesel <= 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor los galones utilizados en la semana por las máquinas a diesel"
+                  , "Aceptar");
+
+                return;
+            }
+            if (this.Can_GasNatural > 0 && this.Lts_GasNatural <= 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor los galones utilizados en la semana por las máquinas a gas"
+                  , "Aceptar");
+
+                return;
+            }
+
+            var Litros_G = this.Lts_Gasolina * 3.78;
+            var Litros_D = this.Lts_Diesel * 3.78;
 
             var oMaquinas = new Maquina
             {
                 Can_Gasolina = this.Can_Gasolina,
-                Lts_Gasolina = this.Lts_Gasolina,
+                Lts_Gasolina = Math.Round(Litros_G, 2),
                 Can_Diesel = this.Can_Diesel,
-                Lts_Diesel = this.Lts_Diesel,
+                Lts_Diesel = Math.Round(Litros_D, 2),
                 Can_GasNatural = this.Can_GasNatural,
                 Lts_GasNatural = this.Lts_GasNatural,
-                IdProyecto = 1,
+                IdProyecto =  MainViewModel.GetInstance().IdProyecto
             };
 
             try
@@ -356,7 +400,6 @@
             }
             catch (Exception e)
             {
-
                 throw;
             }
 
@@ -378,7 +421,7 @@
                 Compostaje = this.Compostaje,
                 Can_RediduosRecicla = this.Can_RediduosRecicla,
                 Can_ResiduosSolidos = this.Can_ResiduosSolidos,
-                IdProyecto = 1,
+                IdProyecto = MainViewModel.GetInstance().IdProyecto
             };
 
             try
@@ -409,7 +452,7 @@
                 EnergiaKwh = this.EnergiaKwh,
                 Gas = this.Gas,
                 EnergiaRenovable = this.EnergiaRenovable,
-                IdProyecto = 1,
+                IdProyecto = MainViewModel.GetInstance().IdProyecto
             };
 
             try
@@ -429,176 +472,6 @@
             await Application.Current.MainPage.Navigation.PushAsync(new CalcularInsti());
         }
 
-        private async Task<bool> ValidarCamposTransporte()
-        {
-            if (string.IsNullOrEmpty(this.CantidadTotal.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad total de los vehículos"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.CantidadGasolina.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de vehículos a gasolina"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Km_Gasolina.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de Km recorridos en la semana por los vehículos a gasolina"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.CantidadDiesel.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de vehículos a Diesel"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Km_Diesel.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de Km recorridos en la semana por los vehículos a diesel"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.CantidadGas.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de vehículos a gas"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Km_Gas.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de Km recorridos en la semana por los vehículos a gas"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            var suma = this.CantidadDiesel + this.CantidadGas + this.CantidadGasolina;
-            //if (this.CantidadTotal != suma)
-            //{
-            //    await Application.Current.MainPage.DisplayAlert(
-            //         "Error"
-            //       , "El total de vehículos no es igual a la suma de los vehículos a gasolina, diesel y gas"
-            //       , "Aceptar");
-
-            //    return retornar = 2;
-            //}
-
-            return false;
-        }
-
-        private async Task<bool> ValidarCamposMaquinas()
-        {
-            if (string.IsNullOrEmpty(this.Can_Total.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad total de las máquinas"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Can_Gasolina.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de las máquinas a gasolina"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Lts_Gasolina.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de galones usuados semanalemente por las máquinas a gasolina"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Can_Diesel.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de máquinas a Diesel"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Lts_Diesel.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de galones usados en la semana por los máquinas a diesel"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Can_GasNatural.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de máquinas a gas"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            if (string.IsNullOrEmpty(this.Lts_GasNatural.ToString()))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                     "Error"
-                   , "Ingrese por favor la cantidad de metros cubicos usados a la semana por las máquinas a gas"
-                   , "Aceptar");
-
-                return true;
-            }
-
-            var suma = this.Can_Diesel + this.Can_GasNatural + this.Can_Gasolina;
-            //if (this.CantidadTotal != suma)
-            //{
-            //    await Application.Current.MainPage.DisplayAlert(
-            //         "Error"
-            //       , "El total de vehículos no es igual a la suma de los vehículos a gasolina, diesel y gas"
-            //       , "Aceptar");
-
-            //    return retornar = 2;
-            //}
-
-            return false;
-        }
+        
     }
 }

@@ -1,12 +1,8 @@
-﻿
-
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace huellaProto.ViewModels
+﻿namespace huellaProto.ViewModels
 {
     using huellaProto.ViewsModels;
+    using System;
+    using System.Collections.ObjectModel;
 
     public class MainViewModel
     {
@@ -22,6 +18,8 @@ namespace huellaProto.ViewModels
         public FormRegistrarViewModel FormRegistrar { get; set; }
         public BienvenidaViewModel Bienvenida { get; set; }
         public TabsViewModel Tabs { get; set; }
+        public ObservableCollection<MenuItemViewModel> Menus { get; set; }
+
 
         public string User { get; set; }
         public int IdProyecto { get; set; }
@@ -43,7 +41,10 @@ namespace huellaProto.ViewModels
             //this.Recordar = new RecordarViewModel();
             //this.FlotaC = new FlotaViewModel();
             //this.ListaFlota = new ListFlotaViewModel("");
+            this.CargarMenu();
         }
+
+        
         #endregion
 
         #region Singleton
@@ -58,5 +59,20 @@ namespace huellaProto.ViewModels
             return instance;
         }
         #endregion
+
+        #region Metodos
+        private void CargarMenu()
+        {
+            this.Menus = new ObservableCollection<MenuItemViewModel>();
+
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon="",
+                PageName="",
+                Title=""
+            });
+        }
+        #endregion
+
     }
 }
