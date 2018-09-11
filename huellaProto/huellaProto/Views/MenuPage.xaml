@@ -4,56 +4,59 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Menú"
+    BackgroundColor="#82a20d"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout
-            Padding="5,20,5,5">
-                <controls:CircleImage 
+            <StackLayout Padding="5,20,5,5">
+                <!--<controls:CircleImage
                 Aspect="AspectFill"
                 HeightRequest="150"
                 Source="{Binding User.ImageFullPath}">
-                </controls:CircleImage>
-                <Label
-                FontSize="Large"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
-                Text="{Binding User.FullName}"
-                TextColor="White">
-                </Label>
-                <ListView 
-                BackgroundColor="Navy"
-                ItemsSource="{Binding Menus}"
-                HasUnevenRows="True"
-                SeparatorVisibility="None">
+                </controls:CircleImage>-->
+
+                <Image
+                    HorizontalOptions="CenterAndExpand"
+                    Source="logoBlanco"
+                    WidthRequest="140" />
+                <!--<Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Text="Carlos"
+                    TextColor="White" />-->
+                <ListView
+                    Margin="10,15,10,15"
+                    HasUnevenRows="True"
+                    ItemsSource="{Binding Menus}"
+                   >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Grid>
                                     <Grid.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding NavigateCommand}"/>
+                                        <TapGestureRecognizer Command="{Binding NavigateCommand}" />
                                     </Grid.GestureRecognizers>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Image 
-                                    Source="{Binding Icon}"
-                                    WidthRequest="50"
-                                    HeightRequest="50">
-                                    </Image>
-                                    <Label 
-                                    Grid.Column="1"
-                                    VerticalOptions="Center"
-                                    TextColor="White"
-                                    Text="{Binding Title}">
-                                    </Label>
+                                    <Image
+                                        HeightRequest="70"
+                                        Source="{Binding Icon}"
+                                        WidthRequest="70" />
+                                    <Label
+                                        Grid.Column="1"
+                                        FontSize="Medium"
+                                        Text="{Binding Title}"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-        </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

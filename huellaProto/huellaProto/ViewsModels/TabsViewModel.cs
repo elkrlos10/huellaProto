@@ -469,7 +469,9 @@
             }
 
             MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new CalcularInsti());
+            //MainPage = new MasterPage();
+             Application.Current.MainPage = new MasterPage();
+            //await Application.Current.MainPage.Navigation.PushAsync(new MasterPage());
         }
 
         

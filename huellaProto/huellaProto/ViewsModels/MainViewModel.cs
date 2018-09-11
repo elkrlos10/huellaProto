@@ -67,10 +67,25 @@
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon="",
+                Icon= "IconUser",
                 PageName="",
-                Title=""
+                Title="Sena"
             });
+
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "Proyectos",
+                PageName = "",
+                Title = "Proyectos"
+            });
+
+            this.Menus.Add(new MenuItemViewModel
+            {
+                Icon = "cerrar_sesion",
+                PageName = "",
+                Title = "Cerrar sesión"
+            });
+
         }
         #endregion
 

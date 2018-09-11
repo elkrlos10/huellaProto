@@ -294,4 +294,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\truck.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cerrar_sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Proyectos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IconUser.png" />
+  </ItemGroup>
 </Project>

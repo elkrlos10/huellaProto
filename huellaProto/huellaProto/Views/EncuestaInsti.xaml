@@ -1,90 +1,108 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.EncuestaInsti"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}"
-             Title="VEHICULOS">
+<ContentPage
+    x:Class="huellaProto.Views.EncuestaInsti"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="VEHICULOS"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding Login}">
-            
+
             <StackLayout Padding="10">
-                
-                <Image Source="huella_icon" WidthRequest="100" HorizontalOptions="CenterAndExpand"></Image>
 
-                <Label XAlign="Center" FontSize="20" Margin="0,8" Text="El consumo anual de la institucion es de:"></Label>
-                <Label XAlign="Center" Text="1. En Viajes en avión"></Label>
-                <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a kilometros"></Label>
+                <Image
+                    HorizontalOptions="CenterAndExpand"
+                    Source="huella_icon"
+                    WidthRequest="100" />
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image Source="aeroplane_icon" WidthRequest="20"></Image>
-                    <Entry  WidthRequest="100" Keyboard="Numeric">
+                <Label
+                    Margin="0,8"
+                    FontSize="20"
+                    Text="El consumo anual de la institucion es de:"
+                    XAlign="Center" />
+                <Label Text="1. En Viajes en avión" XAlign="Center" />
+                <Label
+                    Margin="3"
+                    Text="*La cantidad solicitada equivale a kilometros"
+                    TextColor="#61edb9"
+                    XAlign="Center" />
 
-                    </Entry>
-                    <Label VerticalOptions="Center" Text="Km/h."></Label>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Image Source="aeroplane_icon" WidthRequest="20" />
+                    <Entry Keyboard="Numeric" WidthRequest="100" />
+                    <Label Text="Km/h." VerticalOptions="Center" />
                 </StackLayout>
 
 
-                <Label XAlign="Center" Margin="3" Text="2. En Combustible"></Label>
-                <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a galones"></Label>
+                <Label
+                    Margin="3"
+                    Text="2. En Combustible"
+                    XAlign="Center" />
+                <Label
+                    Margin="3"
+                    Text="*La cantidad solicitada equivale a galones"
+                    TextColor="#61edb9"
+                    XAlign="Center" />
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image Source="combustible" WidthRequest="15"></Image>
-                    <Entry WidthRequest="100" Keyboard="Numeric" >
-
-                    </Entry>
-                    <Label VerticalOptions="Center" Text="Gal."></Label>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Image Source="combustible" WidthRequest="15" />
+                    <Entry Keyboard="Numeric" WidthRequest="100" />
+                    <Label Text="Gal." VerticalOptions="Center" />
                 </StackLayout>
 
-                <Label XAlign="Center" Margin="3" Text="3. En Energía"></Label>
-                <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a kilowatts"></Label>
+                <Label
+                    Margin="3"
+                    Text="3. En Energía"
+                    XAlign="Center" />
+                <Label
+                    Margin="3"
+                    Text="*La cantidad solicitada equivale a kilowatts"
+                    TextColor="#61edb9"
+                    XAlign="Center" />
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image Source="energia" WidthRequest="15"></Image>
-                    <Entry WidthRequest="100" Keyboard="Numeric">
-
-                    </Entry>
-                    <Label VerticalOptions="Center" Text="kW/h."></Label>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Image Source="energia" WidthRequest="15" />
+                    <Entry Keyboard="Numeric" WidthRequest="100" />
+                    <Label Text="kW/h." VerticalOptions="Center" />
                 </StackLayout>
 
-                <Label XAlign="Center" Margin="3" Text="4. En Gas"></Label>
-                <Label XAlign="Center" Margin="3" TextColor="#61edb9" Text="*La cantidad solicitada equivale a metros cubicos"></Label>
+                <Label
+                    Margin="3"
+                    Text="4. En Gas"
+                    XAlign="Center" />
+                <Label
+                    Margin="3"
+                    Text="*La cantidad solicitada equivale a metros cubicos"
+                    TextColor="#61edb9"
+                    XAlign="Center" />
 
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Image Source="gas" WidthRequest="15"></Image>
-                    <Entry WidthRequest="100" Keyboard="Numeric">
-
-                    </Entry>
-                    <Label VerticalOptions="Center" Text="m3."></Label>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Image Source="gas" WidthRequest="15" />
+                    <Entry Keyboard="Numeric" WidthRequest="100" />
+                    <Label Text="m3." VerticalOptions="Center" />
                 </StackLayout>
-                <StackLayout
-                    Orientation="Horizontal"
-                    VerticalOptions="CenterAndExpand"
-                    >
+                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
                     <Button
-                            
-                            Text="Calcular" 
-                            BackgroundColor="#61edb9"
-                            TextColor="White" 
-                            BorderRadius="23"
-                            HeightRequest="46"
-                            WidthRequest="200"                
-                            HorizontalOptions="CenterAndExpand" 
-                            Command="{Binding CalcularCommand}" 
-                            IsEnabled="{Binding Isnabled, Mode=TwoWay}">
-                    </Button>
+                        BackgroundColor="#61edb9"
+                        BorderRadius="23"
+                        Command="{Binding CalcularCommand}"
+                        HeightRequest="46"
+                        HorizontalOptions="CenterAndExpand"
+                        IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                        Text="Calcular"
+                        TextColor="White"
+                        WidthRequest="200" />
 
                 </StackLayout>
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Image Source="logos_sena" WidthRequest="130" ></Image>
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Image Source="logos_sena" WidthRequest="130" />
 
                 </StackLayout>
                 <StackLayout>
-                    <Image Margin="-11" Source="fondos_arboles3_icon.png" >
-
-                    </Image>
+                    <Image Margin="-11" Source="fondos_arboles3_icon.png" />
                 </StackLayout>
-                
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

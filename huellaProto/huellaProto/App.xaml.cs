@@ -14,8 +14,8 @@ namespace huellaProto
         public App()
         {
             InitializeComponent();
-            //MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
-            MainPage = new  MasterPage();
+            MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
+            //MainPage = new  MasterPage();
         }
 
         #endregion
