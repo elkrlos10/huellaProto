@@ -11,7 +11,7 @@
                                                                    Property=Height}"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
                                                                   Property=Width}"
-            Source="fondoCielo"
+            Source="fondoCielo3"
             VerticalOptions="EndAndExpand" />
       
 

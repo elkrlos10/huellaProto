@@ -7,7 +7,18 @@
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding ListaFlota}">
-            <Label
+				<Image
+					Margin="0,40,0,30"
+					Source="logoVerde"
+					VerticalOptions="StartAndExpand">
+				<Image.WidthRequest>
+					<OnIdiom
+                         x:TypeArguments="x:Double"
+                         Phone="140.0"
+                         Tablet="210.0" />
+				</Image.WidthRequest>
+			</Image>
+			<Label
                 Margin="0,15,0,0"
                 FontAttributes="Bold"
                 FontSize="Large"
@@ -16,7 +27,7 @@
             <Label
                 Margin="0,15,0,0"
                 FontAttributes="Bold"
-                FontSize="Micro"
+                FontSize="Medium"
                 HorizontalTextAlignment="Center"
                 Text="Marca-Modelo-Combustible-Cilindraje" />
             <!--<ListView
@@ -88,17 +99,16 @@
                 HasUnevenRows="true"
                 ItemsSource="{Binding Prueba}"
                 SeparatorVisibility="None"
-                VerticalOptions="Start" HorizontalOptions="CenterAndExpand">
+                VerticalOptions="Start" HorizontalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                          <StackLayout HorizontalOptions="FillAndExpand">
-                            <StackLayout
-                                Padding="30,10"
-                                HorizontalOptions="FillAndExpand"
+							<StackLayout HorizontalOptions="FillAndExpand">
+								<StackLayout
+                                Padding="50,10"
+                                HorizontalOptions="Fill "
                                 Orientation="Vertical">
-
-                                <Label
+									<Label
                                     FontSize="15"
                                     Text="{Binding Motor}"
                                     VerticalOptions="FillAndExpand"
@@ -106,10 +116,9 @@
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Command="{Binding NavegarCommand}" />
                                     </Label.GestureRecognizers>
-                                </Label>
-                                <StackLayout Orientation="Horizontal">
-                                    <Image Source="truck" />
-                                    <Entry
+									</Label>
+									<StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+										<Entry
                                         HorizontalOptions="Center"
                                         Keyboard="Numeric"
                                         WidthRequest="80" />
@@ -131,7 +140,7 @@
             </ListView>
             <StackLayout Margin="20">
                 <Button
-                    BackgroundColor="#61edb9"
+                    BackgroundColor="#82a20d"
                     BorderRadius="23"
                     Command="{Binding CalcularCommand}"
                     HeightRequest="46"
@@ -142,6 +151,11 @@
                     VerticalOptions="Start"
                     WidthRequest="150" />
             </StackLayout>
-        </StackLayout>
+
+			<StackLayout VerticalOptions="EndAndExpand">
+				<Image Margin="-11" Source="fondos_arboles3_icon.png" />
+			</StackLayout>
+
+		</StackLayout>
     </ContentPage.Content>
 </ContentPage>

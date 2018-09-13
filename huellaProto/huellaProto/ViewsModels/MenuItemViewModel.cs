@@ -17,36 +17,38 @@ namespace huellaProto.ViewsModels
         public string Title { get; set; }
 
         public string PageName { get; set; }
-        #endregion
+		public string WidthRequest { get; set; }
 
-        #region Commands
-        //public ICommand NavigateCommand
-        //{
-        //    get
-        //    {
-        //        return new RelayCommand(Navigate);
-        //    }
-        //}
+		#endregion
 
-        //private void Navigate()
-        //{
-        //    App.Master.IsPresented = false;
+		#region Commands
+		//public ICommand NavigateCommand
+		//{
+		//    get
+		//    {
+		//        return new RelayCommand(Navigate);
+		//    }
+		//}
 
-        //    if (this.PageName == "LoginPage")
-        //    {
-        //        Settings.IsRemembered = "false";
-        //        var mainViewModel = MainViewModel.GetInstance();
-        //        mainViewModel.Token = null;
-        //        mainViewModel.User = null;
-        //        Application.Current.MainPage = new NavigationPage(
-        //            new LoginPage());
-        //    }
-        //    else if (this.PageName == "MyProfilePage")
-        //    {
-        //        MainViewModel.GetInstance().MyProfile = new MyProfileViewModel();
-        //        App.Navigator.PushAsync(new MyProfilePage());
-        //    }
-        //}
-        #endregion
-    }
+		//private void Navigate()
+		//{
+		//    App.Master.IsPresented = false;
+
+		//    if (this.PageName == "LoginPage")
+		//    {
+		//        Settings.IsRemembered = "false";
+		//        var mainViewModel = MainViewModel.GetInstance();
+		//        mainViewModel.Token = null;
+		//        mainViewModel.User = null;
+		//        Application.Current.MainPage = new NavigationPage(
+		//            new LoginPage());
+		//    }
+		//    else if (this.PageName == "MyProfilePage")
+		//    {
+		//        MainViewModel.GetInstance().MyProfile = new MyProfileViewModel();
+		//        App.Navigator.PushAsync(new MyProfilePage());
+		//    }
+		//}
+		#endregion
+	}
 }

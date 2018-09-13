@@ -67,24 +67,29 @@
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon= "IconUser",
+                Icon= "users",
                 PageName="",
-                Title="Sena"
+                Title="Sena",
+				WidthRequest = "40"
             });
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "Proyectos",
+                Icon = "sprout",
                 PageName = "",
-                Title = "Proyectos"
-            });
+                Title = "Proyectos",
+				WidthRequest = "50"
+
+			});
 
             this.Menus.Add(new MenuItemViewModel
             {
-                Icon = "cerrar_sesion",
+                Icon = "salir",
                 PageName = "",
-                Title = "Cerrar sesión"
-            });
+                Title = "Cerrar sesión",
+				WidthRequest = "40"
+
+			});
 
         }
         #endregion

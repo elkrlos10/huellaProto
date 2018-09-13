@@ -14,11 +14,10 @@
                 HeightRequest="150"
                 Source="{Binding User.ImageFullPath}">
                 </controls:CircleImage>-->
-
                 <Image
                     HorizontalOptions="CenterAndExpand"
                     Source="logoBlanco"
-                    WidthRequest="140" />
+                    WidthRequest="180" />
                 <!--<Label
                     FontAttributes="Bold"
                     FontSize="Large"
@@ -42,9 +41,10 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <Image
-                                        HeightRequest="70"
+										Margin="15"
+                                        HeightRequest="{Binding WidthRequest}"
                                         Source="{Binding Icon}"
-                                        WidthRequest="70" />
+                                        WidthRequest="{Binding WidthRequest}" />
                                     <Label
                                         Grid.Column="1"
                                         FontSize="Medium"
