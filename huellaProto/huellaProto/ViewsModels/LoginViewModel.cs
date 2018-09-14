@@ -62,8 +62,8 @@
             this.IsRemembered = true;
             this.isEnabled = true;
 
-            this.Email = "Colegio";
-            this.Password = "123";
+            this.Email = "a@a.com";
+            this.Password = "123456";
 
             this.apiService = new ApiService();
         }

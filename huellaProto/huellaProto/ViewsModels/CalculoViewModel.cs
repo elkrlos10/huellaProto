@@ -1,10 +1,15 @@
-﻿using huellaProto.Service;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace huellaProto.ViewModels
+﻿namespace huellaProto.ViewModels
 {
+    using GalaSoft.MvvmLight.Command;
+    using huellaProto.Models.DTO;
+    using huellaProto.Service;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Input;
+    using Xamarin.Forms;
+    using huellaProto.Views;
+
     public class CalculoViewModel: BaseViewModel
     {
         #region Service
@@ -51,24 +56,45 @@ namespace huellaProto.ViewModels
 
         #endregion
 
+        #region Commands 
+        public ICommand SiguienteCommand
+        {
+            get
+            {
+                return new RelayCommand(ConfCommand);
+            }
+        }
+        #endregion
 
         #region Metodos
         private async void CalculoHuella()
         {
             try
             {
-                var response = await this.apiService.Post<double>(
+                var parametros = new ParametrosDTO
+                {
+                    Paramatro1 = MainViewModel.GetInstance().IdProyecto.ToString()
+                };
+                var response = await this.apiService.Post<ParametrosDTO>(
                                  MainViewModel.GetInstance().UrlServices,
                                  "api/Proyecto",
-                                "/RegristarVehiculos", MainViewModel.GetInstance().IdProyecto);
+                                "/CalculoHuella", parametros);
 
-                var cosa = response.Result;
+                var totalHuella = (ParametrosDTO)response.Result;
+
+                this.ToneladasCo2 = Math.Round(double.Parse(totalHuella.Paramatro1),2);
             }
             catch (Exception e)
             {
                 throw;
             }
 
+        }
+
+        private async void ConfCommand()
+        {
+            //MainViewModel.GetInstance().Tabs = new TabsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
         }
         #endregion
 

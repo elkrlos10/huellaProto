@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="huellaProto.Views.CalcularInsti"
+    x:Class="huellaProto.Views.CompensarPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Calculo"
+    Title="Compensar"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <RelativeLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Image
@@ -14,7 +14,6 @@
                                                                   Property=Width}"
             Source="fondoCielo3"
             VerticalOptions="EndAndExpand" />
-
         <FlexLayout
             AlignItems="Center"
             BindingContext="{Binding Calculo}"
@@ -37,23 +36,17 @@
                                 Tablet="240.0" />
                         </Image.WidthRequest>
                     </Image>
-
                 </StackLayout>
                 <StackLayout
                     HorizontalOptions="CenterAndExpand"
                     Orientation="Vertical"
                     VerticalOptions="CenterAndExpand">
-                    <Label HorizontalOptions="CenterAndExpand" Text="Su huella de carbono es" />
                     <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                         <Label FontSize="Medium" Text="{Binding ToneladasCo2}" />
                         <Label FontSize="Medium" Text="Toneladas de CO2" />
                     </StackLayout>
-
                 </StackLayout>
-                <StackLayout Padding="30" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Si deseas compensar la huella de carbono que dejas en el medio ambiente, a continuación encontrarás un programa de siembra de árboles donde podrás seleccionar la zona,el tipo de árbol y el porcentaje a compensar." XAlign="Center" />
-                </StackLayout>
-                <!--<StackLayout>
+                <StackLayout>
                     <Picker
                         x:Name="picker"
                         Title="Selecciona un árbol"
@@ -120,12 +113,12 @@
                         <Switch IsToggled="{Binding EnergiaRenovable, Mode=TwoWay}" />
                         <Label Text="SI" XAlign="Center" />
                     </StackLayout>
-                </StackLayout>-->
+                </StackLayout>
                 <StackLayout Margin="0">
                     <Button
                         BackgroundColor="#82a20d"
                         BorderRadius="23"
-                        Command="{Binding SiguienteCommand}"
+                        Command="{Binding LoginCommand}"
                         HeightRequest="46"
                         HorizontalOptions="CenterAndExpand"
                         IsEnabled="{Binding Isnabled, Mode=TwoWay}"
@@ -133,10 +126,7 @@
                         TextColor="White"
                         WidthRequest="200" />
                 </StackLayout>
-
-
             </StackLayout>
         </FlexLayout>
-
     </RelativeLayout>
 </ContentPage>
