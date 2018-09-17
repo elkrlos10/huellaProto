@@ -52,6 +52,7 @@
                         Title="Selecciona un árbol"
                         Margin="100,0,100,0"
                         FontSize="Small"
+                        SelectedItem="{Binding Zona}"
                         WidthRequest="150">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -65,6 +66,7 @@
                         Title="Selecciona la zona"
                         Margin="100,0,100,0"
                         FontSize="Small"
+                        SelectedItem="{Binding Arbol}"
                         WidthRequest="150">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -82,7 +84,7 @@
                             Text="Porcentaje a compensar"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" Text="{Binding Gas, Mode=TwoWay}">
+                            <Entry Keyboard="Numeric" Text="{Binding Porcentaje, Mode=TwoWay}">
                                 <Entry.WidthRequest>
                                     <OnIdiom
                                         x:TypeArguments="x:Double"
@@ -110,7 +112,7 @@
                         XAlign="Center" />
                     <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                         <Label Text="NO" XAlign="Center" />
-                        <Switch IsToggled="{Binding EnergiaRenovable, Mode=TwoWay}" />
+                        <Switch IsToggled="{Binding Precisar, Mode=TwoWay}" />
                         <Label Text="SI" XAlign="Center" />
                     </StackLayout>
                 </StackLayout>
@@ -118,7 +120,7 @@
                     <Button
                         BackgroundColor="#82a20d"
                         BorderRadius="23"
-                        Command="{Binding LoginCommand}"
+                        Command="{Binding CompensarCommand}"
                         HeightRequest="46"
                         HorizontalOptions="CenterAndExpand"
                         IsEnabled="{Binding Isnabled, Mode=TwoWay}"

@@ -9,6 +9,7 @@
     using System.Windows.Input;
     using Xamarin.Forms;
     using huellaProto.Views;
+    using huellaProto.Models;
 
     public class CalculoViewModel: BaseViewModel
     {
@@ -18,9 +19,10 @@
 
         #region atributos
         private double toneladasCo2;
-        private string region;
+        private string zona;
         private string arbol;
-        private bool precision;
+        private bool precisar;
+        private double porcentaje;
         #endregion
 
         #region Propiedades
@@ -30,20 +32,25 @@
             get { return this.toneladasCo2; }
             set { SetValue(ref this.toneladasCo2, value); }
         }
-        public string Region
+        public string Zona
         {
-            get { return this.region; }
-            set { SetValue(ref this.region, value); }
+            get { return this.zona; }
+            set { SetValue(ref this.zona, value); }
         }
         public string Arbol
         {
             get { return this.arbol; }
             set { SetValue(ref this.arbol, value); }
         }
-        public bool Precision
+        public bool Precisar
         {
-            get { return this.precision; }
-            set { SetValue(ref this.precision, value); }
+            get { return this.precisar; }
+            set { SetValue(ref this.precisar, value); }
+        }
+        public double Porcentaje
+        {
+            get { return this.porcentaje; }
+            set { SetValue(ref this.porcentaje, value); }
         }
         #endregion
 
@@ -62,6 +69,14 @@
             get
             {
                 return new RelayCommand(ConfCommand);
+            }
+        }
+
+        public ICommand CompensarCommand
+        {
+            get
+            {
+                return new RelayCommand(GuargarCalculo);
             }
         }
         #endregion
@@ -94,7 +109,38 @@
         private async void ConfCommand()
         {
             //MainViewModel.GetInstance().Tabs = new TabsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
+             Application.Current.MainPage = new MasterPage();
+            //await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
+        }
+
+        private async void GuargarCalculo()
+        {
+
+            var oHuella = new HuellaDTO
+            {
+                IdProyecto= MainViewModel.GetInstance().IdProyecto,
+                Toneledas= this.ToneladasCo2,
+                Fecha= DateTime.Now,
+                TipoArbol= this.Arbol,
+                Zona= this.Zona,
+                Precisar= this.Precisar,
+                Porcentaje= this.Porcentaje
+            };
+
+            try
+            {
+                var response = await this.apiService._Post(
+                                      MainViewModel.GetInstance().UrlServices,
+                                      "api/Proyecto",
+                                     "/Guardarcalculo", oHuella);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
+
+           //await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(2));
         }
         #endregion
 
