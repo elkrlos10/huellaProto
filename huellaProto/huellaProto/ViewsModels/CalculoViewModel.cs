@@ -79,10 +79,26 @@
                 return new RelayCommand(GuargarCalculo);
             }
         }
-        #endregion
 
-        #region Metodos
-        private async void CalculoHuella()
+		public ICommand NoPrecisarCommand
+		{
+			get
+			{
+				return new RelayCommand(NoPrecisar);
+			}
+		}
+
+		public ICommand PrecisarCommand
+		{
+			get
+			{
+				return new RelayCommand(PrecisarHuella);
+			}
+		}
+		#endregion
+
+		#region Metodos
+		private async void CalculoHuella()
         {
             try
             {
@@ -142,7 +158,18 @@
 
            //await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(2));
         }
-        #endregion
 
-    }
+		private async void NoPrecisar()
+		{
+			await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
+		}
+
+		private async void PrecisarHuella()
+		{
+			await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
+		}
+
+		#endregion
+
+	}
 }

@@ -44,84 +44,13 @@
                     Orientation="Vertical"
                     VerticalOptions="CenterAndExpand">
                     <Label HorizontalOptions="CenterAndExpand" Text="Su huella de carbono es" />
-                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                        <Label FontSize="Medium" Text="{Binding ToneladasCo2}" />
-                        <Label FontSize="Medium" Text="Toneladas de CO2" />
-                    </StackLayout>
+					<StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+						<Label FontSize="Large" Text="{Binding ToneladasCo2}" />
+						<Label FontSize="Large" Text="Toneladas de CO2" />
+					</StackLayout>
+				</StackLayout>
 
-                </StackLayout>
-                <StackLayout Padding="30" HorizontalOptions="CenterAndExpand">
-                    <Label Text="Si deseas compensar la huella de carbono que dejas en el medio ambiente, a continuación encontrarás un programa de siembra de árboles donde podrás seleccionar la zona,el tipo de árbol y el porcentaje a compensar." XAlign="Center" />
-                </StackLayout>
-                <!--<StackLayout>
-                    <Picker
-                        x:Name="picker"
-                        Title="Selecciona un árbol"
-                        Margin="100,0,100,0"
-                        FontSize="Small"
-                        WidthRequest="150">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Pino</x:String>
-                                <x:String>Acacia</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                    </Picker>
-                    <Picker
-                        x:Name="pickerZona"
-                        Title="Selecciona la zona"
-                        Margin="100,0,100,0"
-                        FontSize="Small"
-                        WidthRequest="150">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Urabá</x:String>
-                                <x:String>La Salada</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                    </Picker>
-                    <StackLayout
-                        Margin="0,5,0,0"
-                        Orientation="Vertical"
-                        VerticalOptions="CenterAndExpand">
-                        <Label
-                            Margin="0"
-                            Text="Porcentaje a compensar"
-                            XAlign="Center" />
-                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" Text="{Binding Gas, Mode=TwoWay}">
-                                <Entry.WidthRequest>
-                                    <OnIdiom
-                                        x:TypeArguments="x:Double"
-                                        Phone="80.0"
-                                        Tablet="140.0" />
-                                </Entry.WidthRequest>
-                                <Entry.HeightRequest>
-                                    <OnIdiom
-                                        x:TypeArguments="x:Double"
-                                        Phone="45.0"
-                                        Tablet="35.0" />
-                                </Entry.HeightRequest>
-                            </Entry>
-                        </StackLayout>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout
-                    Margin="0,0,0,10"
-                    HorizontalOptions="CenterAndExpand"
-                    Orientation="Vertical">
-                    <Label
-                        Margin="10"
-                        HorizontalOptions="CenterAndExpand"
-                        Text="¿Deseas precisar tu calculo de huella?"
-                        XAlign="Center" />
-                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                        <Label Text="NO" XAlign="Center" />
-                        <Switch IsToggled="{Binding EnergiaRenovable, Mode=TwoWay}" />
-                        <Label Text="SI" XAlign="Center" />
-                    </StackLayout>
-                </StackLayout>-->
-                <StackLayout Margin="0">
+                 <StackLayout Margin="0" Orientation="Horizontal">
                     <Button
                         BackgroundColor="#82a20d"
                         BorderRadius="23"
@@ -129,10 +58,20 @@
                         HeightRequest="46"
                         HorizontalOptions="CenterAndExpand"
                         IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                        Text="Compensar"
+                        Text="Sí"
                         TextColor="White"
-                        WidthRequest="200" />
-                </StackLayout>
+                        WidthRequest="100" />
+					<Button
+                        BackgroundColor="#82a20d"
+                        BorderRadius="23"
+                        Command="{Binding NoPrecisarCommand}"
+                        HeightRequest="46"
+                        HorizontalOptions="CenterAndExpand"
+                        IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                        Text="No"
+                        TextColor="White"
+                        WidthRequest="100" />
+				</StackLayout>
 
 
             </StackLayout>

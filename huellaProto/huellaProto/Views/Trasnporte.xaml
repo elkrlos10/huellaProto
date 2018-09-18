@@ -93,7 +93,7 @@
                                     <OnIdiom
                                         x:TypeArguments="x:Double"
                                         Phone="45.0"
-                                        Tablet="35.0" />
+                                        Tablet="55.0" />
                                 </Entry.HeightRequest>
                             </Entry>
                             <Entry Keyboard="Numeric" Text="{Binding Km_Gasolina, Mode=TwoWay}">
@@ -107,7 +107,7 @@
                                     <OnIdiom
                                         x:TypeArguments="x:Double"
                                         Phone="45.0"
-                                        Tablet="35.0" />
+                                        Tablet="55.0" />
                                 </Entry.HeightRequest>
                             </Entry>
                             <Label Text="km." VerticalOptions="Center" />
@@ -134,7 +134,7 @@
                                     <OnIdiom
                                         x:TypeArguments="x:Double"
                                         Phone="45.0"
-                                        Tablet="35.0" />
+                                        Tablet="55.0" />
                                 </Entry.HeightRequest>
                             </Entry>
                             <Entry Keyboard="Numeric" Text="{Binding Km_Diesel, Mode=TwoWay}">
@@ -148,7 +148,7 @@
                                     <OnIdiom
                                         x:TypeArguments="x:Double"
                                         Phone="45.0"
-                                        Tablet="35.0" />
+                                        Tablet="55.0" />
                                 </Entry.HeightRequest>
                             </Entry>
                             <Label Text="km." VerticalOptions="Center" />
@@ -175,7 +175,7 @@
                                     <OnIdiom
                                         x:TypeArguments="x:Double"
                                         Phone="45.0"
-                                        Tablet="35.0" />
+                                        Tablet="55.0" />
                                 </Entry.HeightRequest>
                             </Entry>
                             <Entry Keyboard="Numeric" Text="{Binding Km_Gas, Mode=TwoWay}">
@@ -189,7 +189,7 @@
                                     <OnIdiom
                                         x:TypeArguments="x:Double"
                                         Phone="45.0"
-                                        Tablet="35.0" />
+                                        Tablet="55.0" />
                                 </Entry.HeightRequest>
                             </Entry>
                             <Label Text="km." VerticalOptions="Center" />

@@ -26,14 +26,14 @@
                 VerticalOptions="StartAndExpand">
                 <StackLayout Orientation="Vertical">
                     <Image
-                        Margin="0,0,0,10"
+                        Margin="30"
                         Source="logoVerde"
                         VerticalOptions="StartAndExpand">
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
                                 Phone="140.0"
-                                Tablet="240.0" />
+                                Tablet="250.0" />
                         </Image.WidthRequest>
                     </Image>
                 </StackLayout>
@@ -42,8 +42,8 @@
                     Orientation="Vertical"
                     VerticalOptions="CenterAndExpand">
                     <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                        <Label FontSize="Medium" Text="{Binding ToneladasCo2}" />
-                        <Label FontSize="Medium" Text="Toneladas de CO2" />
+                        <Label FontSize="Large" Text="{Binding ToneladasCo2}" />
+                        <Label FontSize="Large" Text="Toneladas de CO2" />
                     </StackLayout>
                 </StackLayout>
                 <StackLayout>
@@ -51,7 +51,7 @@
                         x:Name="picker"
                         Title="Selecciona un árbol"
                         Margin="100,0,100,0"
-                        FontSize="Small"
+                        FontSize="Medium"
                         SelectedItem="{Binding Zona}"
                         WidthRequest="150">
                         <Picker.ItemsSource>
@@ -60,12 +60,24 @@
                                 <x:String>Acacia</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
-                    </Picker>
+						<Picker.WidthRequest>
+							<OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="250.0" />
+						</Picker.WidthRequest>
+						<Picker.HeightRequest>
+							<OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="55.0" />
+						</Picker.HeightRequest>
+					</Picker>
                     <Picker
                         x:Name="pickerZona"
                         Title="Selecciona la zona"
                         Margin="100,0,100,0"
-                        FontSize="Small"
+                        FontSize="Medium"
                         SelectedItem="{Binding Arbol}"
                         WidthRequest="150">
                         <Picker.ItemsSource>
@@ -74,12 +86,25 @@
                                 <x:String>La Salada</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
+						<Picker.WidthRequest>
+							<OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="80.0"
+                                    Tablet="200.0" />
+						</Picker.WidthRequest>
+						<Picker.HeightRequest>
+							<OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="55.0" />
+						</Picker.HeightRequest>
                     </Picker>
                     <StackLayout
                         Margin="0,5,0,0"
                         Orientation="Vertical"
                         VerticalOptions="CenterAndExpand">
                         <Label
+							FontSize="Medium"
                             Margin="0"
                             Text="Porcentaje a compensar"
                             XAlign="Center" />
@@ -95,28 +120,13 @@
                                     <OnIdiom
                                         x:TypeArguments="x:Double"
                                         Phone="45.0"
-                                        Tablet="35.0" />
+                                        Tablet="55.0" />
                                 </Entry.HeightRequest>
                             </Entry>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
-                <StackLayout
-                    Margin="0,0,0,10"
-                    HorizontalOptions="CenterAndExpand"
-                    Orientation="Vertical">
-                    <Label
-                        Margin="10"
-                        HorizontalOptions="CenterAndExpand"
-                        Text="¿Deseas precisar tu calculo de huella?"
-                        XAlign="Center" />
-                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                        <Label Text="NO" XAlign="Center" />
-                        <Switch IsToggled="{Binding Precisar, Mode=TwoWay}" />
-                        <Label Text="SI" XAlign="Center" />
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout Margin="0">
+                <StackLayout Margin="20">
                     <Button
                         BackgroundColor="#82a20d"
                         BorderRadius="23"
@@ -125,6 +135,7 @@
                         HorizontalOptions="CenterAndExpand"
                         IsEnabled="{Binding Isnabled, Mode=TwoWay}"
                         Text="Compensar"
+						FontSize="Medium"
                         TextColor="White"
                         WidthRequest="200" />
                 </StackLayout>

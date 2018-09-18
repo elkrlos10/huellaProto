@@ -96,7 +96,7 @@
                                         <OnIdiom
                                             x:TypeArguments="x:Double"
                                             Phone="45.0"
-                                            Tablet="35.0" />
+                                            Tablet="55.0" />
                                     </Entry.HeightRequest>
                                 </Entry>
                                 <Entry Keyboard="Numeric" Text="{Binding Lts_Gasolina, Mode=TwoWay}">
@@ -110,7 +110,7 @@
                                         <OnIdiom
                                             x:TypeArguments="x:Double"
                                             Phone="45.0"
-                                            Tablet="35.0" />
+                                            Tablet="55.0" />
                                     </Entry.HeightRequest>
                                 </Entry>
                                 <Label Text="Gal." VerticalOptions="Center" />
@@ -136,7 +136,7 @@
                                         <OnIdiom
                                             x:TypeArguments="x:Double"
                                             Phone="45.0"
-                                            Tablet="35.0" />
+                                            Tablet="55.0" />
                                     </Entry.HeightRequest>
                                 </Entry>
                                 <Entry Keyboard="Numeric" Text="{Binding Lts_Diesel, Mode=TwoWay}">
@@ -150,7 +150,7 @@
                                         <OnIdiom
                                             x:TypeArguments="x:Double"
                                             Phone="45.0"
-                                            Tablet="35.0" />
+                                            Tablet="55.0" />
                                     </Entry.HeightRequest>
                                 </Entry>
                                 <Label Text="Gal." VerticalOptions="Center" />
@@ -176,7 +176,7 @@
                                         <OnIdiom
                                             x:TypeArguments="x:Double"
                                             Phone="45.0"
-                                            Tablet="35.0" />
+                                            Tablet="55.0" />
                                     </Entry.HeightRequest>
                                 </Entry>
                                 <Entry Keyboard="Numeric" Text="{Binding Lts_GasNatural, Mode=TwoWay}">
@@ -190,7 +190,7 @@
                                         <OnIdiom
                                             x:TypeArguments="x:Double"
                                             Phone="45.0"
-                                            Tablet="35.0" />
+                                            Tablet="55.0" />
                                     </Entry.HeightRequest>
                                 </Entry>
                                 <Label Text="m3" VerticalOptions="Center" />
