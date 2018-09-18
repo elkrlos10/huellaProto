@@ -16,7 +16,7 @@
             VerticalOptions="EndAndExpand" />
         <FlexLayout
             AlignItems="Center"
-            BindingContext="{Binding Calculo}"
+            BindingContext="{Binding Compensar}"
             Direction="Column"
             JustifyContent="SpaceEvenly">
             <StackLayout
@@ -32,7 +32,7 @@
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
-                                Phone="140.0"
+                                Phone="180.0"
                                 Tablet="250.0" />
                         </Image.WidthRequest>
                     </Image>
@@ -42,8 +42,8 @@
                     Orientation="Vertical"
                     VerticalOptions="CenterAndExpand">
                     <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                        <Label FontSize="Large" Text="{Binding ToneladasCo2}" />
-                        <Label FontSize="Large" Text="Toneladas de CO2" />
+                        <Label FontSize="Medium" Text="{Binding ToneladasCo2}" />
+                        <Label FontSize="Medium" Text="Toneladas de CO2" />
                     </StackLayout>
                 </StackLayout>
                 <StackLayout>
@@ -63,7 +63,7 @@
 						<Picker.WidthRequest>
 							<OnIdiom
                                     x:TypeArguments="x:Double"
-                                    Phone="80.0"
+                                    Phone="200.0"
                                     Tablet="250.0" />
 						</Picker.WidthRequest>
 						<Picker.HeightRequest>
@@ -89,7 +89,7 @@
 						<Picker.WidthRequest>
 							<OnIdiom
                                     x:TypeArguments="x:Double"
-                                    Phone="80.0"
+                                    Phone="200.0"
                                     Tablet="200.0" />
 						</Picker.WidthRequest>
 						<Picker.HeightRequest>

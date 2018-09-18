@@ -19,20 +19,22 @@
         public BienvenidaViewModel Bienvenida { get; set; }
         public TabsViewModel Tabs { get; set; }
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
+		public CompensarViewModel Compensar { get; set; }
 
 
-        public string User { get; set; }
+		public string User { get; set; }
         public int IdProyecto { get; set; }
         public int TipoEmpresa { get; set; }
         public string Etapa { get; set; }
         public int IdEmpresa { get; set; }
         public string UrlServices { get; set; }
+		public double ToneladasCO2 { get; set; }
 
-        #endregion
+		#endregion
 
-        #region Contructores
+		#region Contructores
 
-        public MainViewModel()
+		public MainViewModel()
         {
             instance = this;
             this.Login = new LoginViewModel();
