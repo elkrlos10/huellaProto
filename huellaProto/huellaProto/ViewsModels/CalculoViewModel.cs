@@ -70,7 +70,7 @@
 
 		private async void PrecisarHuella()
 		{
-
+            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
 			await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
 		}
 

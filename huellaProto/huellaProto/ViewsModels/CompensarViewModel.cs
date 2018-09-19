@@ -170,7 +170,8 @@ namespace huellaProto.ViewsModels
 
 		private async void PrecisarHuella()
 		{
-			await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
+            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
 		}
 
 		#endregion

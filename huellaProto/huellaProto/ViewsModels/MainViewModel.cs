@@ -20,9 +20,10 @@
         public TabsViewModel Tabs { get; set; }
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
 		public CompensarViewModel Compensar { get; set; }
+        public CuentaRegresivaViewModel CuentaRegresiva { get; set; }
 
 
-		public string User { get; set; }
+        public string User { get; set; }
         public int IdProyecto { get; set; }
         public int TipoEmpresa { get; set; }
         public string Etapa { get; set; }
@@ -38,7 +39,8 @@
         {
             instance = this;
             this.Login = new LoginViewModel();
-            this.UrlServices = "http://10.3.240.88:8089//";
+            //this.UrlServices = "http://10.3.240.88:8089//";
+            this.UrlServices = "http://huellacarbonoweb20180918120510.azurewebsites.net//";
             //this.Registro = new RegistroViewModel();
             //this.Recordar = new RecordarViewModel();
             //this.FlotaC = new FlotaViewModel();
