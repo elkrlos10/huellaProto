@@ -2,7 +2,8 @@
 namespace huellaProto
 {
 	using huellaProto.ViewModels;
-	using Views;
+    using huellaProto.ViewsModels;
+    using Views;
     using Xamarin.Forms;
 
     public partial class App : Application
@@ -16,7 +17,9 @@ namespace huellaProto
         {
             InitializeComponent();
 
-			MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
+            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+
+            MainPage = new NavigationPage(new cuentaRegresiva()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
             //MainPage = new  MasterPage();
         }
 

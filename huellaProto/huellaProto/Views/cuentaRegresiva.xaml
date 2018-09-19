@@ -1,14 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.cuentaRegresiva" 
-             Title="Calculo"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+<ContentPage
+    x:Class="huellaProto.Views.cuentaRegresiva"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Calculo"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding CuentaRegresiva}">
-            <Label Text="{Binding Contador}"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="True"
+                Text="{Binding FechaFinal}"
+                VerticalOptions="CenterAndExpand" />
+            <Label
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="False"
+                Text="{Binding FechaFinal}"
+                VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

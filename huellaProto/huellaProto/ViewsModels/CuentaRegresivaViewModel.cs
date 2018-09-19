@@ -1,4 +1,5 @@
 ﻿using huellaProto.Helpers;
+using huellaProto.Service;
 using huellaProto.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -9,37 +10,54 @@ namespace huellaProto.ViewsModels
 {
     public class CuentaRegresivaViewModel : BaseViewModel
     {
-        #region atributos
-        static Countdown countdown;
-        //private Countdown countdown;
+        #region Service
+        private ApiService apiService;
         #endregion
 
-        #region atributos
-        private string contador;
+        #region Atributos
+        private string fechaFinal;
+        private string link;
         #endregion
 
         #region Propiedades
-
-        public string Contador
+        public string FechaFinal
         {
-            get { return this.contador; }
-            set { SetValue(ref this.contador, value); }
+            get { return this.fechaFinal; }
+            set { SetValue(ref this.fechaFinal, value); }
         }
 
-
+        public string Link
+        {
+            get { return this.link; }
+            set { SetValue(ref this.link, value); }
+        }
         #endregion
 
-        public CuentaRegresivaViewModel()
+        #region Constructor
+        public CuentaRegresivaViewModel(bool _precisar)
         {
-            CountdownConverter oCountdownConverter = new CountdownConverter();
-            countdown = new Countdown();
-            countdown.StartUpdating(3600 * 24);
+            this.Precisar(_precisar);
+        }
+        #endregion
 
-            this.Contador = oCountdownConverter.Convert1(countdown).ToString();
+        #region Metodos
+        private void Precisar(bool _precisar)
+        {
+            if (_precisar)
+            {
+                var Fecha = DateTime.Parse("2018-09-17").AddDays(15);
+                var horas = (DateTime.Now - Fecha).ToString(@"dd\d\ hh\h\ mm\m\ ");
+                this.FechaFinal = horas.ToString();
+            }
+            else
+            {
+                this.Link = "http://10.3.240.88:8089/#!/Encuesta";
+            }
 
         }
-
-
+        #endregion
 
     }
+
+    
 }
