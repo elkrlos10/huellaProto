@@ -7,18 +7,59 @@
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding CuentaRegresiva}">
-            <Label
-                FontSize="Large"
-                HorizontalOptions="CenterAndExpand"
-                IsVisible="True"
-                Text="{Binding FechaFinal}"
-                VerticalOptions="CenterAndExpand" />
-            <Label
-                FontSize="Large"
-                HorizontalOptions="CenterAndExpand"
-                IsVisible="False"
-                Text="{Binding FechaFinal}"
-                VerticalOptions="CenterAndExpand" />
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                <Image
+                    Margin="0,15,0,10"
+                    Source="logoVerde"
+                    VerticalOptions="StartAndExpand">
+                    <Image.WidthRequest>
+                        <OnIdiom
+                            x:TypeArguments="x:Double"
+                            Phone="180.0"
+                            Tablet="210.0" />
+                    </Image.WidthRequest>
+                </Image>
+
+                <Label
+                    Margin="50,10,50,10"
+                    FontSize="16"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding FechaFinal}"
+                    VerticalOptions="CenterAndExpand"
+                    XAlign="Center">
+                    <Label.FontSize>
+                        <OnIdiom
+                            x:TypeArguments="x:Double"
+                            Phone="40"
+                            Tablet="25.0" />
+                    </Label.FontSize>
+                </Label>
+                <Label
+                    FontSize="Large"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="False"
+                    Text="{Binding FechaFinal}"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Margin="50"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Dìas para compartir el link a las personas de tu empresa" />
+                <Label
+                    Margin="50"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="http://10.3.240.88:8089/#!/Encuesta" />
+
+                <StackLayout>
+                    <Button
+                        BackgroundColor="#82a20d"
+                        BorderRadius="23"
+                        HeightRequest="46"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Compartir"
+                        TextColor="White"
+                        WidthRequest="200" />
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

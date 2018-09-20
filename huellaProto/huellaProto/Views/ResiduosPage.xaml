@@ -9,7 +9,7 @@
         <ScrollView BindingContext="{Binding Tabs}">
             <StackLayout Padding="10" VerticalOptions="FillAndExpand">
                 <StackLayout>
-                     <Image
+                    <Image
                         Margin="0,0,0,10"
                         Source="logoVerde"
                         VerticalOptions="StartAndExpand">
@@ -24,10 +24,10 @@
                         Margin="0,10,0,0"
                         Orientation="Vertical"
                         VerticalOptions="CenterAndExpand">
-                        <Label Text="¿Realiza realiza separación de residuos orgánicos e inorgánicos? " XAlign="Center" />
+                        <Label Text="¿Realiza separación de residuos orgánicos e inorgánicos? " XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Label Text="NO" XAlign="Center" />
-                            <Switch IsToggled="{Binding SeparacionResiduos, Mode=TwoWay}"></Switch>
+                            <Switch IsToggled="{Binding SeparacionResiduos, Mode=TwoWay}" />
                             <Label Text="SI" XAlign="Center" />
                         </StackLayout>
                     </StackLayout>
@@ -41,7 +41,7 @@
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Label Text="NO" XAlign="Center" />
-                            <Switch IsToggled="{Binding ProgramaReciclaje, Mode=TwoWay}"></Switch>
+                            <Switch IsToggled="{Binding ProgramaReciclaje, Mode=TwoWay}" />
                             <Label Text="SI" XAlign="Center" />
                         </StackLayout>
                     </StackLayout>
@@ -55,7 +55,7 @@
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Label Text="NO" XAlign="Center" />
-                            <Switch IsToggled="{Binding Compostaje, Mode=TwoWay}"></Switch>
+                            <Switch IsToggled="{Binding Compostaje, Mode=TwoWay}" />
                             <Label Text="SI" XAlign="Center" />
                         </StackLayout>
                     </StackLayout>
@@ -69,21 +69,20 @@
                             Text="En promedio, ¿Qué cantidad de residuos sólidos generan mensualmente en la institución, teniendo en cuenta todos los residuos? (Toneladas)"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric"
-                                   Text="{Binding Can_ResiduosSolidos, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                            <Entry Keyboard="Numeric" Text="{Binding Can_ResiduosSolidos, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"
-                                    Tablet="55.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
                         </StackLayout>
                     </StackLayout>
 
@@ -96,21 +95,20 @@
                             Text="En promedio, ¿Qué cantidad de residuos reciclables se están generando mensualmente en la institución? (Toneladas)   "
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric"
-                                   Text="{Binding Can_RediduosRecicla, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                            <Entry Keyboard="Numeric" Text="{Binding Can_RediduosRecicla, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"
-                                    Tablet="55.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout

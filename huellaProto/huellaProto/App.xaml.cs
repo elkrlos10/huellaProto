@@ -17,7 +17,7 @@ namespace huellaProto
         {
             InitializeComponent();
 
-            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel(true);
 
             MainPage = new NavigationPage(new cuentaRegresiva()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
             //MainPage = new  MasterPage();

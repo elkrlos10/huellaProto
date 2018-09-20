@@ -44,15 +44,15 @@
                     Orientation="Vertical"
                     VerticalOptions="CenterAndExpand">
                     <Label HorizontalOptions="CenterAndExpand" Text="Su huella de carbono es" />
-					<StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-						<Label FontSize="Medium" Text="{Binding ToneladasCo2}" />
-						<Label FontSize="Medium" Text="Toneladas de CO2" />
-					</StackLayout>
-				</StackLayout>
-				<StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-					<Label FontSize="Medium" Text="¿Desea precisar el calculo?" />
-				</StackLayout>
-				<StackLayout Margin="20" Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                        <Label FontSize="Medium" Text="{Binding ToneladasCo2, Mode=TwoWay}" />
+                        <Label FontSize="Medium" Text="Toneladas de CO2" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Label FontSize="Medium" Text="¿Desea precisar el calculo?" />
+                </StackLayout>
+                <StackLayout Margin="20" Orientation="Horizontal">
                     <Button
                         BackgroundColor="#82a20d"
                         BorderRadius="23"
@@ -63,7 +63,7 @@
                         Text="Sí"
                         TextColor="White"
                         WidthRequest="70" />
-					<Button
+                    <Button
                         BackgroundColor="#82a20d"
                         BorderRadius="23"
                         Command="{Binding NoPrecisarCommand}"
@@ -73,7 +73,7 @@
                         Text="No"
                         TextColor="White"
                         WidthRequest="70" />
-				</StackLayout>
+                </StackLayout>
 
 
             </StackLayout>

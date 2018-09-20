@@ -58,7 +58,7 @@ namespace huellaProto.ViewsModels
 		public CompensarViewModel()
 		{
 			this.apiService = new ApiService();
-			this.CalculoHuella();
+            this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
 			Application.Current.MainPage.DisplayAlert(
 			"Información",
 			"Si deseas compensar la huella de carbono que dejas en el medio ambiente, a continuación encontrarás un programa de siembra de árboles donde podrás seleccionar la zona, el tipo de árbol y el porcentaje a compensar.",
@@ -117,7 +117,7 @@ namespace huellaProto.ViewsModels
 
 				var totalHuella = (ParametrosDTO)response.Result;
 
-				this.ToneladasCo2 = Math.Round(double.Parse(totalHuella.Paramatro1), 2);
+				this.ToneladasCo2 = Math.Round(double.Parse(totalHuella.Paramatro1)/1000, 2);
 			}
 			catch (Exception e)
 			{
@@ -165,12 +165,13 @@ namespace huellaProto.ViewsModels
 
 		private async void NoPrecisar()
 		{
-			await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
+            MainViewModel.GetInstance().Compensar = new CompensarViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
 		}
 
 		private async void PrecisarHuella()
 		{
-            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel(false);
             await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
 		}
 

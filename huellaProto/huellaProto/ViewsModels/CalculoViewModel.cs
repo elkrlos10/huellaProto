@@ -11,8 +11,9 @@
     using huellaProto.Views;
     using huellaProto.Models;
 	using huellaProto.ViewsModels;
+    using System.Threading.Tasks;
 
-	public class CalculoViewModel: BaseViewModel
+    public class CalculoViewModel: BaseViewModel
     {
         #region Service
         private ApiService apiService;
@@ -36,7 +37,7 @@
         public CalculoViewModel()
         {
             this.apiService = new ApiService();
-			this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
+            this.CalculoHuella();
         }
 
         #endregion
@@ -74,7 +75,24 @@
 			await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
 		}
 
-		#endregion
+        private async void CalculoHuella()
+        {
+                var parametros = new ParametrosDTO
+                {
+                    Paramatro1 = MainViewModel.GetInstance().IdProyecto.ToString()
+                };
+                var response = await this.apiService.Post<ParametrosDTO>(
+                                 MainViewModel.GetInstance().UrlServices,
+                                 "api/Proyecto",
+                                "/CalculoHuella", parametros);
 
-	}
+                var totalHuella = (ParametrosDTO)response.Result;
+
+            MainViewModel.GetInstance().ToneladasCO2 = Math.Round(double.Parse(totalHuella.Paramatro1) / 1000, 2);
+            this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
+        }
+
+        #endregion
+
+    }
 }
