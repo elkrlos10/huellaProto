@@ -1,5 +1,6 @@
 ﻿namespace huellaProto.ViewModels
 {
+    using huellaProto.Models;
     using huellaProto.ViewsModels;
     using System;
     using System.Collections.ObjectModel;
@@ -22,7 +23,7 @@
 		public CompensarViewModel Compensar { get; set; }
         public CuentaRegresivaViewModel CuentaRegresiva { get; set; }
 
-
+        public Proyecto oProyecto { get; set; }
         public string User { get; set; }
         public int IdProyecto { get; set; }
         public int TipoEmpresa { get; set; }

@@ -6,60 +6,79 @@
     Title="Calculo"
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding CuentaRegresiva}">
-            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
-                <Image
-                    Margin="0,15,0,10"
-                    Source="logoVerde"
-                    VerticalOptions="StartAndExpand">
-                    <Image.WidthRequest>
-                        <OnIdiom
-                            x:TypeArguments="x:Double"
-                            Phone="180.0"
-                            Tablet="210.0" />
-                    </Image.WidthRequest>
-                </Image>
+        <ScrollView BindingContext="{Binding CuentaRegresiva}">
+            <StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                    <Image
+                        Margin="0,15,0,10"
+                        Source="logoVerde"
+                        VerticalOptions="StartAndExpand">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="180.0"
+                                Tablet="210.0" />
+                        </Image.WidthRequest>
+                    </Image>
 
-                <Label
-                    Margin="50,10,50,10"
-                    FontSize="16"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding FechaFinal}"
-                    VerticalOptions="CenterAndExpand"
-                    XAlign="Center">
-                    <Label.FontSize>
-                        <OnIdiom
-                            x:TypeArguments="x:Double"
-                            Phone="40"
-                            Tablet="25.0" />
-                    </Label.FontSize>
-                </Label>
-                <Label
-                    FontSize="Large"
-                    HorizontalOptions="CenterAndExpand"
-                    IsVisible="False"
-                    Text="{Binding FechaFinal}"
-                    VerticalOptions="CenterAndExpand" />
-                <Label
-                    Margin="50"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Dìas para compartir el link a las personas de tu empresa" />
-                <Label
-                    Margin="50"
-                    HorizontalOptions="CenterAndExpand"
-                    Text="http://10.3.240.88:8089/#!/Encuesta" />
-
-                <StackLayout>
-                    <Button
-                        BackgroundColor="#82a20d"
-                        BorderRadius="23"
-                        HeightRequest="46"
+                    <Label
+                        Margin="50,10,50,10"
                         HorizontalOptions="CenterAndExpand"
-                        Text="Compartir"
-                        TextColor="White"
-                        WidthRequest="200" />
+                        Text="{Binding FechaFinal}"
+                        VerticalOptions="CenterAndExpand"
+                        XAlign="Center">
+                        <Label.FontSize>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="25"
+                                Tablet="40.0" />
+                        </Label.FontSize>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegisCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        Margin="30,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Para precisar tu calculo de huella por medio del siguiente link, el cuál debes compartir a los funcionarios y/o estudiantes de tu institución"
+                        XAlign="Center">
+                        <Label.FontSize>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="16"
+                                Tablet="25.0" />
+                        </Label.FontSize>
+                    </Label>
+                    <Label
+                        Margin="20"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Link}"
+                        TextColor="#82a20d">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding AbrirUrlCommand}" />
+                        </Label.GestureRecognizers>
+                        <Label.FontSize>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="16"
+                                Tablet="25.0" />
+                        </Label.FontSize>
+                    </Label>
+                    <StackLayout>
+                        <Button
+                            BackgroundColor="#82a20d"
+                            BorderRadius="23"
+                            HeightRequest="46"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Compartir"
+                            TextColor="White"
+                            WidthRequest="200" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Image Margin="-11" Source="fondos_arboles3_icon.png" />
                 </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

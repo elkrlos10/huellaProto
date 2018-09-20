@@ -309,7 +309,7 @@
                 return;
             }
 
-            var idProyecto = MainViewModel.GetInstance().IdProyecto;
+            var idProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto;
             var oVehiculos = new Vehiculos
             {
                 Can_Gasolina = this.CantidadGasolina,
@@ -388,7 +388,7 @@
                 Lts_Diesel = Math.Round(Litros_D, 2),
                 Can_GasNatural = this.Can_GasNatural,
                 Lts_GasNatural = this.Lts_GasNatural,
-                IdProyecto =  MainViewModel.GetInstance().IdProyecto
+                IdProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto
             };
 
             try
@@ -421,7 +421,7 @@
                 Compostaje = this.Compostaje,
                 Can_RediduosRecicla = this.Can_RediduosRecicla,
                 Can_ResiduosSolidos = this.Can_ResiduosSolidos,
-                IdProyecto = MainViewModel.GetInstance().IdProyecto
+                IdProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto
             };
 
             try
@@ -452,7 +452,7 @@
                 EnergiaKwh = this.EnergiaKwh,
                 Gas = this.Gas,
                 EnergiaRenovable = this.EnergiaRenovable,
-                IdProyecto = MainViewModel.GetInstance().IdProyecto
+                IdProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto
             };
 
             try

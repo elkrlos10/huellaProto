@@ -79,7 +79,7 @@
         {
                 var parametros = new ParametrosDTO
                 {
-                    Paramatro1 = MainViewModel.GetInstance().IdProyecto.ToString()
+                    Paramatro1 = MainViewModel.GetInstance().oProyecto.IdProyecto.ToString()
                 };
                 var response = await this.apiService.Post<ParametrosDTO>(
                                  MainViewModel.GetInstance().UrlServices,

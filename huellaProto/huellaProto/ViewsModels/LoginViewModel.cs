@@ -157,9 +157,10 @@
             };
 
             var connection = await this.apiService.CheckConnection();
-
+            this.IsRunning = true;
             if (!connection.IsSuccess)
             {
+                this.IsRunning = false;
                 //Probar conexión a internet
                 await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
 
@@ -175,11 +176,12 @@
             if (!response.IsSuccess)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
-
+                this.IsRunning = false;
                 return;
             }
             if (response.Result == null)
             {
+                this.IsRunning = false;
                 await Application.Current.MainPage.DisplayAlert("Error", "Ingresaste un correo o contraseña incorrecta", "Aceptar");
                 return;
             }
@@ -190,7 +192,7 @@
             MainViewModel.GetInstance().IdEmpresa = oUsuario.IdEmpresa;
             MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
-
+            this.IsRunning = false;
 
             this.Email = string.Empty;
             this.Password = string.Empty;

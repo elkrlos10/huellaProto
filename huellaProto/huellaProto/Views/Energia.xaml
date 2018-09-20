@@ -10,7 +10,7 @@
 
             <StackLayout Padding="10" VerticalOptions="FillAndExpand">
                 <StackLayout>
-                     <Image
+                    <Image
                         Margin="0,0,0,10"
                         Source="logoVerde"
                         VerticalOptions="StartAndExpand">
@@ -27,21 +27,20 @@
                         VerticalOptions="CenterAndExpand">
                         <Label Text="¿Cuál es el consumo promedio (En kW/h), en la factura de servicios públicos, del consumo mensual de Energía Eléctrica en la institución?" XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                          <Entry Keyboard="Numeric"
-                                 Text="{Binding EnergiaKwh, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                            <Entry Keyboard="Numeric" Text="{Binding EnergiaKwh, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"
-                                    Tablet="55.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -53,21 +52,20 @@
                             Text="¿Cuál es el consumo promedio (En metros cúbicos), en la factura de servicios públicos, del consumo mensual de Gas Natural en la institución?"
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                           <Entry Keyboard="Numeric"
-                                  Text="{Binding Gas, Mode=TwoWay}">
-                             <Entry.WidthRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="80.0"
-                                    Tablet="140.0" />
-                            </Entry.WidthRequest>
+                            <Entry Keyboard="Numeric" Text="{Binding Gas, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
                                 <Entry.HeightRequest>
-                                <OnIdiom
-                                    x:TypeArguments="x:Double"
-                                    Phone="45.0"
-                                    Tablet="55.0" />
-                            </Entry.HeightRequest>
-                           </Entry>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
                         </StackLayout>
                     </StackLayout>
                     <StackLayout
@@ -80,7 +78,7 @@
                             XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
                             <Label Text="NO" XAlign="Center" />
-                            <Switch IsToggled="{Binding EnergiaRenovable, Mode=TwoWay}"></Switch>
+                            <Switch IsToggled="{Binding EnergiaRenovable, Mode=TwoWay}" />
                             <Label Text="SI" XAlign="Center" />
                         </StackLayout>
                     </StackLayout>

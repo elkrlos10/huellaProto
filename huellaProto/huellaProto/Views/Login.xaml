@@ -11,9 +11,7 @@
         <ScrollView BindingContext="{Binding Login}">
             <StackLayout Padding="0,15,0,0">
                 <StackLayout VerticalOptions="CenterAndExpand">
-                    <Image 
-                        Source="logoVerde.png"
-                        Margin="0,0,0,30">
+                    <Image Margin="0,0,0,30" Source="logoVerde.png">
                         <Image.WidthRequest>
                             <OnIdiom
                                 x:TypeArguments="x:Double"
@@ -21,51 +19,57 @@
                                 Tablet="210.0" />
                         </Image.WidthRequest>
                     </Image>
-                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" >
+                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
                         <Entry
                             Keyboard="Email"
                             Placeholder="E-mail"
                             Text="{Binding Email, Mode=TwoWay}"
-                            WidthRequest="200" >
+                            WidthRequest="200">
                             <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
                                     Phone="150.0"
                                     Tablet="300.0" />
                             </Entry.WidthRequest>
-                                <Entry.HeightRequest>
+                            <Entry.HeightRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
-                                    Phone="45.0"    
+                                    Phone="45.0"
                                     Tablet="40.0" />
                             </Entry.HeightRequest>
                         </Entry>
-                       <Image Source="usuario" WidthRequest="20"/>
+                        <Image Source="usuario" WidthRequest="20" />
                     </StackLayout>
-                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal" Margin="6">
+                    <StackLayout
+                        Margin="6"
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal">
                         <Entry
                             IsPassword="True"
                             Placeholder="Password"
                             Text="{Binding Password, Mode=TwoWay}"
-                            WidthRequest="200" >
+                            WidthRequest="200">
                             <Entry.WidthRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
                                     Phone="150.0"
                                     Tablet="300.0" />
                             </Entry.WidthRequest>
-                                <Entry.HeightRequest>
+                            <Entry.HeightRequest>
                                 <OnIdiom
                                     x:TypeArguments="x:Double"
-                                    Phone="45.0"    
+                                    Phone="45.0"
                                     Tablet="40.0" />
                             </Entry.HeightRequest>
                         </Entry>
-                       <Image Source="pass" WidthRequest="20"/>
-      
+                        <Image Source="pass" WidthRequest="20" />
                     </StackLayout>
+                    <ActivityIndicator
+                        Margin="0,-15"
+                        IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                        VerticalOptions="CenterAndExpand" />
                     <StackLayout
-                        Margin="0,20,0,0"
+                        Margin="0,0,0,0"
                         HorizontalOptions="CenterAndExpand"
                         Orientation="Vertical">
                         <Label
