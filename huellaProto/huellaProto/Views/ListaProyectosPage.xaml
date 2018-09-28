@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="huellaProto.Views.ListaProyectosPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Vehículos"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding ListaProyectos}">
+            <ListView
+                BackgroundColor="Silver"
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                ItemsSource="{Binding Proyectos}"
+                RefreshCommand="{Binding RefreshCommand}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                Margin="5"
+                                CornerRadius="20"
+                                HasShadow="true">
+
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectPaisCommand}" />
+                                </Frame.GestureRecognizers>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="auto" />
+
+                                        <ColumnDefinition Width="Auto" />
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--<ffimageloading:CachedImage
+                                        Grid.Column="0"
+                                        HeightRequest="30"
+                                        Source="{Binding Flag, Converter={StaticResource SvgImageSourceConverter}}"
+                                        WidthRequest="60">
+                                    </ffimageloading:CachedImage>-->
+
+                                    <StackLayout Grid.Column="0" VerticalOptions="Center">
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="Medium"
+                                            Text="{Binding Toneledas}"
+                                            TextColor="Black" />
+                                        <Label Text="{Binding Zona}" TextColor="Black" />
+                                    </StackLayout>
+
+                                    <Image
+                                        Grid.Column="1"
+                                        HorizontalOptions="End"
+                                        Source="ic_chevron_right" />
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--<ListView
+                x:Name="MenuItemsListView"
+                Margin="0,15,0,0"
+                HasUnevenRows="true"
+                HorizontalOptions="FillAndExpand"
+                ItemsSource="{Binding Proyectos}"
+                SeparatorVisibility="None"
+                VerticalOptions="Start">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <StackLayout
+                                    Padding="50,10"
+                                    HorizontalOptions="Fill "
+                                    Orientation="Vertical">
+                                    <Label
+                                        FontSize="15"
+                                        Text="{Binding Toneledas}"
+                                        VerticalOptions="FillAndExpand"
+                                        VerticalTextAlignment="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding NavegarCommand}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
+                                        <Entry
+                                            HorizontalOptions="Center"
+                                            Keyboard="Numeric"
+                                            WidthRequest="80" />
+                                        <Label
+                                            HorizontalOptions="EndAndExpand"
+                                            Text="N° días"
+                                            VerticalOptions="End" />
+                                        <Entry
+                                            Margin="-5,0,0,0"
+                                            HorizontalOptions="StartAndExpand"
+                                            Keyboard="Numeric"
+                                            WidthRequest="40" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -22,6 +22,7 @@
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
 		public CompensarViewModel Compensar { get; set; }
         public CuentaRegresivaViewModel CuentaRegresiva { get; set; }
+        public ListaProyectosViewModel ListaProyectos { get; set; }
 
         public Proyecto oProyecto { get; set; }
         public string User { get; set; }

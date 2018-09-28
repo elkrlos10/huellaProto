@@ -84,21 +84,21 @@ namespace huellaProto.ViewsModels
 			}
 		}
 
-		public ICommand NoPrecisarCommand
-		{
-			get
-			{
-				return new RelayCommand(NoPrecisar);
-			}
-		}
+		//public ICommand NoPrecisarCommand
+		//{
+		//	get
+		//	{
+		//		return new RelayCommand(NoPrecisar);
+		//	}
+		//}
 
-		public ICommand PrecisarCommand
-		{
-			get
-			{
-				return new RelayCommand(PrecisarHuella);
-			}
-		}
+		//public ICommand PrecisarCommand
+		//{
+		//	get
+		//	{
+		//		return new RelayCommand(PrecisarHuella);
+		//	}
+		//}
 		#endregion
 
 		#region Metodos
@@ -138,7 +138,7 @@ namespace huellaProto.ViewsModels
 
 			var oHuella = new HuellaDTO
 			{
-				IdProyecto = MainViewModel.GetInstance().IdProyecto,
+				IdProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto,
 				Toneledas = this.ToneladasCo2,
 				Fecha = DateTime.Now,
 				TipoArbol = this.Arbol,
@@ -153,8 +153,11 @@ namespace huellaProto.ViewsModels
 									  MainViewModel.GetInstance().UrlServices,
 									  "api/Proyecto",
 									 "/Guardarcalculo", oHuella);
-			}
-			catch (Exception e)
+
+                MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();
+                await Application.Current.MainPage.Navigation.PushAsync(new ListaProyectosPage());
+            }
+            catch (Exception e)
 			{
 				throw;
 			}
@@ -163,17 +166,17 @@ namespace huellaProto.ViewsModels
 			//await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(2));
 		}
 
-		private async void NoPrecisar()
-		{
-            MainViewModel.GetInstance().Compensar = new CompensarViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
-		}
+		//private async void NoPrecisar()
+		//{
+  //          MainViewModel.GetInstance().Compensar = new CompensarViewModel();
+  //          await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
+		//}
 
-		private async void PrecisarHuella()
-		{
-            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel(false);
-            await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
-		}
+		//private async void PrecisarHuella()
+		//{
+  //          MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel(false);
+  //          await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
+		//}
 
 		#endregion
 

@@ -119,7 +119,7 @@
                     Margin="0,10,0,10"
                     HorizontalOptions="CenterAndExpand"
                     Orientation="Horizontal">
-                    <Image Source="logos_sena" WidthRequest="200" />
+                    <Image Source="logos_sena" WidthRequest="240" />
                 </StackLayout>
                 <StackLayout Margin="0,-10,0,0">
                     <Image Source="fondos_arboles3_icon" />

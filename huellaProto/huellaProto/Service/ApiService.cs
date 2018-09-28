@@ -205,25 +205,24 @@ namespace huellaProto.Service
             }
         }
 
-        public async Task<Response> GetList<T>(
+        public async Task<Response> _GetList<T>(
             string urlBase,
             string servicePrefix,
             string controller,
-            string tokenType,
-            string accessToken,
             int id)
         {
             try
             {
                 var client = new HttpClient();
-                client.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue(tokenType, accessToken);
+                //client.DefaultRequestHeaders.Authorization = resivir parametros
+                //    new AuthenticationHeaderValue(tokenType, accessToken);
                 client.BaseAddress = new Uri(urlBase);
                 var url = string.Format(
                     "{0}{1}/{2}",
                     servicePrefix,
                     controller,
                     id);
+                //var url = string.Format("{0}{1}", servicePrefix, controller);
                 var response = await client.GetAsync(url);
 
                 if (!response.IsSuccessStatusCode)
@@ -237,6 +236,8 @@ namespace huellaProto.Service
 
                 var result = await response.Content.ReadAsStringAsync();
                 var list = JsonConvert.DeserializeObject<System.Collections.Generic.List<T>>(result);
+                //var list = JsonConvert.DeserializeObject<List<T>>(result);
+
                 return new Response
                 {
                     IsSuccess = true,
