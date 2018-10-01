@@ -23,6 +23,7 @@ namespace huellaProto.ViewsModels
         //la arquitectura y poder agregar el command en la itemViewModel
         private ObservableCollection<HuellaDTO> proyectos;
         private bool isRefreshing;
+        private HuellaDTO selectedItem;
 
 
         #endregion
@@ -33,6 +34,13 @@ namespace huellaProto.ViewsModels
             get { return this.proyectos; }
             set { SetValue(ref this.proyectos, value); }
         }
+
+        public HuellaDTO SelectedItem
+        {
+            get { return this.selectedItem; }
+            set { SetValue(ref this.selectedItem, value); }
+        }
+
 
         #endregion
 
@@ -61,7 +69,7 @@ namespace huellaProto.ViewsModels
                                  "api/Proyecto",
                                 "/ConsultarProyectos", 31);
 
-               var ListaHuella = (List<HuellaDTO>)response.Result;
+                var ListaHuella = (List<HuellaDTO>)response.Result;
 
                 //Validar la respuesta del api
                 if (!response.IsSuccess)
@@ -77,9 +85,14 @@ namespace huellaProto.ViewsModels
 
                 throw;
             }
-      
+
         }
-        
+
+        private async void CompletarCompensacion()
+        {
+            var answer = await .DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
+            //Debug.WriteLine("Answer: " + answer);
+        }
         #endregion
 
     }

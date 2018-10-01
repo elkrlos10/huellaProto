@@ -144,7 +144,8 @@ namespace huellaProto.ViewsModels
 				TipoArbol = this.Arbol,
 				Zona = this.Zona,
 				Precisar = this.Precisar,
-				Porcentaje = this.Porcentaje
+				Porcentaje = this.Porcentaje,
+                Estado= false
 			};
 
 			try
