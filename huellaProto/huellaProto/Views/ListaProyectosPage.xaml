@@ -8,23 +8,22 @@
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding ListaProyectos}">
             <ListView
+                x:Name="listView"
                 BackgroundColor="Silver"
                 HasUnevenRows="true"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
                 ItemsSource="{Binding Proyectos}"
                 RefreshCommand="{Binding RefreshCommand}"
-                SelectedItem="{Binding SelectedItem}"
+                SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Frame Margin="2">
-
-                                <!--<frame.gesturerecognizers>
-                                    <tapgesturerecognizer command="{binding selectpaiscommand}" />
-                                </frame.gesturerecognizers>-->
-
+                                <!--<Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.CompletarCommand, Source={x:Reference listView}}" />
+                                </Frame.GestureRecognizers>-->
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
@@ -53,6 +52,16 @@
                                                 FontAttributes="Bold"
                                                 FontSize="Medium"
                                                 Text="{Binding Index}"
+                                                TextColor="Black" />
+                                            <Label
+                                                FontAttributes="Bold"
+                                                FontSize="Medium"
+                                                Text="Compensación"
+                                                TextColor="Black" />
+                                            <Label
+                                                FontAttributes="Bold"
+                                                FontSize="Medium"
+                                                Text="{Binding NumCompensacion}"
                                                 TextColor="Black" />
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
@@ -91,13 +100,25 @@
                                             <Label Text="{Binding Estado1}" TextColor="Black" />
                                         </StackLayout>
                                     </StackLayout>
-
-                                    <Image
-                                        Grid.Column="1"
-                                        HorizontalOptions="End"
-                                        Source="Arbol"
-                                        WidthRequest="60" />
-
+                                    <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                        <Image
+                                            Grid.Column="1"
+                                            Margin="0,50,0,0"
+                                            HorizontalOptions="End"
+                                            Source="Arbol"
+                                            WidthRequest="60" />
+                                        <!--<Button
+                                            BackgroundColor="#82a20d"
+                                            BorderRadius="20"
+                                            Command="{Binding Path=BindingContext.CompletarCommand, Source={x:Reference listView}}"
+                                            FontSize="8"
+                                            HeightRequest="40"
+                                            HorizontalOptions="End"
+                                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                                            Text="Completar"
+                                            TextColor="White"
+                                            WidthRequest="80" />-->
+                                    </StackLayout>
                                 </Grid>
                             </Frame>
                         </ViewCell>

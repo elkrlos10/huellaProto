@@ -7,21 +7,21 @@
     BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
         <StackLayout BindingContext="{Binding ListaFlota}">
-				<Image
-					Margin="0,40,0,30"
-					Source="logoVerde"
-					VerticalOptions="StartAndExpand">
-				<Image.WidthRequest>
-					<OnIdiom
-                         x:TypeArguments="x:Double"
-                         Phone="140.0"
-                         Tablet="210.0" />
-				</Image.WidthRequest>
-			</Image>
-			<Label
+            <Image
+                Margin="0,20,0,20"
+                Source="logoVerde"
+                VerticalOptions="StartAndExpand">
+                <Image.WidthRequest>
+                    <OnIdiom
+                        x:TypeArguments="x:Double"
+                        Phone="140.0"
+                        Tablet="210.0" />
+                </Image.WidthRequest>
+            </Image>
+            <Label
                 Margin="0,15,0,0"
                 FontAttributes="Bold"
-                FontSize="Large"
+                FontSize="Medium"
                 HorizontalTextAlignment="Center"
                 Text="{Binding Cantidad}" />
             <Label
@@ -97,43 +97,45 @@
                 x:Name="MenuItemsListView"
                 Margin="0,15,0,0"
                 HasUnevenRows="true"
+                HorizontalOptions="FillAndExpand"
                 ItemsSource="{Binding Prueba}"
                 SeparatorVisibility="None"
-                VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+                VerticalOptions="Start">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-							<StackLayout HorizontalOptions="FillAndExpand">
-								<StackLayout
-                                Padding="50,10"
-                                HorizontalOptions="Fill "
-                                Orientation="Vertical">
-									<Label
-                                    FontSize="15"
-                                    Text="{Binding Motor}"
-                                    VerticalOptions="FillAndExpand"
-                                    VerticalTextAlignment="Center">
-                                    <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding NavegarCommand}" />
-                                    </Label.GestureRecognizers>
-									</Label>
-									<StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-										<Entry
-                                        HorizontalOptions="Center"
-                                        Keyboard="Numeric"
-                                        WidthRequest="80" />
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <StackLayout
+                                    Padding="10"
+                                    HorizontalOptions="Fill "
+                                    Orientation="Vertical">
                                     <Label
-                                        HorizontalOptions="EndAndExpand"
-                                        Text="N° días"
-                                        VerticalOptions="End" />
-                                    <Entry
-                                        Margin="-5,0,0,0"
-                                        HorizontalOptions="StartAndExpand"
-                                        Keyboard="Numeric"
-                                        WidthRequest="40" />
+                                        FontSize="12"
+                                        Text="{Binding Motor}"
+                                        VerticalOptions="FillAndExpand"
+                                        VerticalTextAlignment="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding NavegarCommand}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                        <Entry
+                                            HorizontalOptions="Center"
+                                            Keyboard="Numeric"
+                                            WidthRequest="80" />
+                                        <Label
+                                            FontSize="12"
+                                            HorizontalOptions="EndAndExpand"
+                                            Text="N° Km"
+                                            VerticalOptions="End" />
+                                        <Entry
+                                            Margin="-5,0,0,0"
+                                            HorizontalOptions="StartAndExpand"
+                                            Keyboard="Numeric"
+                                            WidthRequest="40" />
+                                    </StackLayout>
                                 </StackLayout>
                             </StackLayout>
-                          </StackLayout>   
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -152,10 +154,10 @@
                     WidthRequest="150" />
             </StackLayout>
 
-			<StackLayout VerticalOptions="EndAndExpand">
-				<Image Margin="-11" Source="fondos_arboles3_icon.png" />
-			</StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Image Margin="-11" Source="fondos_arboles3_icon.png" />
+            </StackLayout>
 
-		</StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

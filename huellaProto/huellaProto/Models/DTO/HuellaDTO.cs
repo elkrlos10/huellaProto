@@ -18,6 +18,7 @@ namespace huellaProto.Models.DTO
         public double Porcentaje { get; set; }
         public bool Estado { get; set; }
         public string Estado1 { get; set; }
-        public string NombreProyecto { get; set; }
+        public int NumCompensacion { get; set; }
+        public bool EstadoCompensacion { get; set; }
     }
 }

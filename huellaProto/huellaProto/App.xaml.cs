@@ -19,8 +19,8 @@ namespace huellaProto
 
             MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();
 
-            //MainPage = new NavigationPage(new ListaProyectosPage()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
-            MainPage = new  MasterPage();
+            MainPage = new NavigationPage(new ListaProyectosPage()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
+            //MainPage = new  MasterPage();
         }
 
         #endregion

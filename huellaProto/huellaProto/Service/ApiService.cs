@@ -14,7 +14,7 @@ namespace huellaProto.Service
 
     public class ApiService
     {
-    //    Provar conexión a internet
+        //    Provar conexión a internet
         public async Task<Response> CheckConnection()
         {
             //Para validar que el wifi este activo 
@@ -336,7 +336,7 @@ namespace huellaProto.Service
                 {
                     IsSuccess = true,
                     Message = "Record added OK",
-                    Result= newRecord
+                    Result = newRecord
                 };
             }
             catch (Exception ex)
@@ -348,6 +348,7 @@ namespace huellaProto.Service
                 };
             }
         }
+
 
         public async Task<Response> Post<T>(
         string urlBase,
@@ -383,6 +384,48 @@ namespace huellaProto.Service
                     IsSuccess = true,
                     Message = "Record added OK",
                     Result = newRecord
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<Response> _PostList<T>(string urlBase,string servicePrefix, string controller, T model)
+        {
+            try
+            {
+                var request = JsonConvert.SerializeObject(model);
+                var content = new StringContent(
+                    request,
+                    Encoding.UTF8,
+                    "application/json");
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(urlBase);
+                var url = string.Format("{0}{1}", servicePrefix, controller);
+                var response = await client.PostAsync(url, content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = response.StatusCode.ToString(),
+                    };
+                }
+
+                var result = await response.Content.ReadAsStringAsync();
+                var list = JsonConvert.DeserializeObject<System.Collections.Generic.List<T>>(result);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Record added OK",
+                    Result = list
                 };
             }
             catch (Exception ex)

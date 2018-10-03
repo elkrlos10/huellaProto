@@ -1,4 +1,5 @@
-﻿using huellaProto.Models;
+﻿using GalaSoft.MvvmLight.Command;
+using huellaProto.Models;
 using huellaProto.Models.DTO;
 using huellaProto.Service;
 using huellaProto.ViewModels;
@@ -6,9 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
-
-
 
 namespace huellaProto.ViewsModels
 {
@@ -38,8 +38,14 @@ namespace huellaProto.ViewsModels
         public HuellaDTO SelectedItem
         {
             get { return this.selectedItem; }
-            set { SetValue(ref this.selectedItem, value); }
+            set
+            {
+                SetValue(ref this.selectedItem, value);
+                this.CompletarCompensacion();
+            }
         }
+
+       
 
 
         #endregion
@@ -50,6 +56,18 @@ namespace huellaProto.ViewsModels
             this.apiService = new ApiService();
             this.ConsultarProyectos();
         }
+        #endregion
+
+        #region Comandos
+
+        public ICommand CompletarCommand
+        {
+            get
+            {
+                return new RelayCommand(CompletarCompensacion);
+            }
+        }
+
         #endregion
 
         #region Metodos
@@ -79,19 +97,59 @@ namespace huellaProto.ViewsModels
                     return;
                 }
                 this.Proyectos = new ObservableCollection<HuellaDTO>(ListaHuella);
+              
             }
             catch (Exception e)
             {
 
                 throw;
             }
-
+           
         }
 
         private async void CompletarCompensacion()
         {
-            var answer = await .DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
-            //Debug.WriteLine("Answer: " + answer);
+            var Huella = this.SelectedItem;
+            if (Huella== null)
+            {
+                return;
+            }
+            var answer =  await App.Current.MainPage.DisplayAlert("Compensar", "¿Desea compensar el porcentaje faltante de su huella de carbono calculada sobre este proyecto?", "Si", "No");
+          
+            if (answer)
+            {
+                
+                if (Huella.EstadoCompensacion)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Información", "La compesación de este proyecto se completo al 100%", "Aceptar");
+                    this.SelectedItem = null;
+                    return;
+                }
+
+                try
+                {
+                    var response = await this.apiService._PostList<HuellaDTO>(
+                                          MainViewModel.GetInstance().UrlServices,
+                                          "api/Proyecto",
+                                         "/CompletarCompensacion", Huella);
+                    var ListaHuella = (List<HuellaDTO>)response.Result;
+
+                    if (!response.IsSuccess)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
+                        return;
+                    }
+                    this.Proyectos = new ObservableCollection<HuellaDTO>(ListaHuella);
+                    //MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();
+                    //await Application.Current.MainPage.Navigation.PushAsync(new ListaProyectosPage());
+                }
+                catch (Exception e)
+                {
+                    throw;
+                }
+
+            }
+
         }
         #endregion
 

@@ -84,21 +84,7 @@ namespace huellaProto.ViewsModels
 			}
 		}
 
-		//public ICommand NoPrecisarCommand
-		//{
-		//	get
-		//	{
-		//		return new RelayCommand(NoPrecisar);
-		//	}
-		//}
 
-		//public ICommand PrecisarCommand
-		//{
-		//	get
-		//	{
-		//		return new RelayCommand(PrecisarHuella);
-		//	}
-		//}
 		#endregion
 
 		#region Metodos

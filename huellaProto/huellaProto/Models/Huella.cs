@@ -13,6 +13,6 @@ namespace huellaProto.Models
         public string Zona { get; set; }
         public bool Precisar { get; set; }
         public double Toneledas { get; set; }
-
+        public bool EstadoCompensacion { get; set; }
     }
 }
