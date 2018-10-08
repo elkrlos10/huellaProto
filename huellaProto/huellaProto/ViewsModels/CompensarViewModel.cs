@@ -141,8 +141,9 @@ namespace huellaProto.ViewsModels
 									  "api/Proyecto",
 									 "/Guardarcalculo", oHuella);
 
+                MainViewModel.GetInstance().MenuProyectos = new MenuItemViewModel();
                 MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();
-                await Application.Current.MainPage.Navigation.PushAsync(new ListaProyectosPage());
+                Application.Current.MainPage = new MasterPage();
             }
             catch (Exception e)
 			{
@@ -166,7 +167,6 @@ namespace huellaProto.ViewsModels
 		//}
 
 		#endregion
-
 
 	}
 }

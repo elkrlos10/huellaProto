@@ -7,7 +7,6 @@
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-
         <ScrollView BindingContext="{Binding Login}">
             <StackLayout Padding="0,15,0,0">
                 <StackLayout VerticalOptions="CenterAndExpand">

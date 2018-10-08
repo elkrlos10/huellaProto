@@ -23,6 +23,7 @@
 		public CompensarViewModel Compensar { get; set; }
         public CuentaRegresivaViewModel CuentaRegresiva { get; set; }
         public ListaProyectosViewModel ListaProyectos { get; set; }
+        public MenuItemViewModel MenuProyectos { get; set; }
 
         public Proyecto oProyecto { get; set; }
         public string User { get; set; }
@@ -82,7 +83,7 @@
             this.Menus.Add(new MenuItemViewModel
             {
                 Icon = "sprout",
-                PageName = "",
+                PageName = "Proyectos",
                 Title = "Proyectos",
 				WidthRequest = "50"
 

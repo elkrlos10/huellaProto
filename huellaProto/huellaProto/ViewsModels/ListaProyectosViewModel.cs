@@ -74,7 +74,7 @@ namespace huellaProto.ViewsModels
         private async void ConsultarProyectos()
         {
 
-            //var IdEmpresa = MainViewModel.GetInstance().oProyecto.IdEmpresa;
+            var IdEmpresa = MainViewModel.GetInstance().oProyecto.IdEmpresa;
             //var parametrosDTO = new ParametrosDTO
             //{
             //    Paramatro1 = IdEmpresa
@@ -85,7 +85,7 @@ namespace huellaProto.ViewsModels
                 var response = await this.apiService._GetList<HuellaDTO>(
                                  MainViewModel.GetInstance().UrlServices,
                                  "api/Proyecto",
-                                "/ConsultarProyectos", 31);
+                                "/ConsultarProyectos", IdEmpresa);
 
                 var ListaHuella = (List<HuellaDTO>)response.Result;
 

@@ -40,7 +40,7 @@
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
                                     <Image
-										Margin="15"
+                                        Margin="15"
                                         HeightRequest="{Binding WidthRequest}"
                                         Source="{Binding Icon}"
                                         WidthRequest="{Binding WidthRequest}" />
