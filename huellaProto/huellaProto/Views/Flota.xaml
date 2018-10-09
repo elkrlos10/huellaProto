@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="huellaProto.Views.Flota"
-             Title="Flota"
-             BindingContext="{Binding Main,Source={StaticResource Locator}}">
+<ContentPage
+    x:Class="huellaProto.Views.Flota"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Flota"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
-        <ScrollView BindingContext="{Binding FlotaC}">
-            <StackLayout>   
-            <StackLayout Margin="0,10,0,0" 
+        <!--<ScrollView BindingContext="{Binding FlotaC}">
+            <StackLayout>
+            <StackLayout Margin="0,10,0,0"
                          Orientation="Vertical"
-                         HorizontalOptions="CenterAndExpand" 
+                         HorizontalOptions="CenterAndExpand"
                          VerticalOptions="CenterAndExpand">
                 <Image Source="logoVerde"
                        Margin="0,0,0,30">
                     <Image.WidthRequest>
-                      <OnIdiom x:TypeArguments="x:Double"                     
-                        Phone="140.0"                  
+                      <OnIdiom x:TypeArguments="x:Double"
+                        Phone="140.0"
                         Tablet="210.0"/>
                     </Image.WidthRequest>
                 </Image>
                 <StackLayout Margin="0,30,0,0">
-                    <Label 
+                    <Label
                         Text="Ingrese la cantidad de vehiculos de su empresa"
                         HorizontalOptions="CenterAndExpand" />
                 </StackLayout>
@@ -28,33 +29,35 @@
                     <StackLayout Orientation="Vertical" HorizontalOptions="Center">
                         <Image Source="truck" WidthRequest="50" Margin="6">
                             <Image.WidthRequest>
-                              <OnIdiom x:TypeArguments="x:Double"                     
-                                Phone="50.0"                  
+                              <OnIdiom x:TypeArguments="x:Double"
+                                Phone="50.0"
                                 Tablet="100.0"/>
                             </Image.WidthRequest>
                         </Image>
-                        <Entry 
-                            WidthRequest="120" 
+                        <Entry
+                            WidthRequest="120"
                             Keyboard="Numeric"
                             Text="{Binding CantidadVehiculo, Mode=TwoWay}"
                             Margin="6">
                         </Entry>
                     </StackLayout>
                 </StackLayout>
-                <!--<StackLayout HorizontalOptions="CenterAndExpand"  Orientation="Horizontal" Margin="0,20,0,20">
+        -->
+        <!--<StackLayout HorizontalOptions="CenterAndExpand"  Orientation="Horizontal" Margin="0,20,0,20">
                     <Image Source="Arbol" WidthRequest="60"></Image>
                 </StackLayout>-->
+        <!--
                 <StackLayout Margin="0,10,0,0">
                     <Button
-                            Text="Siguiente" 
+                            Text="Siguiente"
                             BackgroundColor="#82a20d"
-                            TextColor="White" 
+                            TextColor="White"
                             BorderRadius="23"
                             HeightRequest="46"
-                            WidthRequest="200"                
-                            HorizontalOptions="CenterAndExpand" 
+                            WidthRequest="200"
+                            HorizontalOptions="CenterAndExpand"
                             VerticalOptions="End"
-                            Command="{Binding SiguienteCommand}" 
+                            Command="{Binding SiguienteCommand}"
                             IsEnabled="{Binding Isnabled, Mode=TwoWay}">
                     </Button>
                 </StackLayout>
@@ -62,8 +65,8 @@
                 <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="0,50,0,30">
                     <Image Source="logos_sena" >
                         <Image.WidthRequest>
-                            <OnIdiom x:TypeArguments="x:Double"                     
-                                Phone="150.0"                  
+                            <OnIdiom x:TypeArguments="x:Double"
+                                Phone="150.0"
                                 Tablet="210.0"/>
                         </Image.WidthRequest>
                     </Image>
@@ -75,6 +78,220 @@
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
+        </ScrollView>-->
+        <ScrollView BindingContext="{Binding FlotaC}">
+            <StackLayout Padding="10" VerticalOptions="FillAndExpand">
+                <StackLayout IsVisible="{Binding IsVisiblePreg, Mode=TwoWay}" VerticalOptions="EndAndExpand">
+                    <Image
+                        Margin="0,0,0,60"
+                        Source="logoVerde"
+                        VerticalOptions="StartAndExpand">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="140.0"
+                                Tablet="210.0" />
+                        </Image.WidthRequest>
+                    </Image>
+                    <Label
+                        Margin="30,10,30,10"
+                        FontSize="Large"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="¿La institución cuenta con vehículos propios?"
+                        VerticalOptions="CenterAndExpand"
+                        XAlign="Center" />
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        VerticalOptions="EndAndExpand">
+                        <StackLayout Margin="10">
+                            <Button
+                                BackgroundColor="#82a20d"
+                                BorderRadius="23"
+                                Command="{Binding VehiculosCommand}"
+                                HeightRequest="46"
+                                HorizontalOptions="CenterAndExpand"
+                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                                Text="SI"
+                                TextColor="White"
+                                WidthRequest="100" />
+                        </StackLayout>
+                        <StackLayout Margin="10">
+                            <Button
+                                BackgroundColor="#82a20d"
+                                BorderRadius="23"
+                                Command="{Binding OmitirCommand}"
+                                HeightRequest="46"
+                                HorizontalOptions="CenterAndExpand"
+                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                                Text="NO"
+                                TextColor="White"
+                                WidthRequest="100" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout IsVisible="{Binding IsVisibleForm, Mode=TwoWay}">
+                    <Image
+                        Margin="0,10,0,20"
+                        Source="logoVerde"
+                        VerticalOptions="StartAndExpand">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="140.0"
+                                Tablet="210.0" />
+                        </Image.WidthRequest>
+                    </Image>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="¿Cuantos de los vehículos utilizan gasolina?"
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image Source="combustible_icon" WidthRequest="15" />
+                            <Entry Keyboard="Numeric" Text="{Binding CantidadGasolina, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Entry Keyboard="Numeric" Text="{Binding Km_Gasolina, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Label Text="km." VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="¿Cuantos de los vehículos utilizan diesel?"
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image Source="combustible_icon" WidthRequest="15" />
+                            <Entry Keyboard="Numeric" Text="{Binding CantidadDiesel, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Entry Keyboard="Numeric" Text="{Binding Km_Diesel, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Label Text="km." VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Vertical"
+                        VerticalOptions="CenterAndExpand">
+                        <Label
+                            Margin="3"
+                            Text="¿Cuantos de los vehículos utilizan gas natural?"
+                            XAlign="Center" />
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image Source="combustible_icon" WidthRequest="15" />
+                            <Entry Keyboard="Numeric" Text="{Binding CantidadGas, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Entry Keyboard="Numeric" Text="{Binding Km_Gas, Mode=TwoWay}">
+                                <Entry.WidthRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="80.0"
+                                        Tablet="140.0" />
+                                </Entry.WidthRequest>
+                                <Entry.HeightRequest>
+                                    <OnIdiom
+                                        x:TypeArguments="x:Double"
+                                        Phone="45.0"
+                                        Tablet="55.0" />
+                                </Entry.HeightRequest>
+                            </Entry>
+                            <Label Text="km." VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Margin="0,15,0,0"
+                        Orientation="Horizontal"
+                        VerticalOptions="EndAndExpand">
+                        <Button
+                            BackgroundColor="#82a20d"
+                            BorderRadius="23"
+                            Command="{Binding OmitirCommand}"
+                            HeightRequest="46"
+                            HorizontalOptions="CenterAndExpand"
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                            Text="Calcular"
+                            TextColor="White"
+                            WidthRequest="200" />
+
+                    </StackLayout>
+                    <!--<StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                        <Image Source="logos_sena" WidthRequest="130" />
+
+                    </StackLayout>-->
+
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Image Margin="-11" Source="fondos_arboles3_icon.png" />
+                </StackLayout>
+            </StackLayout>
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

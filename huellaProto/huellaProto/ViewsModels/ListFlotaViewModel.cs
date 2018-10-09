@@ -13,73 +13,101 @@ namespace huellaProto.ViewsModels
     public class ListFlotaViewModel : BaseViewModel
     {
         #region Atributos
-        private ObservableCollection<Currency> prueba;
-        private string cantidad;
-        private string combustible;
+        //private ObservableCollection<Currency> prueba;
+        //private string cantidad;
+        //private string combustible;
+
+        private int cantidadTotal;
+        private int cantidadGasolina;
+        private float km_Gasolina;
+        private int cantidadDiesel;
+        private float km_Diesel;
+        private int cantidadGas;
+        private float km_Gas;
 
         #endregion
 
         #region Propiedades
-        public string Cantidad
+        public int CantidadTotal
         {
-            get { return this.cantidad; }
-            set { SetValue(ref this.cantidad, value); }
+            get { return this.cantidadTotal; }
+            set { SetValue(ref this.cantidadTotal, value); }
         }
-
-        public string Combustible
+        public int CantidadGasolina
         {
-            get { return this.combustible; }
-            set { SetValue(ref this.combustible, value); }
+            get { return this.cantidadGasolina; }
+            set { SetValue(ref this.cantidadGasolina, value); }
         }
-        public ObservableCollection<Currency> Prueba
+        public float Km_Gasolina
         {
-            get { return this.prueba; }
-            set { SetValue(ref this.prueba, value); }
+            get { return this.km_Gasolina; }
+            set { SetValue(ref this.km_Gasolina, value); }
         }
+        public int CantidadDiesel
+        {
+            get { return this.cantidadDiesel; }
+            set { SetValue(ref this.cantidadDiesel, value); }
+        }
+        public float Km_Diesel
+        {
+            get { return this.km_Diesel; }
+            set { SetValue(ref this.km_Diesel, value); }
+        }
+        public int CantidadGas
+        {
+            get { return this.cantidadGas; }
+            set { SetValue(ref this.cantidadGas, value); }
+        }
+        public float Km_Gas
+        {
+            get { return this.km_Gas; }
+            set { SetValue(ref this.km_Gas, value); }
+        }
+    
         #endregion
 
         #region Constructor
-        public ListFlotaViewModel(string NumCamiones)
-        {
-            this.Prueba = Probando();
-            this.Cantidad = "Total vehículos " + NumCamiones;
+        //public ListFlotaViewModel()
+        //{
+        //    //this.Prueba = Probando();
+        //    //this.Cantidad = "Total vehículos " + NumCamiones;
 
-        }
+        //}
 
         #endregion
 
-        #region Commands 
-        public ICommand CalcularCommand
-        {
-            get
-            {
-                return new RelayCommand(Calcular);
-            }
-        }
-        #endregion
+        //#region Commands 
+        //public ICommand CalcularCommand
+        //{
+        //    get
+        //    {
+        //        return new RelayCommand(Calcular);
+        //    }
+        //}
+        //#endregion
 
         #region Metodos
 
-        public ObservableCollection<Currency> Probando()
-        {
-            var obj = new List<Currency>();
-            for (int i = 2; i < 6; i++)
-            {
-                var obj1 = new Currency();
-                obj1.Motor = "Kenworth" + "-201" + i.ToString() + "-Gas" + "-13.6";
-                obj1.Combustible = "diesel" + i.ToString();
-                obj1.CC = "400" + i.ToString();
-                obj.Add(obj1);
-            }
+        //public ObservableCollection<Currency> Probando()
+        //{
+        //    var obj = new List<Currency>();
+        //    for (int i = 2; i < 6; i++)
+        //    {
+        //        var obj1 = new Currency();
+        //        obj1.Motor = "Kenworth" + "-201" + i.ToString() + "-Gas" + "-13.6";
+        //        obj1.Combustible = "diesel" + i.ToString();
+        //        obj1.CC = "400" + i.ToString();
+        //        obj.Add(obj1);
+        //    }
 
-            return new ObservableCollection<Currency>(obj);
-        }
+        //    return new ObservableCollection<Currency>(obj);
+        //}
 
-        private async void Calcular()
-        {
-            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new CalcularInsti());
-        }
+        //private async void Calcular()
+        //{
+        //    MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+        //    await Application.Current.MainPage.Navigation.PushAsync(new CalcularInsti());
+        //}
 
         #endregion
 
