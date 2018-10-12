@@ -57,12 +57,19 @@ namespace huellaProto.ViewsModels
 		#region Constructor
 		public CompensarViewModel()
 		{
+
 			this.apiService = new ApiService();
+            if (MainViewModel.GetInstance().TipoEmpresa == 2)
+            {
+                this.CalculoHuella();
+            }
             this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
 			Application.Current.MainPage.DisplayAlert(
 			"Información",
 			"Si deseas compensar la huella de carbono que dejas en el medio ambiente, a continuación encontrarás un programa de siembra de árboles donde podrás seleccionar la zona, el tipo de árbol y el porcentaje a compensar.",
 			"Aceptar");
+
+           
 		}
 
 		#endregion
@@ -92,19 +99,23 @@ namespace huellaProto.ViewsModels
 		{
 			try
 			{
-				var parametros = new ParametrosDTO
-				{
-					Paramatro1 = MainViewModel.GetInstance().IdProyecto.ToString()
-				};
-				var response = await this.apiService.Post<ParametrosDTO>(
-								 MainViewModel.GetInstance().UrlServices,
-								 "api/Proyecto",
-								"/CalculoHuella", parametros);
+                var parametros = new ParametrosDTO
+                {
+                    Paramatro1 = MainViewModel.GetInstance().oProyecto.IdProyecto.ToString()
+                };
+                
 
-				var totalHuella = (ParametrosDTO)response.Result;
+                var response = await this.apiService.Post<ParametrosDTO>(
+                                 MainViewModel.GetInstance().UrlServices,
+                                 "api/Proyecto",
+                                "/CalculoHuellaTransporte", parametros);
+                var totalHuella = (ParametrosDTO)response.Result;
 
-				this.ToneladasCo2 = Math.Round(double.Parse(totalHuella.Paramatro1)/1000, 2);
-			}
+                MainViewModel.GetInstance().ToneladasCO2 = Math.Round(double.Parse(totalHuella.Paramatro1) / 1000, 2);
+                this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
+
+              
+            }
 			catch (Exception e)
 			{
 				throw;

@@ -88,9 +88,8 @@ namespace huellaProto.ViewsModels
         #region Constructor
         public FlotaViewModel()
         {
-            this.IsVisibleForm = false;
-            this.IsVisiblePreg = true;
             this.apiService = new ApiService();
+            this.Vehiculos();
         }
         #endregion
 
@@ -117,8 +116,7 @@ namespace huellaProto.ViewsModels
 
         private void Vehiculos()
         {
-            this.IsVisibleForm = true;
-            this.IsVisiblePreg = false;
+           
             Application.Current.MainPage.DisplayAlert(
                      "Para tener en cuenta"
                    , "Ingrese el número de vehículos por cada tipo de combustible y el promedio de kilometros que recorren semanalmente"
@@ -129,11 +127,6 @@ namespace huellaProto.ViewsModels
 
         private async void CambioViewVehiculo()
         {
-            if (!this.IsVisiblePreg)
-            {
-                this.IsVisibleForm = true;
-                this.IsVisiblePreg = false;
-            }
 
             if (this.CantidadGasolina > 0 && this.Km_Gasolina == 0)
             {
@@ -189,9 +182,8 @@ namespace huellaProto.ViewsModels
                 throw;
             }
 
-            await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(1));
-            //Remover la ultima vista de la pila
-            Application.Current.MainPage.Navigation.RemovePage(Application.Current.MainPage.Navigation.NavigationStack[Application.Current.MainPage.Navigation.NavigationStack.Count - 2]);
+            MainViewModel.GetInstance().Compensar = new CompensarViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
         }
 
         #endregion

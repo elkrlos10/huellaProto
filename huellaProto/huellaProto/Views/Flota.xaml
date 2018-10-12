@@ -81,56 +81,7 @@
         </ScrollView>-->
         <ScrollView BindingContext="{Binding FlotaC}">
             <StackLayout Padding="10" VerticalOptions="FillAndExpand">
-                <StackLayout IsVisible="{Binding IsVisiblePreg, Mode=TwoWay}" VerticalOptions="EndAndExpand">
-                    <Image
-                        Margin="0,0,0,60"
-                        Source="logoVerde"
-                        VerticalOptions="StartAndExpand">
-                        <Image.WidthRequest>
-                            <OnIdiom
-                                x:TypeArguments="x:Double"
-                                Phone="140.0"
-                                Tablet="210.0" />
-                        </Image.WidthRequest>
-                    </Image>
-                    <Label
-                        Margin="30,10,30,10"
-                        FontSize="Large"
-                        HorizontalOptions="CenterAndExpand"
-                        Text="¿La institución cuenta con vehículos propios?"
-                        VerticalOptions="CenterAndExpand"
-                        XAlign="Center" />
-                    <StackLayout
-                        HorizontalOptions="CenterAndExpand"
-                        Orientation="Horizontal"
-                        VerticalOptions="EndAndExpand">
-                        <StackLayout Margin="10">
-                            <Button
-                                BackgroundColor="#82a20d"
-                                BorderRadius="23"
-                                Command="{Binding VehiculosCommand}"
-                                HeightRequest="46"
-                                HorizontalOptions="CenterAndExpand"
-                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                                Text="SI"
-                                TextColor="White"
-                                WidthRequest="100" />
-                        </StackLayout>
-                        <StackLayout Margin="10">
-                            <Button
-                                BackgroundColor="#82a20d"
-                                BorderRadius="23"
-                                Command="{Binding OmitirCommand}"
-                                HeightRequest="46"
-                                HorizontalOptions="CenterAndExpand"
-                                IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                                Text="NO"
-                                TextColor="White"
-                                WidthRequest="100" />
-                        </StackLayout>
-                    </StackLayout>
-                </StackLayout>
-                <StackLayout IsVisible="{Binding IsVisibleForm, Mode=TwoWay}">
+                <StackLayout>
                     <Image
                         Margin="0,10,0,20"
                         Source="logoVerde"

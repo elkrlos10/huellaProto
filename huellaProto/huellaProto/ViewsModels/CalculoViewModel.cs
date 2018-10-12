@@ -77,19 +77,43 @@
 
         private async void CalculoHuella()
         {
-                var parametros = new ParametrosDTO
-                {
-                    Paramatro1 = MainViewModel.GetInstance().oProyecto.IdProyecto.ToString()
-                };
-                var response = await this.apiService.Post<ParametrosDTO>(
+            var parametros = new ParametrosDTO
+            {
+                Paramatro1 = MainViewModel.GetInstance().oProyecto.IdProyecto.ToString()
+            };
+
+            //if (MainViewModel.GetInstance().TipoEmpresa !=1)
+            //{
+            //    var response = await this.apiService.Post<ParametrosDTO>(
+            //                     MainViewModel.GetInstance().UrlServices,
+            //                     "api/Proyecto",
+            //                    "/CalculoHuellaTransporte", parametros);
+            //     var totalHuella = (ParametrosDTO)response.Result;
+
+            //    MainViewModel.GetInstance().ToneladasCO2 = Math.Round(double.Parse(totalHuella.Paramatro1) / 1000, 2);
+            //    this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
+            //}
+            //else
+            //{
+            //    var response = await this.apiService.Post<ParametrosDTO>(
+            //                     MainViewModel.GetInstance().UrlServices,
+            //                     "api/Proyecto",
+            //                    "/CalculoHuella", parametros);
+            //    var totalHuella = (ParametrosDTO)response.Result;
+
+            //    MainViewModel.GetInstance().ToneladasCO2 = Math.Round(double.Parse(totalHuella.Paramatro1) / 1000, 2);
+            //    this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
+            //}
+
+            var response = await this.apiService.Post<ParametrosDTO>(
                                  MainViewModel.GetInstance().UrlServices,
                                  "api/Proyecto",
                                 "/CalculoHuella", parametros);
-
-                var totalHuella = (ParametrosDTO)response.Result;
+            var totalHuella = (ParametrosDTO)response.Result;
 
             MainViewModel.GetInstance().ToneladasCO2 = Math.Round(double.Parse(totalHuella.Paramatro1) / 1000, 2);
             this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
+
         }
 
         #endregion

@@ -84,7 +84,9 @@ namespace huellaProto.ViewsModels
 
         private void AbrirUrl()
         {
-            Device.OpenUri(new Uri("http://huellacarbonoweb20180918120510.azurewebsites.net/#!/Encuesta"));
+            var IdProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto;
+            //Device.OpenUri(new Uri("http://huellacarbonoweb20180918120510.azurewebsites.net/#!/Encuesta"));
+            Device.OpenUri(new Uri("http://10.3.240.88:8089/#!/Encuesta?IdProyecto=" + IdProyecto));
         }
         #endregion
 
