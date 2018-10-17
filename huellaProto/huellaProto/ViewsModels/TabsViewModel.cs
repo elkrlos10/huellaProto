@@ -309,6 +309,34 @@
                 return;
             }
 
+            if (this.CantidadGasolina == 0 && this.Km_Gasolina > 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor la cantidad de vahículos a gasolina"
+                  , "Aceptar");
+
+                return;
+            }
+            if (this.CantidadDiesel == 0 && this.Km_Diesel > 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor la cantidad de vahículos a diesel"
+                  , "Aceptar");
+
+                return;
+            }
+            if (this.CantidadGas == 0 && this.km_Gas > 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor la cantidad de vahículos a gas"
+                  , "Aceptar");
+
+                return;
+            }
+
             var idProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto;
             var oVehiculos = new Vehiculos
             {
@@ -372,6 +400,34 @@
                 await Application.Current.MainPage.DisplayAlert(
                     "Error"
                   , "Ingrese por favor los galones utilizados en la semana por las máquinas a gas"
+                  , "Aceptar");
+
+                return;
+            }
+
+            if (this.Can_Gasolina == 0 && this.Lts_Gasolina > 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor la canridad de máquinas a gasolina"
+                  , "Aceptar");
+
+                return;
+            }
+            if (this.Can_Diesel == 0 && this.lts_Diesel > 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor la cantidad de máquinas a diesel"
+                  , "Aceptar");
+
+                return;
+            }
+            if (this.Can_GasNatural == 0 && this.Lts_GasNatural > 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Ingrese por favor la cantidad de máquinas a gas"
                   , "Aceptar");
 
                 return;

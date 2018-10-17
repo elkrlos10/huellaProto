@@ -69,11 +69,12 @@
 			await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
 		}
 
-		private async void PrecisarHuella()
+		private void PrecisarHuella()
 		{
-            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel(true);
-			await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
-		}
+            MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+            //await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
+             Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());
+        }
 
         private async void CalculoHuella()
         {

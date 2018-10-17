@@ -52,12 +52,15 @@
                         Title="Selecciona un árbol"
                         Margin="100,0,100,0"
                         FontSize="Medium"
-                        SelectedItem="{Binding Zona}"
+                        SelectedItem="{Binding Arbol}"
                         WidthRequest="160">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
-                                <x:String>Pino</x:String>
                                 <x:String>Acacia</x:String>
+                                <x:String>Ciprés</x:String>
+                                <x:String>Eucalipto</x:String>
+                                <x:String>Guayacán</x:String>
+                                <x:String>Pino</x:String>
                             </x:Array>
                         </Picker.ItemsSource>
                         <Picker.WidthRequest>
@@ -78,7 +81,7 @@
                         Title="Selecciona la zona"
                         Margin="100,0,100,0"
                         FontSize="Medium"
-                        SelectedItem="{Binding Arbol}"
+                        SelectedItem="{Binding Zona}"
                         WidthRequest="160">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -99,12 +102,12 @@
                                 Tablet="55.0" />
                         </Picker.HeightRequest>
                     </Picker>
-                    <!--<Picker
+                    <Picker
                         x:Name="pickerDensidad"
-                        Title="Densidad árbol Hectarea"
+                        Title="Árboles por hectárea"
                         Margin="100,0,100,0"
                         FontSize="Medium"
-                        SelectedItem=""
+                        SelectedItem="{Binding Densidad}"
                         WidthRequest="160">
                         <Picker.ItemsSource>
                             <x:Array Type="{x:Type x:String}">
@@ -127,7 +130,7 @@
                                 Phone="45.0"
                                 Tablet="55.0" />
                         </Picker.HeightRequest>
-                    </Picker>-->
+                    </Picker>
                     <StackLayout
                         Margin="0,5,0,0"
                         Orientation="Vertical"

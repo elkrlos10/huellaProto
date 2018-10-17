@@ -53,7 +53,8 @@ namespace huellaProto.ViewsModels
                                      "/CrearProyecto", proyecto);
                var proyect = (Proyecto)response.Result;
 
-                MainViewModel.GetInstance().oProyecto = proyect; 
+                MainViewModel.GetInstance().oProyecto = proyect;
+                MainViewModel.GetInstance().oProyecto.FechaProyecto= DateTime.Parse("2018-09-16");
             }
             catch (Exception e)
             {

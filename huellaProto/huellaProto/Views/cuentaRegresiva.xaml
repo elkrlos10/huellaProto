@@ -8,7 +8,10 @@
     <ContentPage.Content>
         <ScrollView BindingContext="{Binding CuentaRegresiva}">
             <StackLayout>
-                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="{Binding VisibleInicio}"
+                    Orientation="Vertical">
                     <Image
                         Margin="0,15,0,10"
                         Source="logoVerde"
@@ -71,6 +74,74 @@
                             HeightRequest="46"
                             HorizontalOptions="CenterAndExpand"
                             Text="Compartir"
+                            TextColor="White"
+                            WidthRequest="200" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="{Binding VisibleFIn}"
+                    Orientation="Vertical">
+                    <Image
+                        Margin="0,15,0,10"
+                        Source="logoVerde"
+                        VerticalOptions="StartAndExpand">
+                        <Image.WidthRequest>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="180.0"
+                                Tablet="210.0" />
+                        </Image.WidthRequest>
+                    </Image>
+
+                    <Label
+                        Margin="50,10,50,10"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding FechaFinal}"
+                        VerticalOptions="CenterAndExpand"
+                        XAlign="Center">
+                        <Label.FontSize>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="25"
+                                Tablet="40.0" />
+                        </Label.FontSize>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegisCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label
+                        Margin="30,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Ya ha finalizado el tiempo para precisar su huella de carbono, el siguiente es el valor de nuevo calculo de CO2:"
+                        XAlign="Center">
+                        <Label.FontSize>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="16"
+                                Tablet="25.0" />
+                        </Label.FontSize>
+                    </Label>
+                    <Label
+                        Margin="20"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding ToneladasCo2}"
+                        TextColor="#82a20d">
+                        <Label.FontSize>
+                            <OnIdiom
+                                x:TypeArguments="x:Double"
+                                Phone="16"
+                                Tablet="25.0" />
+                        </Label.FontSize>
+                    </Label>
+                    <StackLayout>
+                        <Button
+                            BackgroundColor="#82a20d"
+                            BorderRadius="23"
+                            Command="{Binding CompensarCommand}"
+                            HeightRequest="46"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Compensar"
                             TextColor="White"
                             WidthRequest="200" />
                     </StackLayout>

@@ -42,10 +42,10 @@
         {
             instance = this;
             this.Login = new LoginViewModel();
-            //this.UrlServices = "http://10.3.240.88:8089//";
+            this.UrlServices = "http://10.3.240.88:8089//";
             //this.UrlServices = "http://huellacarbonoweb20180918120510.azurewebsites.net//";
-            //this.UrlServices = "https://huellaapi.azurewebsites.net//";
-            this.UrlServices = "https://huellacarbono2.azurewebsites.net//"; 
+            //this.UrlServices = "https://huellaapi.azurewebsites.net//"; samuel
+            //this.UrlServices = "https://huellacarbono2.azurewebsites.net//"; santiago
             //this.Registro = new RegistroViewModel();
             //this.Recordar = new RecordarViewModel();
             //this.FlotaC = new FlotaViewModel();
