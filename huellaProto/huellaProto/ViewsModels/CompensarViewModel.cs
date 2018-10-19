@@ -150,7 +150,7 @@ namespace huellaProto.ViewsModels
             {
                 await Application.Current.MainPage.DisplayAlert(
                      "Error"
-                   , "El valor porcentaje a compensar es de 1% a 100%"
+                   , "El porcentaje a compensar deebe estar entre 1% y 100%"
                    , "Aceptar");
 
                 return;

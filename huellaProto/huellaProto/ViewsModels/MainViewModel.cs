@@ -1,6 +1,7 @@
 ﻿namespace huellaProto.ViewModels
 {
     using huellaProto.Models;
+    using huellaProto.Models.DTO;
     using huellaProto.ViewsModels;
     using System;
     using System.Collections.ObjectModel;
@@ -25,11 +26,11 @@
         public ListaProyectosViewModel ListaProyectos { get; set; }
         public MenuItemViewModel MenuProyectos { get; set; }
 
-        public Proyecto oProyecto { get; set; }
+        public ProyectoDTO oProyecto { get; set; }
         public string User { get; set; }
         public int IdProyecto { get; set; }
         public int TipoEmpresa { get; set; }
-        public string Etapa { get; set; }
+        public string NombreEmpresa { get; set; }
         public int IdEmpresa { get; set; }
         public string UrlServices { get; set; }
 		public double ToneladasCO2 { get; set; }
@@ -73,20 +74,12 @@
         private void CargarMenu()
         {
             this.Menus = new ObservableCollection<MenuItemViewModel>();
-
-            this.Menus.Add(new MenuItemViewModel
-            {
-                Icon= "users",
-                PageName="",
-                Title="Sena",
-				WidthRequest = "40"
-            });
-
+            
             this.Menus.Add(new MenuItemViewModel
             {
                 Icon = "sprout",
                 PageName = "Proyectos",
-                Title = "Proyectos",
+                Title = "Nuevo proyecto",
 				WidthRequest = "50"
 
 			});
@@ -94,7 +87,7 @@
             this.Menus.Add(new MenuItemViewModel
             {
                 Icon = "salir",
-                PageName = "",
+                PageName = "Login",
                 Title = "Cerrar sesión",
 				WidthRequest = "40"
 

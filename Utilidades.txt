@@ -1,0 +1,3 @@
+firebase para la publicación de la app en android
+http://albertomontesdeoca.xyz/firebase-para-aplicaciones-xamarin-forms-parte-1-firebaseauth-para-android/
+https://hprez21.com/xamarin-forms-cambiando-una-imagen-a-partir-de-la-orientacion-del-dispositivo/

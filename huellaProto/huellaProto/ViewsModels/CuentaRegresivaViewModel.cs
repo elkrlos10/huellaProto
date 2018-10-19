@@ -86,6 +86,15 @@ namespace huellaProto.ViewsModels
             }
         }
 
+        public ICommand CorreoCommand
+        {
+            get
+            {
+                return new RelayCommand(CompartirLink);
+            }
+        }
+
+        
         #endregion
 
         #region Metodos
@@ -156,6 +165,11 @@ namespace huellaProto.ViewsModels
         {
             MainViewModel.GetInstance().Compensar = new CompensarViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
+        }
+
+        private void CompartirLink()
+        {
+            Device.OpenUri(new Uri("mailto:ryan.hatfield@test.com"));
         }
 
 

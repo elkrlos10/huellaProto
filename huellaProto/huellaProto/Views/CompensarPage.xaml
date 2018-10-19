@@ -19,159 +19,161 @@
             BindingContext="{Binding Compensar}"
             Direction="Column"
             JustifyContent="SpaceEvenly">
-            <StackLayout
-                Padding="0,5,0,0"
-                HorizontalOptions="CenterAndExpand"
-                Orientation="Vertical"
-                VerticalOptions="StartAndExpand">
-                <StackLayout Orientation="Vertical">
-                    <Image
-                        Margin="30"
-                        Source="logoVerde"
-                        VerticalOptions="StartAndExpand">
-                        <Image.WidthRequest>
-                            <OnIdiom
-                                x:TypeArguments="x:Double"
-                                Phone="180.0"
-                                Tablet="250.0" />
-                        </Image.WidthRequest>
-                    </Image>
-                </StackLayout>
+            <ScrollView>
                 <StackLayout
+                    Padding="0,5,0,0"
                     HorizontalOptions="CenterAndExpand"
                     Orientation="Vertical"
-                    VerticalOptions="CenterAndExpand">
-                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                        <Label FontSize="Medium" Text="{Binding ToneladasCo2}" />
-                        <Label FontSize="Medium" Text="Toneladas de CO2" />
+                    VerticalOptions="StartAndExpand">
+                    <StackLayout Orientation="Vertical">
+                        <Image
+                            Margin="30"
+                            Source="logoVerde"
+                            VerticalOptions="StartAndExpand">
+                            <Image.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="160.0"
+                                    Tablet="250.0" />
+                            </Image.WidthRequest>
+                        </Image>
                     </StackLayout>
-                </StackLayout>
-                <StackLayout>
-                    <Picker
-                        x:Name="picker"
-                        Title="Selecciona un árbol"
-                        Margin="100,0,100,0"
-                        FontSize="Medium"
-                        SelectedItem="{Binding Arbol}"
-                        WidthRequest="160">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Acacia</x:String>
-                                <x:String>Ciprés</x:String>
-                                <x:String>Eucalipto</x:String>
-                                <x:String>Guayacán</x:String>
-                                <x:String>Pino</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                        <Picker.WidthRequest>
-                            <OnIdiom
-                                x:TypeArguments="x:Double"
-                                Phone="200.0"
-                                Tablet="250.0" />
-                        </Picker.WidthRequest>
-                        <Picker.HeightRequest>
-                            <OnIdiom
-                                x:TypeArguments="x:Double"
-                                Phone="45.0"
-                                Tablet="55.0" />
-                        </Picker.HeightRequest>
-                    </Picker>
-                    <Picker
-                        x:Name="pickerZona"
-                        Title="Selecciona la zona"
-                        Margin="100,0,100,0"
-                        FontSize="Medium"
-                        SelectedItem="{Binding Zona}"
-                        WidthRequest="160">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>Urabá</x:String>
-                                <x:String>La Salada</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                        <Picker.WidthRequest>
-                            <OnIdiom
-                                x:TypeArguments="x:Double"
-                                Phone="200.0"
-                                Tablet="200.0" />
-                        </Picker.WidthRequest>
-                        <Picker.HeightRequest>
-                            <OnIdiom
-                                x:TypeArguments="x:Double"
-                                Phone="45.0"
-                                Tablet="55.0" />
-                        </Picker.HeightRequest>
-                    </Picker>
-                    <Picker
-                        x:Name="pickerDensidad"
-                        Title="Árboles por hectárea"
-                        Margin="100,0,100,0"
-                        FontSize="Medium"
-                        SelectedItem="{Binding Densidad}"
-                        WidthRequest="160">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>555  árboles</x:String>
-                                <x:String>1111 árboles</x:String>
-                                <x:String>1333 árboles</x:String>
-                                <x:String>1666 árboles</x:String>
-                                <x:String>2500 árboles</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                        <Picker.WidthRequest>
-                            <OnIdiom
-                                x:TypeArguments="x:Double"
-                                Phone="200.0"
-                                Tablet="250.0" />
-                        </Picker.WidthRequest>
-                        <Picker.HeightRequest>
-                            <OnIdiom
-                                x:TypeArguments="x:Double"
-                                Phone="45.0"
-                                Tablet="55.0" />
-                        </Picker.HeightRequest>
-                    </Picker>
                     <StackLayout
-                        Margin="0,5,0,0"
+                        HorizontalOptions="CenterAndExpand"
                         Orientation="Vertical"
                         VerticalOptions="CenterAndExpand">
-                        <Label
-                            Margin="0"
-                            FontSize="Medium"
-                            Text="Porcentaje a compensar"
-                            XAlign="Center" />
                         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
-                            <Entry Keyboard="Numeric" Text="{Binding Porcentaje, Mode=TwoWay}">
-                                <Entry.WidthRequest>
-                                    <OnIdiom
-                                        x:TypeArguments="x:Double"
-                                        Phone="80.0"
-                                        Tablet="140.0" />
-                                </Entry.WidthRequest>
-                                <Entry.HeightRequest>
-                                    <OnIdiom
-                                        x:TypeArguments="x:Double"
-                                        Phone="45.0"
-                                        Tablet="55.0" />
-                                </Entry.HeightRequest>
-                            </Entry>
+                            <Label FontSize="Medium" Text="{Binding ToneladasCo2}" />
+                            <Label FontSize="Medium" Text="Toneladas de CO2" />
                         </StackLayout>
                     </StackLayout>
+                    <StackLayout>
+                        <Picker
+                            x:Name="picker"
+                            Title="Selecciona un árbol"
+                            Margin="100,0,100,0"
+                            FontSize="Medium"
+                            SelectedItem="{Binding Arbol}"
+                            WidthRequest="160">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Acacia</x:String>
+                                    <x:String>Ciprés</x:String>
+                                    <x:String>Eucalipto</x:String>
+                                    <x:String>Guayacán</x:String>
+                                    <x:String>Pino</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                            <Picker.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="200.0"
+                                    Tablet="250.0" />
+                            </Picker.WidthRequest>
+                            <Picker.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="55.0" />
+                            </Picker.HeightRequest>
+                        </Picker>
+                        <Picker
+                            x:Name="pickerZona"
+                            Title="Selecciona la zona"
+                            Margin="100,0,100,0"
+                            FontSize="Medium"
+                            SelectedItem="{Binding Zona}"
+                            WidthRequest="160">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Urabá</x:String>
+                                    <x:String>La Salada</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                            <Picker.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="200.0"
+                                    Tablet="200.0" />
+                            </Picker.WidthRequest>
+                            <Picker.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="55.0" />
+                            </Picker.HeightRequest>
+                        </Picker>
+                        <Picker
+                            x:Name="pickerDensidad"
+                            Title="Árboles por hectárea"
+                            Margin="100,0,100,0"
+                            FontSize="Medium"
+                            SelectedItem="{Binding Densidad}"
+                            WidthRequest="160">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>555  árboles</x:String>
+                                    <x:String>1111 árboles</x:String>
+                                    <x:String>1333 árboles</x:String>
+                                    <x:String>1666 árboles</x:String>
+                                    <x:String>2500 árboles</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                            <Picker.WidthRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="200.0"
+                                    Tablet="250.0" />
+                            </Picker.WidthRequest>
+                            <Picker.HeightRequest>
+                                <OnIdiom
+                                    x:TypeArguments="x:Double"
+                                    Phone="45.0"
+                                    Tablet="55.0" />
+                            </Picker.HeightRequest>
+                        </Picker>
+                        <StackLayout
+                            Margin="0,5,0,0"
+                            Orientation="Vertical"
+                            VerticalOptions="CenterAndExpand">
+                            <Label
+                                Margin="0"
+                                FontSize="Medium"
+                                Text="Porcentaje a compensar"
+                                XAlign="Center" />
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                <Entry Keyboard="Numeric" Text="{Binding Porcentaje, Mode=TwoWay}">
+                                    <Entry.WidthRequest>
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="80.0"
+                                            Tablet="140.0" />
+                                    </Entry.WidthRequest>
+                                    <Entry.HeightRequest>
+                                        <OnIdiom
+                                            x:TypeArguments="x:Double"
+                                            Phone="45.0"
+                                            Tablet="55.0" />
+                                    </Entry.HeightRequest>
+                                </Entry>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="20">
+                        <Button
+                            BackgroundColor="#82a20d"
+                            BorderRadius="23"
+                            Command="{Binding CompensarCommand}"
+                            FontSize="Medium"
+                            HeightRequest="46"
+                            HorizontalOptions="CenterAndExpand"
+                            IsEnabled="{Binding Isnabled, Mode=TwoWay}"
+                            Text="Compensar"
+                            TextColor="White"
+                            WidthRequest="200" />
+                    </StackLayout>
                 </StackLayout>
-                <StackLayout Margin="20">
-                    <Button
-                        BackgroundColor="#82a20d"
-                        BorderRadius="23"
-                        Command="{Binding CompensarCommand}"
-                        FontSize="Medium"
-                        HeightRequest="46"
-                        HorizontalOptions="CenterAndExpand"
-                        IsEnabled="{Binding Isnabled, Mode=TwoWay}"
-                        Text="Compensar"
-                        TextColor="White"
-                        WidthRequest="200" />
-                </StackLayout>
-            </StackLayout>
+            </ScrollView>
         </FlexLayout>
     </RelativeLayout>
 </ContentPage>

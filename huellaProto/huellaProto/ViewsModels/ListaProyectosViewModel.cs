@@ -118,14 +118,25 @@ namespace huellaProto.ViewsModels
           
             if (answer)
             {
-                
+               
                 if (Huella.EstadoCompensacion)
                 {
                     await Application.Current.MainPage.DisplayAlert("Información", "La compesación de este proyecto se completo al 100%", "Aceptar");
                     this.SelectedItem = null;
                     return;
                 }
-
+                if (Huella.Porcentaje == 100)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Información", "La compesación de huella de este proyecto ejecuto al 100%", "Aceptar");
+                    this.SelectedItem = null;
+                    return;
+                }
+                if (!Huella.Estado)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Información", "Este proyecto de compensación aún esta pendiente de aprovación por parte del administrador", "Aceptar");
+                    this.SelectedItem = null;
+                    return;
+                }
                 try
                 {
                     var response = await this.apiService._PostList<HuellaDTO>(

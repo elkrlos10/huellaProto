@@ -18,12 +18,12 @@
                     HorizontalOptions="CenterAndExpand"
                     Source="logoBlanco"
                     WidthRequest="180" />
-                <!--<Label
+                <Label
                     FontAttributes="Bold"
-                    FontSize="Large"
+                    FontSize="Medium"
                     HorizontalOptions="Center"
-                    Text="Carlos"
-                    TextColor="White" />-->
+                    Text="{Binding NombreEmpresa}"
+                    TextColor="White" />
                 <ListView
                     Margin="10,15,10,15"
                     HasUnevenRows="True"

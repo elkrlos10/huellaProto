@@ -71,6 +71,7 @@
                         <Button
                             BackgroundColor="#82a20d"
                             BorderRadius="23"
+                            Command="{Binding CorreoCommand}"
                             HeightRequest="46"
                             HorizontalOptions="CenterAndExpand"
                             Text="Compartir"

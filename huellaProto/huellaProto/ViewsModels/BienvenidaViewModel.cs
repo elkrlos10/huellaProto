@@ -3,6 +3,7 @@ namespace huellaProto.ViewsModels
 {
     using GalaSoft.MvvmLight.Command;
     using huellaProto.Models;
+    using huellaProto.Models.DTO;
     using huellaProto.Service;
     using huellaProto.ViewModels;
     using huellaProto.Views;
@@ -10,7 +11,7 @@ namespace huellaProto.ViewsModels
     using System.Windows.Input;
     using Xamarin.Forms;
 
-    public class BienvenidaViewModel: BaseViewModel
+    public class BienvenidaViewModel : BaseViewModel
     {
         #region Service
         private ApiService apiService;
@@ -41,20 +42,21 @@ namespace huellaProto.ViewsModels
             try
             {
 
-                var proyecto = new Proyecto();
+                var proyecto = new ProyectoDTO();
 
                 proyecto.IdEmpresa = MainViewModel.GetInstance().IdEmpresa;
                 proyecto.FechaProyecto = DateTime.Now;
                 proyecto.Etapa = 1;
-                
-                var response = await this.apiService.Post<Proyecto>(
+
+                var response = await this.apiService.Post<ProyectoDTO>(
                                       MainViewModel.GetInstance().UrlServices,
-                                      "api/Usuario",
+                                      "api/Proyecto",
                                      "/CrearProyecto", proyecto);
-               var proyect = (Proyecto)response.Result;
+                var proyect = (ProyectoDTO)response.Result;
 
                 MainViewModel.GetInstance().oProyecto = proyect;
-                MainViewModel.GetInstance().oProyecto.FechaProyecto= DateTime.Parse("2018-09-16");
+                //MainViewModel.GetInstance().oProyecto.FechaProyecto = DateTime.Parse("2018-09-16");
+                MainViewModel.GetInstance().NombreEmpresa = MainViewModel.GetInstance().oProyecto.NombreEmpresa;
             }
             catch (Exception e)
             {
