@@ -74,7 +74,7 @@ namespace huellaProto.ViewsModels
         private async void ConsultarProyectos()
         {
 
-            var IdEmpresa = MainViewModel.GetInstance().oProyecto.IdEmpresa;
+            var IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
             //var parametrosDTO = new ParametrosDTO
             //{
             //    Paramatro1 = IdEmpresa

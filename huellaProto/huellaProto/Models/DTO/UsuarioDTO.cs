@@ -17,5 +17,9 @@ namespace huellaProto.Models.DTO
         public int TipoUsuario { get; set; }
 
         public int TipoEmpresa { get; set; }
+
+        public bool Proyectos { get; set; }
+
+        public string NombreEmpresa { get; set; }
     }
 }

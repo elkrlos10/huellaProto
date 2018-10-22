@@ -44,7 +44,7 @@ namespace huellaProto.ViewsModels
 
                 var proyecto = new ProyectoDTO();
 
-                proyecto.IdEmpresa = MainViewModel.GetInstance().IdEmpresa;
+                proyecto.IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
                 proyecto.FechaProyecto = DateTime.Now;
                 proyecto.Etapa = 1;
 
@@ -63,7 +63,8 @@ namespace huellaProto.ViewsModels
                 throw;
             }
 
-            if (MainViewModel.GetInstance().TipoEmpresa == 1)
+           
+            if (MainViewModel.GetInstance().oUsuarioDTO.TipoEmpresa == 1)
             {
                 MainViewModel.GetInstance().Tabs = new TabsViewModel();
                 await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(4));

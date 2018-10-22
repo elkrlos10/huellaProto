@@ -188,11 +188,26 @@
             }
 
             oUsuario = (UsuarioDTO)response.Result;
-            MainViewModel.GetInstance().User = oUsuario.NombreUsuario;
-            MainViewModel.GetInstance().TipoEmpresa = oUsuario.TipoEmpresa;
-            MainViewModel.GetInstance().IdEmpresa = oUsuario.IdEmpresa;
-            MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
+            MainViewModel.GetInstance().oUsuarioDTO = oUsuario;
+            MainViewModel.GetInstance().NombreEmpresa = oUsuario.NombreEmpresa;
+            //MainViewModel.GetInstance().User = oUsuario.NombreUsuario;
+            //MainViewModel.GetInstance().TipoEmpresa = oUsuario.TipoEmpresa;
+            //MainViewModel.GetInstance().IdEmpresa = oUsuario.IdEmpresa;
+            //MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
+            //await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
+
+            if (MainViewModel.GetInstance().oUsuarioDTO.Proyectos)
+            {
+                MainViewModel.GetInstance().MenuProyectos = new MenuItemViewModel();
+                MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();
+                Application.Current.MainPage = new MasterPage();
+            }
+            else
+            {
+                MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
+                await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
+            }
+
             this.IsRunning = false;
 
             this.Email = string.Empty;

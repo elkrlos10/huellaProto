@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+
 namespace huellaProto.ViewsModels
 {
     public class CuentaRegresivaViewModel : BaseViewModel
@@ -167,7 +168,7 @@ namespace huellaProto.ViewsModels
             await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
         }
 
-        private void CompartirLink()
+        private async void CompartirLink()
         {
             Device.OpenUri(new Uri("mailto:ryan.hatfield@test.com"));
         }

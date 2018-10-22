@@ -27,6 +27,7 @@
         public MenuItemViewModel MenuProyectos { get; set; }
 
         public ProyectoDTO oProyecto { get; set; }
+        public UsuarioDTO oUsuarioDTO { get; set; }
         public string User { get; set; }
         public int IdProyecto { get; set; }
         public int TipoEmpresa { get; set; }
