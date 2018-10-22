@@ -140,6 +140,7 @@
 
             if (string.IsNullOrEmpty(this.Password))
             {
+
                 await Application.Current.MainPage.DisplayAlert(
                       "Error"
                     , "Ingrese por favor la Contraseña"
