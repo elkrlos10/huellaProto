@@ -4,8 +4,11 @@ using System.Text;
 
 namespace huellaProto.ViewsModels
 {
+    using System.Threading.Tasks;
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
+    using huellaProto.Models.DTO;
+    using huellaProto.Service;
     using huellaProto.ViewModels;
     using huellaProto.Views;
     using Xamarin.Forms;
@@ -13,9 +16,14 @@ namespace huellaProto.ViewsModels
 
     public class MenuItemViewModel : BaseViewModel
     {
+        #region Service
+        private ApiService apiService;
+        #endregion
+
         #region Atributos
         private string nombreEmpresa;
         #endregion
+
         #region Properties
         public string Icon { get; set; }
 
@@ -33,10 +41,10 @@ namespace huellaProto.ViewsModels
 
         #region Constructor
 
-        //public MenuItemViewModel()
-        //{
-        //    this.NombreEmpresa = MainViewModel.GetInstance().oProyecto.NombreEmpresa;
-        //}
+        public MenuItemViewModel()
+        {
+            this.apiService = new ApiService();
+        }
         #endregion
 
         #region Commands
@@ -48,9 +56,7 @@ namespace huellaProto.ViewsModels
             }
         }
 
-
-
-        private void Navigate()
+        private async void Navigate()
         {
             //App.Master.IsPresented = false;
 
@@ -69,13 +75,64 @@ namespace huellaProto.ViewsModels
             //}
             else if (this.PageName == "Proyectos")
             {
-                MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
+                var pendientes = await ConsultarProyectos();
 
-                //MainPage = new NavigationPage(new Bienvenida());
+                if (pendientes != "")
+                {
+                    await Application.Current.MainPage.DisplayAlert("Información", pendientes, "Aceptar");
+                    return;
+                }
+                MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
                 Application.Current.MainPage = new NavigationPage(new Bienvenida());
                 //await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
             }
 
+
+        }
+
+        private async Task<string> ConsultarProyectos()
+        {
+            var IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
+
+            try
+            {
+                var response = await this.apiService._GetList<HuellaDTO>(
+                                 MainViewModel.GetInstance().UrlServices,
+                                 "api/Proyecto",
+                                "/ConsultarProyectos", IdEmpresa);
+
+                var ListaHuella = (List<HuellaDTO>)response.Result;
+
+                //Validar la respuesta del api
+                if (!response.IsSuccess)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
+
+                    return "";
+                }
+
+                var Mensaje = "";
+                foreach (var item in ListaHuella)
+                {
+                  
+                    if (item.Estado1 == "Pendiente")
+                    {
+                        return Mensaje = "Todavia no puedes crear un proyecto nuevo porque aún hay pendientes por arprobación";
+                    }
+                    if (item.sumaPorcentaje <100)
+                    {
+                        return Mensaje = "Aún hay proyecto por completar la compensación al 100%";
+                    }
+
+                }
+
+                return Mensaje;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
 
         }
         #endregion

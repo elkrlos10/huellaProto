@@ -75,10 +75,6 @@ namespace huellaProto.ViewsModels
         {
 
             var IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
-            //var parametrosDTO = new ParametrosDTO
-            //{
-            //    Paramatro1 = IdEmpresa
-            //};
 
             try
             {
@@ -139,7 +135,8 @@ namespace huellaProto.ViewsModels
                 }
                 try
                 {
-                    var response = await this.apiService._PostList<HuellaDTO>(
+                    Huella.Estado = false;
+                       var response = await this.apiService._PostList<HuellaDTO>(
                                           MainViewModel.GetInstance().UrlServices,
                                           "api/Proyecto",
                                          "/CompletarCompensacion", Huella);

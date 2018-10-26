@@ -72,10 +72,11 @@ namespace huellaProto.ViewsModels
         {
 
             this.apiService = new ApiService();
-            if (MainViewModel.GetInstance().TipoEmpresa == 2)
-            {
-                this.CalculoHuella();
-            }
+            //if (MainViewModel.GetInstance().TipoEmpresa == 2)
+            //{
+              
+            //}
+            this.CalculoHuella();
             this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
             Application.Current.MainPage.DisplayAlert(
             "Información",
@@ -227,7 +228,7 @@ namespace huellaProto.ViewsModels
             {
                 case "Acacia":
 
-                    Co2Compensar = (Den_arbol.Acacia * DensidadArbolHectarea())/1000;
+                    Co2Compensar = ((Den_arbol.Acacia * DensidadArbolHectarea())/1000);
                     Area = this.toneladasCo2 / Co2Compensar;
                     Cant_arboles = Area * DensidadArbolHectarea();
 
@@ -235,7 +236,7 @@ namespace huellaProto.ViewsModels
 
                 case "Ciprés":
 
-                    Co2Compensar = (Den_arbol.Acacia * DensidadArbolHectarea()) / 1000;
+                    Co2Compensar = ((Den_arbol.Cipres * DensidadArbolHectarea()) / 1000);
                     Area = this.toneladasCo2 / Co2Compensar;
                     Cant_arboles = Area * DensidadArbolHectarea();
 
@@ -243,7 +244,7 @@ namespace huellaProto.ViewsModels
 
                 case "Eucalipto":
 
-                    Co2Compensar = (Den_arbol.Acacia * DensidadArbolHectarea()) / 1000;
+                    Co2Compensar = ((Den_arbol.Eucalipto * DensidadArbolHectarea()) / 1000);
                     Area = this.toneladasCo2 / Co2Compensar;
                     Cant_arboles = Area * DensidadArbolHectarea();
 
@@ -251,7 +252,7 @@ namespace huellaProto.ViewsModels
 
                 case "Guayacán":
 
-                    Co2Compensar = (Den_arbol.Acacia * DensidadArbolHectarea()) / 1000;
+                    Co2Compensar = ((Den_arbol.Guayacán * DensidadArbolHectarea()) / 1000);
                     Area = this.toneladasCo2 / Co2Compensar;
                     Cant_arboles = Area * DensidadArbolHectarea();
 
@@ -260,7 +261,7 @@ namespace huellaProto.ViewsModels
 
                 case "Pino":
 
-                    Co2Compensar = (Den_arbol.Acacia * DensidadArbolHectarea()) / 1000;
+                    Co2Compensar = (Den_arbol.Pino * DensidadArbolHectarea()) / 1000;
                     Area = this.toneladasCo2 / Co2Compensar;
                     Cant_arboles = Area * Den_arbol.Acacia;
 
@@ -314,11 +315,11 @@ namespace huellaProto.ViewsModels
 
         public DensidadArbol()
         {
-            this.Acacia = 46.06;
-            this.Cipres = 47.06;
-            this.Eucalipto = 48.06;
-            this.Guayacán = 46.06;
-            this.Pino = 43.06;
+            this.Acacia = 1585;
+            this.Cipres = 2583;
+            this.Eucalipto = 2289;
+            this.Guayacán = 3375;
+            this.Pino = 1350;
         }
 
     }

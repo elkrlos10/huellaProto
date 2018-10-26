@@ -2,6 +2,8 @@
 namespace huellaProto.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using huellaProto.Models.DTO;
+    using huellaProto.Service;
     using huellaProto.Views;
     using System.ComponentModel;
     using System.Windows.Input;
@@ -13,17 +15,22 @@ namespace huellaProto.ViewModels
         #region Eventos
         //kpublic event PropertyChangedEventHandler PropertyChanged;
         #endregion
+
         #region Atributos
        
         private bool isRunning;
         private bool isEnabled;
         
         private string email;
-        
+
+        #endregion
+
+        #region Service
+        private ApiService apiService;
         #endregion
 
         #region Propiedades
-        
+
         public string Email
         {
             get { return this.email; }
@@ -50,6 +57,7 @@ namespace huellaProto.ViewModels
         {
             this.IsRemembered = true;
             this.isEnabled = true;
+            this.apiService = new ApiService();
         }
         #endregion
 
@@ -63,14 +71,12 @@ namespace huellaProto.ViewModels
             }
         }
 
-
-
-        private void Remember()
+        private async void Remember()
         {
             
             if (string.IsNullOrEmpty(this.Email))
             {
-                Application.Current.MainPage.DisplayAlert(
+              await  Application.Current.MainPage.DisplayAlert(
                      "Error"
                    , "Ingrese por favor el Email"
                    , "Aceptar");
@@ -78,25 +84,38 @@ namespace huellaProto.ViewModels
                 return;
             }
 
-          
-
             this.IsRunning = false;
             this.IsEnabled = true;
-
            
             this.Email = string.Empty;
+            var oUsuario = new UsuarioDTO
+            {
+                NombreUsuario = this.Email,
+            };
 
-           
+            var response = await this.apiService.Post<UsuarioDTO>(
+                                MainViewModel.GetInstance().UrlServices,
+                                "api/Usuario",
+                               "/RecuperarContraseña", oUsuario);
+
+            var respuesta = (bool)response.Result;
+
+            if (!respuesta)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error!"
+                 , "El correo no existe."
+                 , "Aceptar");
+            }
+
             MainViewModel.GetInstance().huellaProto = new huellaViewModel();
-            Application.Current.MainPage.DisplayAlert(
+            await Application.Current.MainPage.DisplayAlert(
                     "Enviado!"
                   , "Su contraseña a sido enviada a su correo"
                   , "Aceptar");
-            Application.Current.MainPage.Navigation.PushAsync(new Login());
+            await Application.Current.MainPage.Navigation.PushAsync(new Login());
 
         }
-
-
 
         #endregion
     }

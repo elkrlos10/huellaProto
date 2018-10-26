@@ -69,8 +69,14 @@
 			await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
 		}
 
-		private void PrecisarHuella()
+		private async void PrecisarHuella()
 		{
+            var answer = await App.Current.MainPage.DisplayAlert("Precisar", "¿Desea precisar su huella de carbono?", "Si", "No");
+
+            if (!answer)
+            {
+                return;
+            }
             MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
             //await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
              Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());

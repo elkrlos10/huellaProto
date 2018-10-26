@@ -256,7 +256,8 @@
             //    await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
             //    return;
             //}
-
+            await Application.Current.MainPage.DisplayAlert("Información", "Registro Exitoso", "Aceptar");
+            
             MainViewModel.GetInstance().Login = new LoginViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new Login());
 
