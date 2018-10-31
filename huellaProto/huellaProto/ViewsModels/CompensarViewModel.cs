@@ -194,8 +194,9 @@ namespace huellaProto.ViewsModels
                 Precisar = this.Precisar,
                 Porcentaje = this.Porcentaje,
                 Estado = false,
-                Area= EstimacionCompensacion().Item1,
-                Cant_arboles= EstimacionCompensacion().Item2,
+                Area = EstimacionCompensacion().Item1,
+                Cant_arboles = EstimacionCompensacion().Item2,
+                DensidadArbolHectarea = DensidadArbolHectarea()
             };
 
             try

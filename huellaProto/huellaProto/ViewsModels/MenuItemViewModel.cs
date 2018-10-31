@@ -117,7 +117,7 @@ namespace huellaProto.ViewsModels
                   
                     if (item.Estado1 == "Pendiente")
                     {
-                        return Mensaje = "Todavia no puedes crear un proyecto nuevo porque aún hay pendientes por arprobación";
+                        return Mensaje = "Todavia no puedes crear un proyecto nuevo porque aún hay pendientes por aprobación";
                     }
                     if (item.sumaPorcentaje <100)
                     {
