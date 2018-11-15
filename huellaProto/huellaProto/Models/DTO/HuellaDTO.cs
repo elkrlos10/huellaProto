@@ -10,6 +10,7 @@ namespace huellaProto.Models.DTO
         public int Index { get; set; }
         public int IdHuella { get; set; }
         public int IdProyecto { get; set; }
+        public int IdDetalle { get; set; }
         public int IdEmpresa { get; set; }
         public DateTime Fecha { get; set; }
         public string TipoArbol { get; set; }
@@ -25,5 +26,6 @@ namespace huellaProto.Models.DTO
         public double? Area { get; set; }
         public double sumaPorcentaje { get; set; }
         public double DensidadArbolHectarea { get; set; }
+        public double PorcentajeDashboard { get; set; }
     }
 }

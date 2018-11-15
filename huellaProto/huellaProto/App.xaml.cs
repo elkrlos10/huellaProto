@@ -1,7 +1,8 @@
 
 namespace huellaProto
 {
-	using huellaProto.ViewModels;
+    using huellaProto.Helpers;
+    using huellaProto.ViewModels;
     using huellaProto.ViewsModels;
     using Views;
     using Xamarin.Forms;
@@ -16,10 +17,21 @@ namespace huellaProto
         public App()
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(Settings.User) || !bool.Parse(Settings.Proyectos))
+            {
+                MainViewModel.GetInstance().Login = new LoginViewModel();
 
-            MainViewModel.GetInstance().Login = new LoginViewModel();
+                MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
+            }
+            else
+            {
 
-            MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
+                MainViewModel.GetInstance().MenuProyectos = new MenuItemViewModel();
+                MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();
+                MainViewModel.GetInstance().IdEmpresa = int.Parse(Settings.IdEmpresa);
+                MainPage = new MasterPage();
+            }
+           
             //MainPage = new MasterPage();
         }
 

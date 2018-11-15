@@ -17,12 +17,13 @@
 
         //private const string SettingsKey = "settings_key";
         const string user = "User";
-        const string idProyecto = "0";
-        const string tipoEmpresa = "0";
+        const string proyectos = "Proyectos";
+        const string idEmpresa = "IdEmpresa";
+        //const string tipoEmpresa = "0";
 
         static readonly string userDefault = string.Empty;
-        static readonly string idProyectoDefaultInt = "0";
-        static readonly string Default = "0";
+        static readonly string tokenDefault = string.Empty;
+        static readonly string idEmpresaDefault = "0";
         #endregion
 
 
@@ -38,30 +39,41 @@
             }
         }
 
-        public static string IdProyecto
+        public static string Proyectos
         {
             get
             {
-                return AppSettings.GetValueOrDefault(idProyecto, idProyectoDefaultInt);
+                return AppSettings.GetValueOrDefault(proyectos, tokenDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(idProyecto, value);
+                AppSettings.AddOrUpdateValue(proyectos, value);
             }
         }
 
-
-        public static string TipoEmpresa
+        public static string IdEmpresa
         {
             get
             {
-                return AppSettings.GetValueOrDefault(tipoEmpresa, Default);
+                return AppSettings.GetValueOrDefault(idEmpresa, idEmpresaDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(idProyecto, value);
+                AppSettings.AddOrUpdateValue(idEmpresa, value);
             }
         }
+
+        //public static string TipoEmpresa
+        //{
+        //    get
+        //    {
+        //        return AppSettings.GetValueOrDefault(tipoEmpresa, Default);
+        //    }
+        //    set
+        //    {
+        //        AppSettings.AddOrUpdateValue(idProyecto, value);
+        //    }
+        //}
 
     }
 }

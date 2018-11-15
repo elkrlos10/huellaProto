@@ -1,6 +1,7 @@
 ﻿namespace huellaProto.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
+    using huellaProto.Helpers;
     using huellaProto.Models.DTO;
     using huellaProto.Service;
     using huellaProto.Views;
@@ -62,7 +63,7 @@
             this.IsRemembered = true;
             this.isEnabled = true;
 
-            this.Email = "s@s.com";
+            this.Email = "a@a.com";
             this.Password = "123456";
 
             this.apiService = new ApiService();
@@ -190,13 +191,17 @@
             oUsuario = (UsuarioDTO)response.Result;
             MainViewModel.GetInstance().oUsuarioDTO = oUsuario;
             MainViewModel.GetInstance().NombreEmpresa = oUsuario.NombreEmpresa;
+            Settings.User = oUsuario.NombreUsuario;
+            Settings.Proyectos = oUsuario.Proyectos.ToString();
+            Settings.IdEmpresa = oUsuario.IdEmpresa.ToString();
+
             //MainViewModel.GetInstance().User = oUsuario.NombreUsuario;
             //MainViewModel.GetInstance().TipoEmpresa = oUsuario.TipoEmpresa;
             //MainViewModel.GetInstance().IdEmpresa = oUsuario.IdEmpresa;
             //MainViewModel.GetInstance().Bienvenida = new BienvenidaViewModel();
             //await Application.Current.MainPage.Navigation.PushAsync(new Bienvenida());
 
-            if (MainViewModel.GetInstance().oUsuarioDTO.Proyectos)
+            if (MainViewModel.GetInstance().oUsuarioDTO.Proyectos || bool.Parse(Settings.Proyectos))
             {
                 MainViewModel.GetInstance().MenuProyectos = new MenuItemViewModel();
                 MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();

@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using huellaProto.Helpers;
 using huellaProto.Models;
 using huellaProto.Models.DTO;
 using huellaProto.Service;
@@ -74,7 +75,7 @@ namespace huellaProto.ViewsModels
         private async void ConsultarProyectos()
         {
 
-            var IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
+            var IdEmpresa = int.Parse(Settings.IdEmpresa);
 
             try
             {
@@ -127,12 +128,12 @@ namespace huellaProto.ViewsModels
                 //    this.SelectedItem = null;
                 //    return;
                 //}
-                //if (!Huella.Estado)
-                //{
-                //    await Application.Current.MainPage.DisplayAlert("Información", "Este proyecto de compensación aún esta pendiente de aprovación por parte del administrador", "Aceptar");
-                //    this.SelectedItem = null;
-                //    return;
-                //}
+                if (Huella.Estado != true)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Información", "Este proyecto aún no se ha aprobado, por lo tanto no se puede completar su compensación", "Aceptar");
+                    this.SelectedItem = null;
+                    return;
+                }
                 try
                 {
                     Huella.Estado = false;

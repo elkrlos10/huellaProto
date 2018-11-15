@@ -23,7 +23,7 @@ namespace huellaProto.Service
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Prenda el internet por favor"
+                    Message = "Habilita tu conexión a internet"
                 };
             }
 
@@ -35,7 +35,7 @@ namespace huellaProto.Service
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Conecntese a internet"
+                    Message = "Tu dispositivo no tiene conexión a intenet"
                 };
             }
 

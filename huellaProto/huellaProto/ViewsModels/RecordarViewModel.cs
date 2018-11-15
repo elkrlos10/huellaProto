@@ -93,10 +93,14 @@ namespace huellaProto.ViewModels
                 NombreUsuario = this.Email,
             };
 
-            var response = await this.apiService.Post<UsuarioDTO>(
-                                MainViewModel.GetInstance().UrlServices,
-                                "api/Usuario",
-                               "/RecuperarContraseña", oUsuario);
+            var response = await this.apiService._Post(
+                                    MainViewModel.GetInstance().UrlServices,
+                                    "api/Usuario",
+                                    "/RecuperarContrasena", oUsuario);
+            //var response = await this.apiService.Post<UsuarioDTO>(
+            //                    MainViewModel.GetInstance().UrlServices,
+            //                    "api/Usuario",
+            //                   "/RecuperarContraseña", oUsuario);
 
             var respuesta = (bool)response.Result;
 

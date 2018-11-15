@@ -7,6 +7,7 @@ namespace huellaProto.ViewsModels
     using System.Threading.Tasks;
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
+    using huellaProto.Helpers;
     using huellaProto.Models.DTO;
     using huellaProto.Service;
     using huellaProto.ViewModels;
@@ -66,6 +67,8 @@ namespace huellaProto.ViewsModels
                 var mainViewModel = MainViewModel.GetInstance();
                 //mainViewModel.Token = null;
                 //mainViewModel.User = null;
+                Settings.User = string.Empty;
+                Settings.Proyectos = string.Empty;
                 Application.Current.MainPage = new NavigationPage(new Login());
             }
             //else if (this.PageName == "MyProfilePage")
