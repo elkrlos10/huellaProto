@@ -19,11 +19,14 @@
         const string user = "User";
         const string proyectos = "Proyectos";
         const string idEmpresa = "IdEmpresa";
-        //const string tipoEmpresa = "0";
+        const string fechaProyecto = "Fecha";
+        const string idProyecto = "IdProyecto";
 
         static readonly string userDefault = string.Empty;
         static readonly string tokenDefault = string.Empty;
         static readonly string idEmpresaDefault = "0";
+        static readonly string fechaDefault = string.Empty;
+        static readonly string idProyectoDefault = "0";
         #endregion
 
 
@@ -63,6 +66,30 @@
             }
         }
 
+        public static string FechaProyecto
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(fechaProyecto, fechaDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(fechaProyecto, value);
+            }
+        }
+
+
+        public static string IdProyecto
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(idProyecto, idProyectoDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(idProyecto, value);
+            }
+        }
         //public static string TipoEmpresa
         //{
         //    get

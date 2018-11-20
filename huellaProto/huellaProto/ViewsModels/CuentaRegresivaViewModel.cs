@@ -101,7 +101,14 @@ namespace huellaProto.ViewsModels
         #region Metodos
         private async void Precisar()
         {
-            var Fecha = MainViewModel.GetInstance().oProyecto.FechaProyecto.AddDays(15);
+            if (string.IsNullOrEmpty(Settings.FechaProyecto))
+            {
+                Settings.FechaProyecto = MainViewModel.GetInstance().oProyecto.FechaProyecto.AddDays(15).ToString();
+            }
+
+            Settings.FechaProyecto = "2018-11-04";
+
+            var Fecha = DateTime.Parse(Settings.FechaProyecto);
             if (Fecha < DateTime.Now)
             {
                 this.VisibleInicio = false;
@@ -110,7 +117,7 @@ namespace huellaProto.ViewsModels
                 {
                     var parametros = new ParametrosDTO
                     {
-                        Paramatro1 = MainViewModel.GetInstance().oProyecto.IdProyecto.ToString()
+                        Paramatro1 = Settings.IdProyecto
                     };
 
                     var response = await this.apiService.Post<ParametrosDTO>(
@@ -164,6 +171,7 @@ namespace huellaProto.ViewsModels
 
         private async void Compensar()
         {
+            Settings.FechaProyecto = string.Empty;
             MainViewModel.GetInstance().Compensar = new CompensarViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
         }

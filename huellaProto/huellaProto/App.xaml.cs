@@ -17,6 +17,17 @@ namespace huellaProto
         public App()
         {
             InitializeComponent();
+            //Settings.FechaProyecto = string.Empty;
+            if (!string.IsNullOrEmpty(Settings.FechaProyecto))
+            {
+                MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+                //await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
+                Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());
+
+                return;
+            }
+            //Settings.User = string.Empty;
+            //Settings.Proyectos = string.Empty;
             if (string.IsNullOrEmpty(Settings.User) || !bool.Parse(Settings.Proyectos))
             {
                 MainViewModel.GetInstance().Login = new LoginViewModel();
