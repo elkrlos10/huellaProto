@@ -2,7 +2,6 @@
 namespace huellaProto.ViewsModels
 {
     using GalaSoft.MvvmLight.Command;
-    using huellaProto.Helpers;
     using huellaProto.Models;
     using huellaProto.Models.DTO;
     using huellaProto.Service;
@@ -40,10 +39,12 @@ namespace huellaProto.ViewsModels
         private async void ConfCommand()
         {
 
+            try
+            {
 
                 var proyecto = new ProyectoDTO();
 
-                proyecto.IdEmpresa = int.Parse(Settings.IdEmpresa);
+                proyecto.IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
                 proyecto.FechaProyecto = DateTime.Now;
                 proyecto.Etapa = 1;
 
@@ -54,11 +55,16 @@ namespace huellaProto.ViewsModels
                 var proyect = (ProyectoDTO)response.Result;
 
                 MainViewModel.GetInstance().oProyecto = proyect;
-                Settings.IdProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto.ToString();
                 //MainViewModel.GetInstance().oProyecto.FechaProyecto = DateTime.Parse("2018-09-16");
                 MainViewModel.GetInstance().NombreEmpresa = MainViewModel.GetInstance().oProyecto.NombreEmpresa;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+
            
-            if (proyect.TipoEmpresa == 1)
+            if (MainViewModel.GetInstance().oUsuarioDTO.TipoEmpresa == 1)
             {
                 MainViewModel.GetInstance().Tabs = new TabsViewModel();
                 await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(4));

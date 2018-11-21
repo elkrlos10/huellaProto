@@ -95,8 +95,8 @@ namespace huellaProto.ViewsModels
 
         private async Task<string> ConsultarProyectos()
         {
-            //var IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
-            var IdEmpresa = int.Parse(Settings.IdEmpresa);
+            var IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
+
             try
             {
                 var response = await this.apiService._GetList<HuellaDTO>(
