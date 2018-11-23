@@ -3,6 +3,7 @@ using huellaProto.Models.DTO;
 using huellaProto.Service;
 namespace huellaProto.ViewsModels
 {
+    using huellaProto.Helpers;
     using huellaProto.ViewModels;
     using huellaProto.Views;
     using System;
@@ -74,7 +75,7 @@ namespace huellaProto.ViewsModels
             this.apiService = new ApiService();
             //if (MainViewModel.GetInstance().TipoEmpresa == 2)
             //{
-              
+
             //}
             this.CalculoHuella();
             this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
@@ -115,7 +116,7 @@ namespace huellaProto.ViewsModels
             {
                 var parametros = new ParametrosDTO
                 {
-                    Paramatro1 = MainViewModel.GetInstance().oProyecto.IdProyecto.ToString()
+                    Paramatro1 = Settings.IdProyecto,
                 };
 
 
@@ -184,9 +185,10 @@ namespace huellaProto.ViewsModels
                 return;
             }
 
+            var IdProyecto = int.Parse(Settings.IdProyecto);
             var oHuella = new HuellaDTO
             {
-                IdProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto,
+                IdProyecto = IdProyecto,
                 Toneledas = this.ToneladasCo2,
                 Fecha = DateTime.Now,
                 TipoArbol = this.Arbol,

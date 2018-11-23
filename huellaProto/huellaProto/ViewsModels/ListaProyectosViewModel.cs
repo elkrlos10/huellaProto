@@ -85,7 +85,7 @@ namespace huellaProto.ViewsModels
                                 "/ConsultarProyectos", IdEmpresa);
 
                 var ListaHuella = (List<HuellaDTO>)response.Result;
-
+                Settings.Proyectos = "true";
                 //Validar la respuesta del api
                 if (!response.IsSuccess)
                 {
