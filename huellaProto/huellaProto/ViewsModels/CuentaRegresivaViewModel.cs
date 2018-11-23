@@ -95,13 +95,20 @@ namespace huellaProto.ViewsModels
             }
         }
 
-        
+
         #endregion
 
         #region Metodos
         private async void Precisar()
         {
-            var Fecha = MainViewModel.GetInstance().oProyecto.FechaProyecto.AddDays(15);
+            if (string.IsNullOrEmpty(Settings.FechaProyecto))
+            {
+                Settings.FechaProyecto = MainViewModel.GetInstance().oProyecto.FechaProyecto.AddDays(15).ToString();
+            }
+
+            //Settings.FechaProyecto = "2018-11-04";
+
+            var Fecha = DateTime.Parse(Settings.FechaProyecto);
             if (Fecha < DateTime.Now)
             {
                 this.VisibleInicio = false;
@@ -110,7 +117,7 @@ namespace huellaProto.ViewsModels
                 {
                     var parametros = new ParametrosDTO
                     {
-                        Paramatro1 = MainViewModel.GetInstance().oProyecto.IdProyecto.ToString()
+                        Paramatro1 = Settings.IdProyecto
                     };
 
                     var response = await this.apiService.Post<ParametrosDTO>(
@@ -154,7 +161,7 @@ namespace huellaProto.ViewsModels
 
         private void AbrirUrl()
         {
-            var IdProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto;
+            var IdProyecto = int.Parse(Settings.IdProyecto);
             //Device.OpenUri(new Uri("http://huellacarbonoweb20180918120510.azurewebsites.net/#!/Encuesta"));
             Device.OpenUri(new Uri("http://10.3.240.88:8089/#!/Encuesta?IdProyecto=" + IdProyecto));
             //Device.OpenUri(new Uri(" https://huellaapi.azurewebsites.net//#!/Encuesta?IdProyecto=" + IdProyecto));
@@ -164,13 +171,16 @@ namespace huellaProto.ViewsModels
 
         private async void Compensar()
         {
+            Settings.FechaProyecto = string.Empty;
             MainViewModel.GetInstance().Compensar = new CompensarViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new CompensarPage());
         }
 
         private async void CompartirLink()
         {
-            Device.OpenUri(new Uri("mailto:ryan.hatfield@test.com"));
+            var IdProyecto = int.Parse(Settings.IdProyecto);
+            var url = "http://10.3.240.88:8089/#!/Encuesta?IdProyecto=" + IdProyecto;
+            Device.OpenUri(new Uri($"mailto:body ={url}"));
         }
 
 
@@ -178,3 +188,4 @@ namespace huellaProto.ViewsModels
 
     }
 }
+

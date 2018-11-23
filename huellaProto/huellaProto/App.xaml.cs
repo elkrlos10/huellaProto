@@ -1,4 +1,3 @@
-
 namespace huellaProto
 {
     using huellaProto.Helpers;
@@ -17,7 +16,18 @@ namespace huellaProto
         public App()
         {
             InitializeComponent();
-            if (string.IsNullOrEmpty(Settings.User) || !bool.Parse(Settings.Proyectos))
+            //Settings.FechaProyecto = string.Empty;
+            if (!string.IsNullOrEmpty(Settings.FechaProyecto))
+            {
+                MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+                //await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
+                Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());
+
+                return;
+            }
+            //Settings.User = string.Empty;
+            //Settings.Proyectos = string.Empty;
+            if (string.IsNullOrEmpty(Settings.User) || bool.Parse(Settings.Proyectos) == false)
             {
                 MainViewModel.GetInstance().Login = new LoginViewModel();
 
@@ -31,7 +41,7 @@ namespace huellaProto
                 MainViewModel.GetInstance().IdEmpresa = int.Parse(Settings.IdEmpresa);
                 MainPage = new MasterPage();
             }
-           
+
             //MainPage = new MasterPage();
         }
 
