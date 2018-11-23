@@ -178,10 +178,24 @@ namespace huellaProto.ViewsModels
 
         private async void CompartirLink()
         {
-            var IdProyecto = int.Parse(Settings.IdProyecto);
-            var url = "http://10.3.240.88:8089/#!/Encuesta?IdProyecto=" + IdProyecto;
-            Device.OpenUri(new Uri($"mailto:body ={url}"));
-        }
+			try
+			{
+				var IdProyecto = int.Parse(Settings.IdProyecto);
+				var orignalURL = ("http://10.3.240.88:8089/Encuesta?IdProyecto=" + IdProyecto);
+				//var orignalURL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+				var shortURL = DaimtoShort.shortenIt(orignalURL);
+				//Console.WriteLine("Mi URL abreviada:" + shortURL);
+				Device.OpenUri(new Uri("mailto:?subject=MobileTing&body= a continuacion un link" + shortURL));
+			}
+			catch (Exception e)
+			{
+
+				throw;
+			}
+          
+           
+
+		}
 
 
         #endregion

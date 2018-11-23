@@ -2,7 +2,8 @@
 namespace huellaProto.ViewsModels
 {
     using GalaSoft.MvvmLight.Command;
-    using huellaProto.Models;
+	using huellaProto.Helpers;
+	using huellaProto.Models;
     using huellaProto.Models.DTO;
     using huellaProto.Service;
     using huellaProto.ViewModels;
@@ -57,7 +58,9 @@ namespace huellaProto.ViewsModels
                 MainViewModel.GetInstance().oProyecto = proyect;
                 //MainViewModel.GetInstance().oProyecto.FechaProyecto = DateTime.Parse("2018-09-16");
                 MainViewModel.GetInstance().NombreEmpresa = MainViewModel.GetInstance().oProyecto.NombreEmpresa;
-            }
+				Settings.IdProyecto = proyect.IdProyecto.ToString();
+
+			}
             catch (Exception e)
             {
                 throw;

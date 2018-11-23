@@ -73,12 +73,12 @@ namespace huellaProto.ViewsModels
         {
 
             this.apiService = new ApiService();
-            //if (MainViewModel.GetInstance().TipoEmpresa == 2)
-            //{
+			if (MainViewModel.GetInstance().TipoEmpresa == 2)
+			{
+				this.CalculoHuella();
+			}
 
-            //}
-            this.CalculoHuella();
-            this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
+			this.ToneladasCo2 = MainViewModel.GetInstance().ToneladasCO2;
             Application.Current.MainPage.DisplayAlert(
             "Información",
             "Si deseas compensar la huella de carbono que dejas en el medio ambiente, a continuación encontrarás un programa de siembra de árboles donde podrás seleccionar la zona, el tipo de árbol y el porcentaje a compensar.",
