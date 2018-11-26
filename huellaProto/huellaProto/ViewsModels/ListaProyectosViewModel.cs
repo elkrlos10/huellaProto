@@ -128,7 +128,7 @@ namespace huellaProto.ViewsModels
                 //    this.SelectedItem = null;
                 //    return;
                 //}
-                if (Huella.Estado != true)
+                if (Huella.Estado == null)
                 {
                     await Application.Current.MainPage.DisplayAlert("Información", "Este proyecto aún no se ha aprobado, por lo tanto no se puede completar su compensación", "Aceptar");
                     this.SelectedItem = null;
@@ -136,7 +136,7 @@ namespace huellaProto.ViewsModels
                 }
                 try
                 {
-                    Huella.Estado = false;
+                    Huella.Estado = null;
                        var response = await this.apiService._PostList<HuellaDTO>(
                                           MainViewModel.GetInstance().UrlServices,
                                           "api/Proyecto",

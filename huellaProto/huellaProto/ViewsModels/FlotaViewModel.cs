@@ -2,7 +2,8 @@
 namespace huellaProto.ViewsModels
 {
     using GalaSoft.MvvmLight.Command;
-    using huellaProto.Models;
+	using huellaProto.Helpers;
+	using huellaProto.Models;
     using huellaProto.Service;
     using huellaProto.ViewModels;
     using huellaProto.Views;
@@ -155,7 +156,7 @@ namespace huellaProto.ViewsModels
                 return;
             }
 
-            var idProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto;
+			var idProyecto = int.Parse(Settings.IdProyecto);
             var oVehiculos = new Vehiculos
             {
                 Can_Gasolina = this.CantidadGasolina,

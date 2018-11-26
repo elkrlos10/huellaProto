@@ -194,6 +194,7 @@
             Settings.User = oUsuario.NombreUsuario;
             Settings.Proyectos = oUsuario.Proyectos.ToString();
             Settings.IdEmpresa = oUsuario.IdEmpresa.ToString();
+			Settings.TipoEmpresa = oUsuario.TipoEmpresa.ToString();
 
             //MainViewModel.GetInstance().User = oUsuario.NombreUsuario;
             //MainViewModel.GetInstance().TipoEmpresa = oUsuario.TipoEmpresa;

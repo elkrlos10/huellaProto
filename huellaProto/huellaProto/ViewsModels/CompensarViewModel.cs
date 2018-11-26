@@ -73,7 +73,8 @@ namespace huellaProto.ViewsModels
         {
 
             this.apiService = new ApiService();
-			if (MainViewModel.GetInstance().TipoEmpresa == 2)
+			var tipoEmpresa = int.Parse(Settings.TipoEmpresa);
+			if (tipoEmpresa == 2)
 			{
 				this.CalculoHuella();
 			}

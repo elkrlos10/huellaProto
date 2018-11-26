@@ -87,7 +87,7 @@ namespace huellaProto.ViewModels
             this.IsRunning = false;
             this.IsEnabled = true;
            
-            this.Email = string.Empty;
+        
             var oUsuario = new UsuarioDTO
             {
                 NombreUsuario = this.Email,
@@ -110,9 +110,11 @@ namespace huellaProto.ViewModels
                    "Error!"
                  , "El correo no existe."
                  , "Aceptar");
-            }
 
-            MainViewModel.GetInstance().huellaProto = new huellaViewModel();
+				return;
+            }
+			this.Email = string.Empty;
+			MainViewModel.GetInstance().huellaProto = new huellaViewModel();
             await Application.Current.MainPage.DisplayAlert(
                     "Enviado!"
                   , "Su contraseña a sido enviada a su correo"

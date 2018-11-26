@@ -95,7 +95,7 @@ namespace huellaProto.ViewsModels
 
         private async Task<string> ConsultarProyectos()
         {
-            var IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
+			var IdEmpresa = int.Parse(Settings.IdEmpresa);
 
             try
             {

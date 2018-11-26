@@ -45,7 +45,7 @@ namespace huellaProto.ViewsModels
 
                 var proyecto = new ProyectoDTO();
 
-                proyecto.IdEmpresa = MainViewModel.GetInstance().oUsuarioDTO.IdEmpresa;
+                proyecto.IdEmpresa = int.Parse(Settings.IdEmpresa);
                 proyecto.FechaProyecto = DateTime.Now;
                 proyecto.Etapa = 1;
 
@@ -59,6 +59,20 @@ namespace huellaProto.ViewsModels
                 //MainViewModel.GetInstance().oProyecto.FechaProyecto = DateTime.Parse("2018-09-16");
                 MainViewModel.GetInstance().NombreEmpresa = MainViewModel.GetInstance().oProyecto.NombreEmpresa;
 				Settings.IdProyecto = proyect.IdProyecto.ToString();
+				var tipoEmpresa = int.Parse(Settings.TipoEmpresa);
+
+				if (tipoEmpresa == 1)
+				{
+					MainViewModel.GetInstance().Tabs = new TabsViewModel();
+					await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(4));
+
+				}
+				else
+				{
+					MainViewModel.GetInstance().FlotaC = new FlotaViewModel();
+					await Application.Current.MainPage.Navigation.PushAsync(new Flota());
+
+				}
 
 			}
             catch (Exception e)
@@ -67,18 +81,7 @@ namespace huellaProto.ViewsModels
             }
 
            
-            if (MainViewModel.GetInstance().oUsuarioDTO.TipoEmpresa == 1)
-            {
-                MainViewModel.GetInstance().Tabs = new TabsViewModel();
-                await Application.Current.MainPage.Navigation.PushAsync(new HuellaTabbed(4));
-
-            }
-            else
-            {
-                MainViewModel.GetInstance().FlotaC = new FlotaViewModel();
-                await Application.Current.MainPage.Navigation.PushAsync(new Flota());
-
-            }
+          
 
 
         }
