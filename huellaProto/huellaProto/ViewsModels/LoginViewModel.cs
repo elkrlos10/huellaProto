@@ -63,8 +63,8 @@
             this.IsRemembered = true;
             this.isEnabled = true;
 
-            this.Email = "a@a.com";
-            this.Password = "123456";
+            //this.Email = "a@a.com";
+            //this.Password = "123456";
 
             this.apiService = new ApiService();
         }
@@ -151,11 +151,11 @@
             }
 
             #endregion
-
+            var encriptar = SecurityEncode.Encriptar(this.Password);
             var oUsuario = new UsuarioDTO
             {
                 NombreUsuario = this.Email,
-                Password = this.Password,
+                Password = encriptar,
             };
 
             var connection = await this.apiService.CheckConnection();

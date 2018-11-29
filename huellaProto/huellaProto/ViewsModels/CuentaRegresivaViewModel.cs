@@ -106,7 +106,7 @@ namespace huellaProto.ViewsModels
                 Settings.FechaProyecto = MainViewModel.GetInstance().oProyecto.FechaProyecto.AddDays(15).ToString();
             }
 
-            //Settings.FechaProyecto = "2018-11-04";
+            Settings.FechaProyecto = "2018-11-30";
 
             var Fecha = DateTime.Parse(Settings.FechaProyecto);
             if (Fecha < DateTime.Now)
@@ -182,10 +182,10 @@ namespace huellaProto.ViewsModels
 			{
 				var IdProyecto = int.Parse(Settings.IdProyecto);
 				var orignalURL = ("http://10.3.240.88:8089/Encuesta?IdProyecto=" + IdProyecto);
-				//var orignalURL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-				var shortURL = DaimtoShort.shortenIt(orignalURL);
-				//Console.WriteLine("Mi URL abreviada:" + shortURL);
-				Device.OpenUri(new Uri("mailto:?subject=MobileTing&body= a continuacion un link" + shortURL));
+				
+				Device.OpenUri(new Uri("mailto:?subject=MobileTing&body= Hola! A continuación te compartimos un link para que realices una encuesta personal, así nos ayudarás a conocer la huella de carbono" +
+                    "que emitimos y así contribuir con el medio ambiente... Muchas gracias <br>"
+                    + orignalURL));
 			}
 			catch (Exception e)
 			{

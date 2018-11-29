@@ -1,11 +1,12 @@
-﻿using Google.Apis.Services;
-using Google.Apis.Urlshortener.v1;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace huellaProto.Helpers
 {
+    using Google.Apis.Services;
+    using Google.Apis.Urlshortener.v1;
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     public class DaimtoShort
     {
 		UrlshortenerService service = new UrlshortenerService(new BaseClientService.Initializer()

@@ -17,41 +17,41 @@ namespace huellaProto
         {
             InitializeComponent();
 
-			//MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
-			////await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
-			//Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());
+            //MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+            ////await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
+            //Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());
 
-			//Settings.FechaProyecto = string.Empty;
-			//Settings.User = string.Empty;
-			//Settings.Proyectos = string.Empty;
-			if (!string.IsNullOrEmpty(Settings.FechaProyecto))
-			{
-				MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
-				//await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
-				Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());
+            //Settings.FechaProyecto = string.Empty;
+            //Settings.User = string.Empty;
+            //Settings.Proyectos = string.Empty;
+            if (!string.IsNullOrEmpty(Settings.FechaProyecto))
+            {
+                MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();
+                //await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
+                Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());
 
-				return;
-			}
-		
-			if (string.IsNullOrEmpty(Settings.User) || bool.Parse(Settings.Proyectos) == false)
-			{
-				MainViewModel.GetInstance().Login = new LoginViewModel();
+                return;
+            }
 
-				MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
+            if (string.IsNullOrEmpty(Settings.User) || bool.Parse(Settings.Proyectos) == false)
+            {
+                MainViewModel.GetInstance().Login = new LoginViewModel();
+
+                MainPage = new NavigationPage(new Login()) { BarBackgroundColor = Color.FromHex("#82a20d"), BarTextColor = Color.White };
 
 
-			}
-			else
-			{
+            }
+            else
+            {
 
-				MainViewModel.GetInstance().MenuProyectos = new MenuItemViewModel();
-				MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();
-				MainViewModel.GetInstance().IdEmpresa = int.Parse(Settings.IdEmpresa);
-				MainPage = new MasterPage();
-			}
+                MainViewModel.GetInstance().MenuProyectos = new MenuItemViewModel();
+                MainViewModel.GetInstance().ListaProyectos = new ListaProyectosViewModel();
+                MainViewModel.GetInstance().IdEmpresa = int.Parse(Settings.IdEmpresa);
+                MainPage = new MasterPage();
+            }
 
-			//MainPage = new MasterPage();
-		}
+            ///////MainPage = new MasterPage();
+        }
 
         #endregion
 

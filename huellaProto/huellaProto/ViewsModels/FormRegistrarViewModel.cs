@@ -1,6 +1,7 @@
 ﻿namespace huellaProto.ViewsModels
 {
     using GalaSoft.MvvmLight.Command;
+    using huellaProto.Helpers;
     using huellaProto.Models;
     using huellaProto.Models.DTO;
     using huellaProto.Service;
@@ -202,11 +203,12 @@
                 tipoEmpresa = 2;
             }
 
+            var encriptar = SecurityEncode.Encriptar(this.Password);
             var Empresa = new EmpresaDTO
             {
                 NombreEmpresa = this.Nombre,
                 Email = this.Email,
-                Password = this.Password,
+                Password = encriptar,
                 Nit = this.Nit,
                 Direccion = this.Direc,
                 TipoEmpresa = tipoEmpresa,

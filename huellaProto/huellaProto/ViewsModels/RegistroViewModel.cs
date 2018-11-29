@@ -47,8 +47,6 @@ namespace huellaProto.ViewModels
 
         //Comandos
         #region Commands 
-      
-
         public ICommand InstitucionCommand
         {
             get
@@ -65,7 +63,6 @@ namespace huellaProto.ViewModels
             }
         }
 
-       
         private void Insti()
         {
            
