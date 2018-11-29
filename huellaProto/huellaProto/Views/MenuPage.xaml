@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="huellaProto.Views.MenuPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -26,8 +26,10 @@
                     TextColor="White" />
                 <ListView
                     Margin="10,15,10,15"
-                    HasUnevenRows="True"
-                    ItemsSource="{Binding Menus}">
+                    HasUnevenRows="true"
+                    ItemsSource="{Binding Menus}" 
+                    BackgroundColor="#82a20d"
+                    SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

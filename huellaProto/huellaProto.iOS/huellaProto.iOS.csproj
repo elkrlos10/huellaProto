@@ -185,122 +185,47 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\huella_icon.png" />
-    <BundleResource Include="Resources\logoVerde.png" />
-    <BundleResource Include="Resources\fondo1verde.png" />
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\pass.png" />
-    <BundleResource Include="Resources\usuario.png" />
-    <BundleResource Include="Resources\abajoVerde.png" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\agua.png" />
-    <BundleResource Include="Resources\anteriorAzul.png" />
-    <BundleResource Include="Resources\anteriorNaranja.png" />
     <BundleResource Include="Resources\anteriorVerde.png" />
-    <BundleResource Include="Resources\arribaAzul.png" />
-    <BundleResource Include="Resources\arribaNaranaja.png" />
+    <BundleResource Include="Resources\Arbol.png" />
     <BundleResource Include="Resources\arribaVerde.png" />
+    <BundleResource Include="Resources\cerrar_sesion.png" />
     <BundleResource Include="Resources\combustible.png" />
     <BundleResource Include="Resources\correo.png" />
     <BundleResource Include="Resources\direccion.png" />
     <BundleResource Include="Resources\energia.png" />
     <BundleResource Include="Resources\Fondo1Azul.png" />
     <BundleResource Include="Resources\fondo1Naranja.png" />
+    <BundleResource Include="Resources\fondo1Verde.png" />
     <BundleResource Include="Resources\fondo2Azul.png" />
     <BundleResource Include="Resources\fondo2Verde.png" />
     <BundleResource Include="Resources\fondo3Verde.png" />
-    <BundleResource Include="Resources\gas.png" />
-    <BundleResource Include="Resources\ic_chevron_right.png" />
-    <BundleResource Include="Resources\iconoContrasenaNaranja.png" />
-    <BundleResource Include="Resources\iconoCorreo.png" />
-    <BundleResource Include="Resources\iconoDireccion.png" />
-    <BundleResource Include="Resources\LaunchScreen.storyboard" />
-    <BundleResource Include="Resources\iconoInstitucion.png" />
-    <BundleResource Include="Resources\iconoInstitucionRegistro.png" />
-    <BundleResource Include="Resources\iconoPassword.png" />
-    <BundleResource Include="Resources\iconoTransporteRegistro.png" />
-    <BundleResource Include="Resources\iconoUsuario.png" />
-    <BundleResource Include="Resources\institucion.png" />
-    <BundleResource Include="Resources\logo.png" />
-    <BundleResource Include="Resources\logoAzul.png" />
-    <BundleResource Include="Resources\logoBlanco.png" />
-    <BundleResource Include="Resources\logoNaranja.png" />
-    <BundleResource Include="Resources\logosSenaSennova.png" />
-    <BundleResource Include="Resources\siguienteAzul.png" />
-    <BundleResource Include="Resources\siguienteNaranja.png" />
-    <BundleResource Include="Resources\siguienteVerde.png" />
-    <BundleResource Include="Resources\transporte.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\aeroplane_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\agua_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Arbol.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\combustible_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\email.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\energia_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <BundleResource Include="Resources\fondoCielo.png" />
+    <BundleResource Include="Resources\fondoCielo2.png" />
+    <BundleResource Include="Resources\fondoCielo3.png" />
     <BundleResource Include="Resources\fondos_arboles2_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\fondos_arboles3_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\foot_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\forget_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\gas_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\img_footer_form.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\instagram_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\institucion_icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\letter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\logos_sena.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\nit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\sign.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\university.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\truck.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\cerrar_sesion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Proyectos.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <BundleResource Include="Resources\gas.png" />
     <BundleResource Include="Resources\IconUser.png" />
+    <BundleResource Include="Resources\img_footer_form.png" />
+    <BundleResource Include="Resources\institucion.png" />
+    <BundleResource Include="Resources\logoBlanco.png" />
+    <BundleResource Include="Resources\logos_sena.png" />
+    <BundleResource Include="Resources\logosSenaSennova.png" />
+    <BundleResource Include="Resources\logoVerde.png" />
+    <BundleResource Include="Resources\nit.png" />
+    <BundleResource Include="Resources\pass.png" />
+    <BundleResource Include="Resources\pass2.png" />
+    <BundleResource Include="Resources\Proyectos.png" />
+    <BundleResource Include="Resources\salir.png" />
+    <BundleResource Include="Resources\siguienteVerde.png" />
+    <BundleResource Include="Resources\sprout.png" />
+    <BundleResource Include="Resources\transporte.png" />
+    <BundleResource Include="Resources\users.png" />
+    <BundleResource Include="Resources\usuario.png" />
   </ItemGroup>
 </Project>
