@@ -25,8 +25,7 @@ namespace huellaProto.ViewsModels
         private ObservableCollection<HuellaDTO> proyectos;
         private bool isRefreshing;
         private HuellaDTO selectedItem;
-
-
+        
         #endregion
 
         #region Propiedades 
@@ -34,6 +33,12 @@ namespace huellaProto.ViewsModels
         {
             get { return this.proyectos; }
             set { SetValue(ref this.proyectos, value); }
+        }
+
+        public bool IsRefreshing
+        {
+            get { return this.isRefreshing; }
+            set { SetValue(ref this.isRefreshing, value); }
         }
 
         public HuellaDTO SelectedItem
@@ -68,13 +73,29 @@ namespace huellaProto.ViewsModels
                 return new RelayCommand(CompletarCompensacion);
             }
         }
-
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new RelayCommand(ConsultarProyectos);
+            }
+        }
+        
         #endregion
 
         #region Metodos
         private async void ConsultarProyectos()
         {
+            this.IsRefreshing = true;
+            var connection = await this.apiService.CheckConnection();
+            if (!connection.IsSuccess)
+            {
+                this.IsRefreshing = false;
+                await Application.Current.MainPage.DisplayAlert("Error",
+                    connection.Message, "Aceptar");
 
+                return;
+            }
             var IdEmpresa = int.Parse(Settings.IdEmpresa);
 
             try
@@ -89,12 +110,14 @@ namespace huellaProto.ViewsModels
                 //Validar la respuesta del api
                 if (!response.IsSuccess)
                 {
+                    this.IsRefreshing = false;
                     await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
 
                     return;
                 }
+
                 this.Proyectos = new ObservableCollection<HuellaDTO>(ListaHuella);
-              
+                this.IsRefreshing = false;
             }
             catch (Exception e)
             {

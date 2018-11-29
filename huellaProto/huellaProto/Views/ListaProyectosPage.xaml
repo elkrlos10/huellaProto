@@ -15,6 +15,7 @@
                 IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
                 ItemsSource="{Binding Proyectos}"
                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                RefreshCommand="{Binding RefreshCommand}"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
