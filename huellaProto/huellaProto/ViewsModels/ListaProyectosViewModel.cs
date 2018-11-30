@@ -145,12 +145,12 @@ namespace huellaProto.ViewsModels
                     this.SelectedItem = null;
                     return;
                 }
-                //if (Huella.Porcentaje == 100)
-                //{
-                //    await Application.Current.MainPage.DisplayAlert("Información", "La compesación de huella de este proyecto ejecuto al 100%", "Aceptar");
-                //    this.SelectedItem = null;
-                //    return;
-                //}
+                if (Huella.sumaPorcentaje == 100)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Información", "La compesación de huella de este proyecto ejecuto al 100%", "Aceptar");
+                    this.SelectedItem = null;
+                    return;
+                }
                 if (Huella.Estado == null)
                 {
                     await Application.Current.MainPage.DisplayAlert("Información", "Este proyecto aún no se ha aprobado, por lo tanto no se puede completar su compensación", "Aceptar");

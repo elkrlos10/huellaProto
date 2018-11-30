@@ -149,11 +149,11 @@ namespace huellaProto.ViewsModels
         private async void GuargarCalculo()
         {
 
-            if (this.Porcentaje>100 || this.Porcentaje == 0)
+            if (this.Porcentaje>100 || this.Porcentaje <= 0)
             {
                 await Application.Current.MainPage.DisplayAlert(
                      "Error"
-                   , "El porcentaje a compensar deebe estar entre 1% y 100%"
+                   , "El porcentaje a compensar debe estar entre 1% y 100%"
                    , "Aceptar");
 
                 return;

@@ -281,6 +281,16 @@
                 this.IsVisiblePreg = false;
             }
 
+            if (this.CantidadGasolina < 0 || this.Km_Gasolina < 0 || this.CantidadDiesel < 0 || this.Km_Diesel < 0 || this.CantidadGas < 0 || this.km_Gas < 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Algunos datos tienen valores negativos"
+                  , "Aceptar");
+
+                return;
+            }
+
             if (this.CantidadGasolina > 0 && this.Km_Gasolina==0)
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -337,6 +347,8 @@
                 return;
             }
 
+        
+
             var idProyecto = MainViewModel.GetInstance().oProyecto.IdProyecto;
             var oVehiculos = new Vehiculos
             {
@@ -377,6 +389,16 @@
 
         private async void CambioViewMaquina()
         {
+
+            if (this.Can_Gasolina < 0 || this.Lts_Gasolina < 0 || this.Can_Diesel < 0 || this.lts_Diesel < 0 || this.Can_GasNatural < 0 || this.Lts_GasNatural < 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Algunos datos tienen valores negativos"
+                  , "Aceptar");
+
+                return;
+            }
             if (this.Can_Gasolina > 0 && this.Lts_Gasolina <= 0)
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -469,6 +491,15 @@
 
         private async void CambioViewResiduos()
         {
+            if (this.Can_RediduosRecicla < 0 || this.Can_ResiduosSolidos < 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Algunos datos tienen valores negativos"
+                  , "Aceptar");
+
+                return;
+            }
 
             var oResiduos = new Residuos
             {
@@ -502,6 +533,15 @@
 
         private async void Calcular()
         {
+            if (this.EnergiaKwh < 0 || this.Gas < 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Algunos datos tienen valores negativos"
+                  , "Aceptar");
+
+                return;
+            }
 
             var oEnergia = new EnergiaM
             {

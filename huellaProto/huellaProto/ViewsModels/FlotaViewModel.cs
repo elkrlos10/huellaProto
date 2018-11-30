@@ -127,6 +127,15 @@ namespace huellaProto.ViewsModels
 
         private async void CambioViewVehiculo()
         {
+            if (this.CantidadGasolina < 0 || this.Km_Gasolina < 0 || this.CantidadDiesel < 0 || this.Km_Diesel < 0 || this.CantidadGas < 0 || this.km_Gas < 0)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error"
+                  , "Algunos datos tienen valores negativos"
+                  , "Aceptar");
+
+                return;
+            }
 
             if (this.CantidadGasolina > 0 && this.Km_Gasolina == 0)
             {
