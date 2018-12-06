@@ -21,9 +21,9 @@ namespace huellaProto
             ////await Application.Current.MainPage.Navigation.PushAsync(new cuentaRegresiva());
             //Application.Current.MainPage = new NavigationPage(new cuentaRegresiva());
 
-            //Settings.FechaProyecto = string.Empty;
-            //Settings.User = string.Empty;
-            //Settings.Proyectos = string.Empty;
+            Settings.FechaProyecto = string.Empty;
+            Settings.User = string.Empty;
+            Settings.Proyectos = string.Empty;
             if (!string.IsNullOrEmpty(Settings.FechaProyecto))
             {
                 MainViewModel.GetInstance().CuentaRegresiva = new CuentaRegresivaViewModel();

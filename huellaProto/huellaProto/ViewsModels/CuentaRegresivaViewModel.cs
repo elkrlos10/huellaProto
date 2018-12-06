@@ -106,7 +106,7 @@ namespace huellaProto.ViewsModels
                 Settings.FechaProyecto = MainViewModel.GetInstance().oProyecto.FechaProyecto.AddDays(15).ToString();
             }
 
-            Settings.FechaProyecto = "2018-11-30";
+            //Settings.FechaProyecto = "2018-11-30";
 
             var Fecha = DateTime.Parse(Settings.FechaProyecto);
             if (Fecha < DateTime.Now)
@@ -163,7 +163,9 @@ namespace huellaProto.ViewsModels
         {
             var IdProyecto = int.Parse(Settings.IdProyecto);
             //Device.OpenUri(new Uri("http://huellacarbonoweb20180918120510.azurewebsites.net/#!/Encuesta"));
-            Device.OpenUri(new Uri("http://10.3.240.88:8089/#!/Encuesta?IdProyecto=" + IdProyecto));
+            //Device.OpenUri(new Uri("http://10.3.240.88:8089/#!/Encuesta?IdProyecto=" + IdProyecto));
+            Device.OpenUri(new Uri("https://www.huellacarbonosena.com/Encuesta?IdProyecto=" + IdProyecto));
+       
             //Device.OpenUri(new Uri(" https://huellaapi.azurewebsites.net//#!/Encuesta?IdProyecto=" + IdProyecto));
             //Device.OpenUri(new Uri("https://huellacarbono2.azurewebsites.net//#!/Encuesta?IdProyecto=" + IdProyecto));
 
@@ -181,7 +183,7 @@ namespace huellaProto.ViewsModels
 			try
 			{
 				var IdProyecto = int.Parse(Settings.IdProyecto);
-				var orignalURL = ("http://10.3.240.88:8089/Encuesta?IdProyecto=" + IdProyecto);
+				var orignalURL = ("https://www.huellacarbonosena.com/Encuesta?IdProyecto=" + IdProyecto);
 				
 				Device.OpenUri(new Uri("mailto:?subject=MobileTing&body= Hola! A continuación te compartimos un link para que realices una encuesta personal, así nos ayudarás a conocer la huella de carbono" +
                     "que emitimos y así contribuir con el medio ambiente... Muchas gracias <br>"
@@ -196,8 +198,6 @@ namespace huellaProto.ViewsModels
            
 
 		}
-
-
         #endregion
 
     }

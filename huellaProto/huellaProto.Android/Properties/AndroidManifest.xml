@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.huellaProto" android:installLocation="auto">
+<!--<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.huellaProto" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="10" android:targetSdkVersion="27" />
 	<application android:label="huellaProto.Android" android:icon="@drawable/logoVerde"></application>
+</manifest>-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.Sena.HuellaCarbono" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="26" />
+
+<!--<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.huellaProto" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="10" android:targetSdkVersion="27" />
+>>>>>>> 59d7a2cf38d3955a2ab72e0aa7ad4df74a9f23d3
+	<application android:label="huellaProto.Android" android:icon="@drawable/logoVerde"></application>-->
 </manifest>
