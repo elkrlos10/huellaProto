@@ -80,7 +80,10 @@
     <BuildIpa>True</BuildIpa>
     <CodesignProvision>VS: com.companyname.huellaProto Development</CodesignProvision>
     <CodesignKey>iPhone Developer: Juan Vahos (VBF3DXQLGT)</CodesignKey>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
@@ -184,9 +187,7 @@
       <Name>huellaProto</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BundleResource Include="Resources\agua.png" />
     <BundleResource Include="Resources\anteriorVerde.png" />
